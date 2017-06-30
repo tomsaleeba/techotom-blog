@@ -1,0 +1,25 @@
+---
+layout: post
+title: Jenkins and private BitBucket repo on Ubuntu Server 12.04
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+author: Tom Saleeba
+---
+<ol>
+<li><span style="line-height:13px;">install tomcat with apt-get</span></li>
+<li>download and deploy Jenkins</li>
+<li>use usermod -s /bin/bash to give the tomcat7 user a shell</li>
+<li>su -c "/bin/bash" tomcat7 to start a shell as tomcat7</li>
+<li>ssh-keygen to generate a key (be sure to use the default id_rsa name and have no passphrase)</li>
+<li>cat the .pub key and chuck it onto BitBucket</li>
+<li>ssh-add the key</li>
+<li>might need to start ssh-agent</li>
+<li>ssh git@bitbucket.org to add the key to the known hosts and test it out</li>
+</ol>

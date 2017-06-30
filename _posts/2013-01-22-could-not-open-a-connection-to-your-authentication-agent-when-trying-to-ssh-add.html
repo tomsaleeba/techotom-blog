@@ -1,0 +1,19 @@
+---
+layout: post
+title: '"Could not open a connection to your authentication agent." when trying to
+  ssh-add'
+date: 2013-01-22 12:58:55.000000000 +10:30
+type: post
+published: true
+status: publish
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+  _publicize_pending: '1'
+author: Tom Saleeba
+---
+<p>This is a reference for myself and hopefully others Googling will find it useful.</p>
+<p><strong>The situation</strong> is that I had SSH'd into a remote machine and I needed to use <code>ssh-add</code> to add a key so I could connect to BitBucket from the local machine using SSH (I know I could've used HTTPS instead). On my local machine I would usually run <code>ssh-add /path/to/key/file</code>, enter my password and be on my way. In this situation however, it wasn't that easy. I think ssh-add is trying to look on my local machine (i.e. back through the SSH connection) to see if an agent on my machine is providing keys but in my case, nothing was.</p>
+<p><strong>The fix</strong> was to run <code>exec ssh-agent bash</code> in the terminal, then run the <code>ssh-add</code> command to add my key file. Thanks to <strong>chamstar</strong> for answering his own question here: http://forum.slicehost.com/index.php?p=/discussion/comment/18819#Comment_18819</p>

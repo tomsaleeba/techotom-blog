@@ -1,0 +1,20 @@
+---
+layout: post
+title: Using add-apt-repository from behind a proxy
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+author: Tom Saleeba
+---
+<p>Set http_proxy and ftp_proxy (not https because it has direct access) in /etc/enviroment.<br />
+Set http:proxy and ftp::proxy in /etc/apt/apt.conf (again, not https::proxy)<br />
+sudo su to root<br />
+run the add-apt-repository command (DON'T RUN AS SUDO)</p>
+<p>If you have issues, check that the new variables have taken effect by doing an echo.<br />
+If it still doesn't work, restart to be sure that all shells have the new values.</p>

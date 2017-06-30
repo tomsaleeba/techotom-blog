@@ -1,0 +1,32 @@
+---
+layout: post
+title: MethodNotFoundException using Tomcat inside Eclipse
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+author: Tom Saleeba
+---
+<p>running tomcat (actually vfabric tc) in eclipse (actually STS) and using a web deployment descriptor thingo.</p>
+<p>it worked when you built using maven and deployed manually and when you looked in the debugger you'd see the right class source but the object itself wouldn't have the property/method.</p>
+<p>problem caused by updating a dependency JAR version and updating it in the referencing POM but the deployment descriptor is never updated because the POM is missing:</p>
+<p>....</p>
+<p>				maven-eclipse-plugin<br />
+				2.9</p>
+<p>						org.springframework.ide.eclipse.core.springnature</p>
+<p>						org.springframework.ide.eclipse.core.springbuilder</p>
+<p>					true<br />
+					true<br />
+this stuff fixed it \/ \/<br />
+					true<br />
+					true<br />
+					2.0</p>
+<p>						5.0</p>
+<p>this stuff fixed it /\ /\</p>
+<p>...</p>
+<p>That way when you run mvn eclipse:eclipse (and refresh the project in eclipse) the deployment descriptor will be updated to reflect the POM.</p>

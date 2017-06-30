@@ -1,0 +1,29 @@
+---
+layout: post
+title: Some notes on pop up blockers in Chrome and Firefox
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+author: Tom Saleeba
+---
+<p><code>$('#popupBlockerCheckButton').click(function(){<br />
+				$('#popupCheckMsg').html('<img src="{{ site.baseurl }}/assets/loading.gif" />');<br />
+				setTimeout(function(){<br />
+	// 				var popupWindow = window.open('popupCheck', '_blank');<br />
+					var url = '${pageContext.request.contextPath}/popupCheck';<br />
+					var popupWindow = window.open(url, '_blank', "location=no,toolbar=no,menubar=no,status=no,scrollbars=yes,resizable=no,width=900,height=330", true);<br />
+					if (popupWindow == null || typeof(popupWindow)=='undefined') {<br />
+						$('#popupCheckMsg').html('Please disable your pop-up blocker and click the "Open" link again.');<br />
+					}<br />
+					else {<br />
+						$('#popupCheckMsg').html('yay');<br />
+					}<br />
+				}, 1100);<br />
+			});</code></p>
+<p>Pop ups must be fired by a click and &lt;1 second after the click event. After that they are caught by the blocker.</p>

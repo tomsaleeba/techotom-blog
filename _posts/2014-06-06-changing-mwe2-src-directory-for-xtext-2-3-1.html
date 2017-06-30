@@ -1,0 +1,50 @@
+---
+layout: post
+title: Changing mwe2 src directory for Xtext 2.3.1
+date: 2014-06-06 06:51:54.000000000 +09:30
+type: post
+published: true
+status: publish
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+  _publicize_pending: '1'
+  geo_public: '0'
+author: Tom Saleeba
+---
+<p><strong>Problem</strong></p>
+<p>The Xtext project I'm working with had, what I assume is, the default project structure where all the java source code lives in a src directory and the generated code goes into src-gen. I wanted to change the structure to a more maven-like structure and have the java code living under src/main/java. I wasn't too fussed about the src-gen directory, that can stay where it is. I Googled for a while but I couldn't find anyone asking the same question as me so hopefully this will help any others (and my future self).</p>
+<p><strong>Solution</strong></p>
+<p>In the .mwe2 file, I have a section like:</p>
+<pre>Workflow {
+  ...snip...
+  component = Generator {
+    pathRtProject = runtimeProject
+    pathUiProject = "${runtimeProject}.ui"
+    projectNameRt = projectName
+    projectNameUi = "${projectName}.ui"
+    language = {
+        uri = grammarURI
+        fileExtensions = file.extensions
+        ...snip....</pre>
+<p class="p1">Note: the Generator is an <code>org.eclipse.xtext.generator.Generator</code>.</p>
+<p class="p1">This fix was to add:</p>
+<pre class="p1"> srcPath = "/src/main/java"</pre>
+<p class="p1">...to the Generator. The leading slash is important otherwise you'll end up with a directory called something like <code>ExampleProjectsrc/main/java</code>, assuming your project is called ExampleProject.</p>
+<p class="p1">So you'll end up with the following:</p>
+<pre>Workflow {
+  ...snip...
+  component = Generator {
+    pathRtProject = runtimeProject
+    pathUiProject = "${runtimeProject}.ui"
+    projectNameRt = projectName
+    projectNameUi = "${projectName}.ui"
+<span style="color:#ff0000;">    srcPath = "/src/main/java"</span>
+    language = {
+        uri = grammarURI
+        fileExtensions = file.extensions
+        ...snip....
+</pre>
+<p class="p1">Then re-run your .mwe2 workflow to make sure everything gets generated to the expected spot. If you have other code living in the old <code>src</code>, you'll want to move that to <code>src/main/java</code> too.</p>

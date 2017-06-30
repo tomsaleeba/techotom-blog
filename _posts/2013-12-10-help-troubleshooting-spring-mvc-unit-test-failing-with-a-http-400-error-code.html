@@ -1,0 +1,44 @@
+---
+layout: post
+title: Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code
+date: 2013-12-10 06:32:17.000000000 +10:30
+type: post
+published: true
+status: publish
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+  _publicize_pending: '1'
+author: Tom Saleeba
+---
+<p>Note: I'm working in Eclipse with Spring 3 and using jUnit for my tests.</p>
+<p><strong>Background</strong></p>
+<p>I was writing a unit test for a file upload method on a controller that looks like:</p>
+<pre><code>mockMvc.perform(fileUpload("/fileUpload")
+    .param("description", "blah")
+    )
+    .andExpect(status().isOk());</code></pre>
+<p>The test was failing with the message:</p>
+<pre>java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;400&gt;</pre>
+<p>This isn't super helpful because I wasn't sure why I was getting the 400. I tried changing the URL that I was testing and the error code changed to a 404 so I knew the request was trying to get to the right controller method. I also put a breakpoint in my controller method but it was never hit so I knew it was the configuration of the test and not the code in the controller method that was causing the issue.</p>
+<p><strong>How to get more info</strong></p>
+<p>To find out what the problem is, we need to use the debugger to get to a useful message. In my example above, we need to set a breakpoint inside the <code>.andExpect()</code> method call. To do this, and you'll need a newish version of Eclipse to support this feature, hold <i>control</i> (or <em>command</em> in OSX) and mouse over the <code>.andExpect()</code> method call, then click <i>Open Implementation</i> and it should open something like the following code in your editor:</p>
+<pre><code>public ResultActions andExpect(ResultMatcher matcher) throws Exception {
+	matcher.match(mvcResult);
+	return this;
+}
+</code></pre>
+<p>We need to set our breakpoint on the first line; the <code>matcher.match()</code> call. Now run your unit test in debug mode and wait for the breakpoint to trigger. When it triggers, we'll need the <strong>Variables</strong> view in Eclipse to inspect stuff. If it's not in your perspective, add it using <i>Window -&gt; Show View</i>. In the <strong>Variables</strong> view, you'll need to navigate to the following path:</p>
+<pre>this -&gt; val$mvcResult -&gt; mockResponse -&gt; errorMessage</pre>
+<p>The <code>errorMessage</code> variable is a String and for me, the message was:</p>
+<pre>Required MultipartFile parameter 'file' is not present</pre>
+<p>Ta-da! Now we have some useful information. For my example, the way to fix the message is to call the <code>.file()</code> method on the result from the <code>fileUpload()</code> method, so:</p>
+<pre><code>MockMultipartFile file = new MockMultipartFile("file", "orig", null, "bar".getBytes());
+mockMvc.perform(fileUpload("/questionFileUpload")
+    .file(file)
+    .param("description", "blah")
+    )
+    .andExpect(status().isOk());</code></pre>
+<p>Unfortunately I can't tell you how to fix your problem if it's not what I've experienced but hopefully I've given you some help in fixing it yourself.</p>

@@ -1,0 +1,46 @@
+---
+layout: post
+title: Beware Apache JENA and multiple models
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Software Development
+tags: []
+meta: {}
+author: Tom Saleeba
+---
+<p># The background<br />
+I created some helpers to make creating RDF test data easier and more readable.</p>
+<p># The problem<br />
+They weren't actually adding all the data. The resources were showing up but they were empty</p>
+<p>Example<br />
+import org.apache.jena.rdf.model.Model;<br />
+import org.apache.jena.rdf.model.ModelFactory;<br />
+import org.apache.jena.rdf.model.Property;<br />
+import org.apache.jena.rdf.model.Resource;</p>
+<p>@Test<br />
+public void testTwoModels() {<br />
+Model m1 = ModelFactory.createDefaultModel();<br />
+Resource alice = m1.createResource("urn:person1");<br />
+alice.addLiteral(m1.createProperty("urn:name"), "Alice");<br />
+m1.write(System.out, "TURTLE");<br />
+System.out.println("----------------------------");</p>
+<p>Model m2 = ModelFactory.createDefaultModel();<br />
+Resource bob = m2.createResource("urn:person2");<br />
+bob.addLiteral(m2.createProperty("urn:name"), "Bob");<br />
+m2.write(System.out, "TURTLE");<br />
+System.out.println("----------------------------");</p>
+<p>Property knowsProperty = m2.createProperty("urn:knows");<br />
+bob.addProperty(knowsProperty, alice);</p>
+<p>Resource otherPersonReference = bob.getProperty(knowsProperty).getResource();<br />
+try {<br />
+otherPersonReference.getProperty(m2.createProperty("urn:name")).getLiteral(); // What? But we created it.<br />
+} catch (NullPointerException e) {<br />
+// this will happen<br />
+}<br />
+m2.write(System.out, "TURTLE");<br />
+}</p>
+<p>The problem is that when you create a resource with statements in it in one model, then take that reference to another model. That reference is exactly that, just a reference! It doesn't contain any data. I even knew this before I wrote all this but the behaviour wasn't what I expected.</p>
+<p>The solution is to pass a reference to the model or something in the model (and do .getModel()) to the helper method, then it can create everything it needs in the _right_ model.</p>

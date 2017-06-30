@@ -1,0 +1,25 @@
+---
+layout: post
+title: Fixing "XMLGregorianCalendarImpl is internal proprietary API and may be removed
+  in a future release"
+date: 2015-02-03 07:43:51.000000000 +10:30
+type: post
+published: true
+status: publish
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+  _publicize_pending: '1'
+  geo_public: '0'
+  _oembed_f272ecca749bc4400cc9595e7c18c8c2: "{{unknown}}"
+author: Tom Saleeba
+---
+<h1>Background:</h1>
+<p>I wrote some code that required an XMLGregorianCalendar so when I poked around with code completion, the first thing I found was a constructor on <span style="font-family:monospace;">com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl</span>. This got my code working but when you build with Maven, you get given a warning (and rightly so):</p>
+<pre>XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release</pre>
+<h1>The fix:</h1>
+<p>The correct way to get something that conforms to the XMLGregorianCalendar interface is to call this factory:</p>
+<pre>XMLGregorianCalendar cal = javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar();</pre>
+<p>Credit to this answer (<a href="http://stackoverflow.com/a/5402007/1410035">http://stackoverflow.com/a/5402007/1410035</a>) for how to do it.</p>

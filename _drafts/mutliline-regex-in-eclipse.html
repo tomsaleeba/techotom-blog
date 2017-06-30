@@ -1,0 +1,32 @@
+---
+layout: post
+title: Mutliline regex in Eclipse
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Software Development
+tags: []
+meta:
+  _edit_last: '29818343'
+author: Tom Saleeba
+---
+<p>(?s)&lt;description&gt;.+?&lt;/description&gt;</p>
+<p>this is a lazy regex to search a multiline in and XML file</p>
+<p>&nbsp;</p>
+<p>Search this</p>
+<p>&lt;question id="2.2" showId="true" type="TEXT_BOX" mandatory="false" meta="SHD.projectAbstract"&gt;</p>
+<p>&lt;text&gt;Please provide a brief summary of the project which led to the establishment of the dataset, similar to the abstract of a scientific publication.</p>
+<p>This abstract ideally includes descriptions of the project's objectives, the methods/techniques applied and the results obtained.&lt;/text&gt;</p>
+<p>&lt;description&gt;</p>
+<p>&lt;![CDATA[</p>
+<p>Please provide a short but meaningful</p>
+<p>summary about the project leading to</p>
+<p>the creation of the dataset, including</p>
+<p>the overall objectives, the methods</p>
+<p>and the results.</p>
+<p>]]&gt;</p>
+<p>&lt;/description&gt;</p>
+<p>&lt;responseInputClass&gt;textBoxDefault&lt;/responseInputClass&gt;</p>
+<p>&lt;/question&gt;</p>

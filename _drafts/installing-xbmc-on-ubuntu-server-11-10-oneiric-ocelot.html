@@ -1,0 +1,32 @@
+---
+layout: post
+title: Installing XBMC on Ubuntu Server 11.10 Oneiric Ocelot
+date: 
+type: post
+published: false
+status: draft
+categories:
+- IT
+tags:
+- Oneiric Ocelot
+- Ubuntu Server
+- XBMC
+meta:
+  _edit_last: '29818343'
+author: Tom Saleeba
+---
+<p>Steps:</p>
+<ol>
+<li>Install X11, lirc and some other needed dependencies (including alsa)</li>
+<li>Install video card drivers (nvidia in my case) (don't forget make gcc linux-headers)</li>
+<li>Add the xmbc repo</li>
+<li>install xbmc</li>
+<li>allow your xbmc user to access your audio device (can check with aplay -l)</li>
+<li>make xbmc startup automatically</li>
+</ol>
+<p>&nbsp;</p>
+<p>Credit goes to:</p>
+<ol>
+<li>http://forum.xbmc.org/showthread.php?t=32891</li>
+<li>http://www.noobslab.com/2011/09/install-xbmc-on-ubuntu-1110-oneiric.html</li>
+</ol>

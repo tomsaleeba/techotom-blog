@@ -1,0 +1,77 @@
+---
+layout: post
+title: Ejecting an ISO from a VirtualBox VM using VBoxManage
+date: 2012-09-22 01:19:45.000000000 +09:30
+type: post
+published: true
+status: publish
+categories:
+- IT
+- Virtualisation
+tags:
+- virtualbox
+meta:
+  _edit_last: '29818343'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:8:"29818343";s:7:"blog_id";s:8:"33725032";s:9:"mod_stamp";s:19:"2012-09-22
+    01:30:00";}
+  _oembed_b2f0f244109cbba9b6d30415da678577: "{{unknown}}"
+  _oembed_051d03987fb7909a878a289570243649: "{{unknown}}"
+  _oembed_cf8bd53e6af0c16f002a31479825a8dc: "{{unknown}}"
+  _oembed_dab99db4304d46b41e64081d9c650c71: "{{unknown}}"
+  _oembed_9700fe1890526a75395ced260978339d: "{{unknown}}"
+  _oembed_85435827195444abc660f0b2e5d8a93a: "{{unknown}}"
+author: Tom Saleeba
+---
+<h1>The problem</h1>
+<p>You've connected an ISO to your vm already and now you want to leave the drive connected to the controller but eject the medium from it. This isn't a particularly challenging problem but it wasn't immediately apparent to me so hopefully this saves someone else some time.</p>
+<h1>How-To</h1>
+<ol>
+<li>Let's make sure we get all the right details for the command first up, so we want to look at the info about our vm. All you need to know at this stage is the name or the UUID of the vm. The information we're looking for is the name of the controller, the port on the controller and the device number of the CD/DVD drive.<br />
+This is the format of the command:<br />
+<code><strong>$ VBoxManage showvminfo &lt;name|uuid&gt;</strong></code><br />
+So as an example, when my vm is named "xp", we'd do this (I prefer names to UUIDs):</p>
+<pre style="overflow-x:auto;"><strong>$ VBoxManage showvminfo "xp"</strong>
+<em>...unimportant stuff ommitted...</em>
+Storage Controller Name (0): <span style="color:#ff0000;font-weight:bold;">IDE Controller</span>
+Storage Controller Type (0): PIIX4
+Storage Controller Instance Number (0): 0
+Storage Controller Max Port Count (0): 2
+Storage Controller Port Count (0): 2
+Storage Controller Bootable (0): on
+IDE Controller (0, 0): /path/to/hdd.vdi (UUID: 00000000-0000-0000-0000-000000000000)
+IDE Controller <span style="color:#ff0000;font-weight:bold;">(0, 1)</span>: /usr/share/virtualbox/VBoxGuestAdditions.iso (UUID: 4bbb3ddf-b5f2-47ae-92f5-fbc23a304fae)
+<em>...unimportant stuff ommitted...</em></pre>
+<p>The information we get from this (the bits highlighted in red) are the controller's name is "<strong>IDE Controller</strong>", the port on the controller is <strong>0</strong> and the device number on the port is <strong>1</strong>.</li>
+<li>We then use these values that we found in the command to eject the disc or make the drive empty. This is the format that we use (the \ lets you continue commands on a new line):
+<pre style="overflow-x:auto;"><strong>$ VBoxManage storageattach "&lt;vm name&gt;" \
+--storagectl "&lt;storage controller name&gt;" \
+--port &lt;port number on controller&gt; \
+--device &lt;device number on port&gt; \
+--medium emptydrive</strong>
+So for my "xp" vm and using the values I found in the previous step, I would run:
+<code><strong>$ VBoxManage storageattach "xp" \
+--storagectl "IDE Controller" \
+--port 0 \
+--device 1 \
+--medium emptydrive</strong></code></pre>
+</li>
+<li>If the command ran successfully, there won't be any output to the console. You can double check that it worked by running the showvminfo command again and checking to see that the device is now empty:
+<pre style="overflow-x:auto;"><strong>$ VBoxManage showvminfo "xp"</strong>
+<em>...unimportant stuff ommitted...</em>
+Storage Controller Name (0): IDE Controller
+Storage Controller Type (0): PIIX4
+Storage Controller Instance Number (0): 0
+Storage Controller Max Port Count (0): 2
+Storage Controller Port Count (0): 2
+Storage Controller Bootable (0): on
+IDE Controller (0, 0): /path/to/hdd.vdi (UUID: 00000000-0000-0000-0000-000000000000)
+IDE Controller (0, 1): <span style="color:#ff0000;font-weight:bold;">Empty</span>
+<em>...unimportant stuff ommitted...</em>
+</pre>
+</li>
+</ol>
+<h1>Errors you might encounter</h1>
+<h2>VBoxManage: error: No DVD/Floppy Drive attached to the controller 'IDE Controller'at the port: 1, device: 0</h2>
+<p>If you get an error like this, make sure that you didn't get the port and device numbers around the wrong way. The example I've got here is because I should have used port = 0 and device = 1. In fact, on my VM, there isn't anything plugged into port 1 at all.</p>
+<p>Credit to<br />
+<a href="https://forums.virtualbox.org/viewtopic.php?f=6&amp;t=46265">https://forums.virtualbox.org/viewtopic.php?f=6&amp;t=46265</a></p>

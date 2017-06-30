@@ -3,6 +3,7 @@ layout: post
 title:  'Alternative way to fix the "Screen Overlay Detected" error on Android'
 date:   2017-03-17 11:55:43 +0930
 categories: android
+author: Tom Saleeba
 ---
 # TL;DR Summary
 
@@ -26,4 +27,5 @@ An easier way, and one that actually worked in my situation, is to manually enab
  1. Enable the permission that you were asked about before the “Screen overlay error” happened. You might want to enable more than one permission because presumably you’ll not be able to Allow any other when prompted in the future without the same overlay error.
  1. Close the menu
  1. Open your app again
- 1. This has the benefit of not having to manually disallow and then re-allow a possibly huge number of apps from having the screen overlay permission. Or in my case, even after doing that, it still didn’t help.
+
+This has the benefit of not having to manually disallow and then re-allow a possibly huge number of apps from having the screen overlay permission. Or in my case, even after doing that, it still didn’t help.
