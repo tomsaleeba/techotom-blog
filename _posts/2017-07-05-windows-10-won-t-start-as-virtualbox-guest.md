@@ -1,7 +1,10 @@
 ---
 layout: post
-title: Windows 10 won\'t start as VirtualBox guest
+title: Windows 10 won't start as VirtualBox guest
 author: Tom Saleeba
+tags:
+  - windows
+  - virtualbox
 ---
 
 # TL;DR
