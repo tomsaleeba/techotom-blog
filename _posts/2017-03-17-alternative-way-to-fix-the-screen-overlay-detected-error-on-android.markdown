@@ -4,6 +4,7 @@ title:  'Alternative way to fix the "Screen Overlay Detected" error on Android'
 date:   2017-03-17 11:55:43 +0930
 categories: android
 author: Tom Saleeba
+excerpt: Work around this annoying notification by manually enabling the permission from the settings menu.
 ---
 # TL;DR Summary
 

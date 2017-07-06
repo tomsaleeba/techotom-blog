@@ -5,6 +5,7 @@ author: Tom Saleeba
 tags:
   - windows
   - virtualbox
+excerpt: Updating to a newer version of VirtualBox is required to get Windows 10 version 1703 to run as a guest.
 ---
 
 # TL;DR
