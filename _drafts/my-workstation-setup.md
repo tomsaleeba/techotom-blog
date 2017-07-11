@@ -5,7 +5,7 @@ author: Tom Saleeba
 excerpt: #%excerpt here%
 ---
 
-# Extra packages:
+# Extra APT packages:
  - openconnect
  - sqlite3
  - virtualbox-5.1 (from [https://www.virtualbox.org/wiki/Linux_Downloads#Debian-basedLinuxdistributions]())
@@ -16,16 +16,21 @@ excerpt: #%excerpt here%
    - oh my fish
    - bobthefish
    - [https://github.com/ryanoasis/nerd-fonts/releases/download/v1.0.0/Meslo.zip](Meslo LG S Nerd Font) (install to `~/.local/share/fonts/`)
- - vscode
+ - code (VSCode)
    - chenxsan.vscode-standardjs - standardjs linter
    - ow.vscode-subword-navigation - make the cursor move like it should
  - gparted
+ - `python-pip` (and `setuptools`) using: `sudo pip install -U setuptools awscli`
+ - meld
+
+# Non-APT packages
  - yarn
     - `curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -; and echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list; and sudo apt-get update; and sudo apt-get -y install yarn`
  - nvm (for NodeJS)
     - `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash` or whatever the [https://github.com/creationix/nvm#install-script](latest) is
     - `omf install nvm` to get fish NVM support
     - `nvm install 6.10`
+    - `echo 'set -gx NVM_DIR "~/.nvm"' >> ~/.config/fish/config.fish` to make sure the `node` command is available in shells
 
 # VSCode user config
 Edit the `~/.config/Code/User/settings.json` file with:
@@ -45,7 +50,9 @@ Edit the `~/.config/Code/User/settings.json` file with:
           "describe",
           "it",
           "expect",
-          "fail"
+          "fail",
+          "spyOn",
+          "jasmine"
         ],
         "ignore": [
           "node_modules/**"
