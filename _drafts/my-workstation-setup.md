@@ -19,9 +19,11 @@ excerpt: #%excerpt here%
  - code (VSCode)
    - chenxsan.vscode-standardjs - standardjs linter
    - ow.vscode-subword-navigation - make the cursor move like it should
+   - kaiwood.center-editor-window - to save time wasted when scrolling
  - gparted
  - `python-pip` (and `setuptools`) using: `sudo pip install -U setuptools awscli`
  - meld
+ - java 8 JDK (from [http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html](WebUpd8.org's PPA))
 
 # Non-APT packages
  - yarn
@@ -31,6 +33,9 @@ excerpt: #%excerpt here%
     - `omf install nvm` to get fish NVM support
     - `nvm install 6.10`
     - `echo 'set -gx NVM_DIR "~/.nvm"' >> ~/.config/fish/config.fish` to make sure the `node` command is available in shells
+
+# Java IDE
+I use [https://spring.io/tools](SpringSource Tool Suite) as my IDE for Java work. I also use [http://www.eclemma.org/](EclEmma) as a Eclipse plugin for test coverage.
 
 # VSCode user config
 Edit the `~/.config/Code/User/settings.json` file with:
