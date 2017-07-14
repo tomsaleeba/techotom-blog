@@ -39,104 +39,10 @@ I use [https://spring.io/tools](SpringSource Tool Suite) as my IDE for Java work
 
 # VSCode user config
 Edit the `~/.config/Code/User/settings.json` file with:
-{% highlight json %}
-    {
-      "editor.tabSize": 2,
-      "window.zoomLevel": 0,
-      "terminal.integrated.fontFamily": "'MesloLGS Nerd Font'",
-      "workbench.iconTheme": "vs-seti",
-      "editor.minimap.enabled": false,
-      "standard.options": {
-        "globals": [
-          "$",
-          "jQuery",
-          "fetch",
-          "angular",
-          "describe",
-          "it",
-          "expect",
-          "fail",
-          "spyOn",
-          "jasmine"
-        ],
-        "ignore": [
-          "node_modules/**"
-        ]
-      },
-      "standard.autoFixOnSave": true
-    }
-{% endhighlight %}
+{% highlight json %}{% include workstation/vscode-settings.json %}{% endhighlight %}
 
 Edit the `~/.config/Code/User/keybinding.json` file with:
-{% highlight json %}
-[
-  {
-    "key": "ctrl+d",
-    "command": "editor.action.deleteLines",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+alt+left",
-    "command": "editor.action.smartSelect.grow",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+alt+right",
-    "command": "editor.action.smartSelect.shrink",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+.",
-    "command": "editor.action.marker.next",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+shift+s",
-    "command": "workbench.action.files.saveAll",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+left",
-    "command": "subwordNavigation.cursorSubwordLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+right",
-    "command": "subwordNavigation.cursorSubwordRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+left",
-    "command": "subwordNavigation.cursorSubwordLeftSelect",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+right",
-    "command": "subwordNavigation.cursorSubwordRightSelect",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+left",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "ctrl+alt+-",
-    "command": "-workbench.action.navigateBack"
-  },
-  {
-    "key": "alt+right",
-    "command": "workbench.action.navigateForward"
-  },
-  {
-    "key": "ctrl+shift+-",
-    "command": "-workbench.action.navigateForward"
-  },
-  {
-    "key": "ctrl+shift+x",
-    "command": "editor.action.transformToUppercase"
-  }
-]
-{% endhighlight %}
+{% highlight json %}{% include workstation/vscode-keybindings.json %}{% endhighlight %}
 
 # TL;DR
 summary here

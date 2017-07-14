@@ -1,0 +1,26 @@
+{
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0,
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font'",
+  "workbench.iconTheme": "vs-seti",
+  "editor.minimap.enabled": false,
+  "standard.options": {
+    "globals": [
+      "$",
+      "jQuery",
+      "fetch",
+      "angular",
+      "describe",
+      "it",
+      "expect",
+      "fail",
+      "spyOn",
+      "jasmine",
+      "beforeEach"
+    ],
+    "ignore": [
+      "node_modules/**"
+    ]
+  },
+  "standard.autoFixOnSave": true
+}
