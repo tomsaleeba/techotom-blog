@@ -32,7 +32,7 @@ excerpt: #%excerpt here%
     - `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash` or whatever the [https://github.com/creationix/nvm#install-script](latest) is
     - `omf install nvm` to get fish NVM support
     - `nvm install 6.10`
-    - `echo 'set -gx NVM_DIR "~/.nvm"' >> ~/.config/fish/config.fish` to make sure the `node` command is available in shells
+    - `nvm alias default 6.10` to make sure the `node` command is available in shells. We need to [https://github.com/derekstavis/plugin-nvm/issues/8#issuecomment-193007689](set the default) because there's no system Node to fallback to.
 
 # Java IDE
 I use [https://spring.io/tools](SpringSource Tool Suite) as my IDE for Java work. I also use [http://www.eclemma.org/](EclEmma) as a Eclipse plugin for test coverage.
