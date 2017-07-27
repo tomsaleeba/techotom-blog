@@ -16,7 +16,8 @@
       "fail",
       "spyOn",
       "jasmine",
-      "beforeEach"
+      "beforeEach",
+      "spyOn"
     ],
     "ignore": [
       "node_modules/**"
