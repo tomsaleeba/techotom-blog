@@ -12,18 +12,19 @@ excerpt: #%excerpt here%
    - extensions pack
  - dropbox
    - python-gpgme
- - fish
+ - `fish`
    - oh my fish
    - bobthefish
    - [https://github.com/ryanoasis/nerd-fonts/releases/download/v1.0.0/Meslo.zip](Meslo LG S Nerd Font) (install to `~/.local/share/fonts/`)
- - code (VSCode)
+ - `code` (VSCode)
    - chenxsan.vscode-standardjs - standardjs linter
    - ow.vscode-subword-navigation - make the cursor move like it should
    - kaiwood.center-editor-window - to save time wasted when scrolling
- - gparted
+ - `gparted`
  - `python-pip` (and `setuptools`) using: `sudo pip install -U setuptools awscli`
- - meld
+ - `meld`
  - java 8 JDK (from [http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html](WebUpd8.org's PPA))
+ - `shutter` good for partial screenshots
 
 # Non-APT packages
  - yarn
