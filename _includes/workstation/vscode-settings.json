@@ -17,7 +17,8 @@
       "spyOn",
       "jasmine",
       "beforeEach",
-      "spyOn"
+      "spyOn",
+      "alert"
     ],
     "ignore": [
       "node_modules/**"
