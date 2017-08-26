@@ -25,6 +25,7 @@ excerpt: #%excerpt here%
  - `meld`
  - java 8 JDK (from [http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html](WebUpd8.org's PPA))
  - `shutter` good for partial screenshots
+ - [http://sqlitebrowser.org/](sqlitebrowser) `sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser && sudo apt-get update && sudo apt-get install sqlitebrowser`
 
 # Non-APT packages
  - yarn
