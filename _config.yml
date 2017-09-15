@@ -32,6 +32,7 @@ google_analytics: UA-101335262-2
 plugins:
   - jekyll-feed
   - jemoji
+  - jekyll-sitemap
 
 excerpt_separator: '' # no excerpts unless I define them
 
