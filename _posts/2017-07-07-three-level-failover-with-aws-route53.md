@@ -100,28 +100,29 @@ Now we can create the "main" domain name record pair in basically the same fashi
 **Testing it all**
 
 Let's make sure what we've created works. As mentioned earlier, we'll use netcat for the task of a simple server. Here's a script that will create a simple netcat server that will respond multiple times. The loop achieves the multiple responses, without it, the "server" will respond once, then exit.
-
-        #!/usr/bin/env bash
-        srvnum=1 # edit for each server
-        port=8888
-        while true; do
-            echo -e "HTTP/1.1 200 OK\n\n $(date) on server #$srvnum" | nc -l -p $port -q 1
-        done
+```bash
+#!/usr/bin/env bash
+srvnum=1 # edit for each server
+port=8888
+while true; do
+    echo -e "HTTP/1.1 200 OK\n\n $(date) on server #$srvnum" | nc -l -p $port -q 1
+done
+```
 
 You'll need to SSH into each of the 3 servers and run the script on each. Make sure to change the `srvnum` variable for each so you know which server you end up at.
 
 Once you start the "servers" on `primary.` and `secondary.`, you'll see the AWS health check requests coming in, like:
 
-        GET / HTTP/1.1
-        Host: 1.1.1.1:8888
-        Connection: close
-        User-Agent: Amazon Route 53 Health Check Service; ref:97aace80-62b8-a461-bd0f-580344e8b53a; report http://amzn.to/1vsZADi
-        Accept: */*
-        Accept-Encoding: *
+    GET / HTTP/1.1
+    Host: 1.1.1.1:8888
+    Connection: close
+    User-Agent: Amazon Route 53 Health Check Service; ref:97aace80-62b8-a461-bd0f-580344e8b53a; report http://amzn.to/1vsZADi
+    Accept: */*
+    Accept-Encoding: *
 
 At this stage, you should be able to go to your main domain name (either in a browser or using cURL), `resilient-site.techotom.com` in our example, and get a response like:
 
-         Fri Jul  7 12:26:21 ACST 2017 on server #1
+    Fri Jul  7 12:26:21 ACST 2017 on server #1
 
 The main thing is we're getting a response from server **#1**. You did remember to change the variable for each server, right?
 

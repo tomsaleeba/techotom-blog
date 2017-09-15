@@ -1,24 +1,20 @@
 ---
 layout: post
 title: Mocking remoteAddr with Spring-mvc
-date: 2014-11-12 03:00:42.000000000 +10:30
-type: post
-published: true
-status: publish
+date: 2014-11-12 03:00:42 +1030
 categories:
 - Software Development
-tags: []
-meta:
-  _edit_last: '29818343'
-  _publicize_pending: '1'
-  geo_public: '0'
 author: Tom Saleeba
 ---
-<h1>The problem</h1>
-<p>We developed a Spring MVC controller that needs to know who the client is. We achieved this using a <code>HttpServletRequest</code> parameter and then calling <code>getRemoteAddr()</code> on it. The challenge then was how to test this because we need to be able to mock this value.</p>
-<h1>The fix</h1>
-<p>The Spring test helpers don't provide a way to set this value with a helper method but they do provide an extension point that we can use to do it ourselves. The extension point is the <code>.with(RequestPostProcessor)</code> method:</p>
-<pre style="overflow-x:scroll;white-space:pre;">import static org.hamcrest.MatcherAssert.assertThat;
+# The problem
+
+We developed a Spring MVC controller that needs to know who the client is. We achieved this using a `HttpServletRequest` parameter and then calling `getRemoteAddr()` on it. The challenge then was how to test this because we need to be able to mock this value.
+
+# The fix
+
+The Spring test helpers don't provide a way to set this value with a helper method but they do provide an extension point that we can use to do it ourselves. The extension point is the `.with(RequestPostProcessor)` method:
+```java
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -42,17 +38,17 @@ import org.springframework.web.context.WebApplicationContext;
 @WebAppConfiguration
 @ContextConfiguration(locations = { "classpath:test-servlet-context.xml" })
 public class RestDoThingControllerTest {
-  
+
   @Autowired
   private WebApplicationContext wac;
-  
+
   private MockMvc mockMvc;
-  
+
   @Before
   public void setup() {
     this.mockMvc = webAppContextSetup (this.wac).build();
   }
-  
+
   /**
    * Can we do that thing?
    */
@@ -65,13 +61,13 @@ public class RestDoThingControllerTest {
       }
     };
     mockMvc.perform(post("/doThing")
-        <span style="color:#ff0000;">.with(remoteAddr("192.168.0.1"))</span>
+        .with(remoteAddr("192.168.0.1")) // we can supply a mock IP now :D
         .content("some payload"))
             .andExpect(status().isOk())
             .andDo(assertPayloadIsAccepted);
   }
 
-<span style="color:#ff0000;">  private static RequestPostProcessor remoteAddr(final String remoteAddr) {
+ private static RequestPostProcessor remoteAddr(final String remoteAddr) { // it's nice to extract into a helper
     return new RequestPostProcessor() {
       @Override
       public MockHttpServletRequest postProcessRequest(MockHttpServletRequest request) {
@@ -79,7 +75,8 @@ public class RestDoThingControllerTest {
         return request;
       }
     };
-  }</span>
+  }
 }
-</pre>
-<p>You can then easily move our static helper method to some other class and then use it wherever you like. You can even have it as readable as it is here thanks to <code>import static ...</code>.</p>
+```
+
+You can then easily move our static helper method to some other class and then use it wherever you like. You can even have it as readable as it is here thanks to `import static ...`.
