@@ -3,7 +3,7 @@ layout: post
 title: #%title here%
 author: Tom Saleeba
 tags:
-  - #%tag here%
+  - %tag here%
 excerpt: #%excerpt here%
 ---
 
