@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Docker \'no supported platform found in manifest\'
+title: Docker 'no supported platform found in manifest'
 author: Tom Saleeba
 tags:
   - docker

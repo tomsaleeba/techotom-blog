@@ -1,6 +1,6 @@
 ---
 layout: post
-title: faas-netes getting 502 \'Error pulling metrics from provider/backend\'
+title: faas-netes getting 502 'Error pulling metrics from provider/backend'
 author: Tom Saleeba
 tags:
   - openfaas
@@ -33,7 +33,7 @@ Looking at the logs for the `gateway` pod, I could see the error:
 502 Error pulling metrics from provider/backend
 ```
 
-# The fix
+# The solution
 You can see that the DNS lookup that the `gateway` pod was attempting is `faas-netesd.default.svc.cluster.local`. This second part of that means that it's looking in the `default` namespace. That's not the `openfaas` namespace that I deployed to. Now it's starting to make sense. If you look at the YAML for the faas-netes service, you'll see that the [https://github.com/openfaas/faas-netes/blob/32a818328921900f250501f1e117d1aee551b85b/faas.yml#L79](DNS lookup is fully specified).
 
 The problem is I was rebellious and didn't follow the instructions that said to deploy to the default namespace.
