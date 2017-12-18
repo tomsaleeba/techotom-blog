@@ -88,3 +88,29 @@ gremlin> :pin list
 gremlin> :pin use complexible.stardog
 ==>complexible.stardog activated
 ```
+
+Then you can connect to your Stardog server and run a query (make sure `mygraph` DB exists on Stardog first):
+```groovy
+graphConf = StardogGraphConfiguration.builder()
+graphConf.connectionString("http://localhost:5820/mygraph").credentials("admin", "admin").baseIRI("http://tinkerpop.incubator.apache.org/")
+graph = StardogGraphFactory.open(graphConf.build())
+g = graph.traversal()
+// create some verticies
+g.addV('name', 'Alice')
+g.addV('name', 'Bob')
+// add an edge
+g.withSideEffect('a', g.V().has('name', 'Alice')).V().has('name', 'Bob').addOutE('knows', 'a')
+// get the name of the person that Bob knows
+g.V().has('name', 'Bob').out('knows').properties('name').value()
+// commit the changes so you can see them with Stardog SPARQL
+graph.tx().commit()
+```
+
+If you then open a SPARQL query window for Stardog, you can run a query to see the triples that you've created via the Gremlin console:
+```sparql
+SELECT *
+WHERE {
+  ?s ?p ?o .
+}
+```
+![result of SPARQL query]({{ site.baseurl }}/assets/stardog-sparql-result.jpg)
