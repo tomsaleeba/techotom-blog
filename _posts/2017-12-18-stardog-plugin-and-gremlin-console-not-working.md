@@ -33,7 +33,7 @@ gremlin> :pin list
 ==>tinkerpop.tinkergraph[active]
 ```
 
-My Google-fu must be weak because I didn't turn up much information on Gremlin plugins in general let alone to Stardog one specifically. It's my hope that this post will show up for searches like I was doing: "gremlin stardog plugin", "gremlin plugin" or "gremlin plugin loading".
+My Google-fu must be weak because I didn't turn up much information on Gremlin plugins in general let alone the Stardog one specifically. It's my hope that this post will show up for searches like I was doing: "gremlin stardog plugin", "gremlin plugin" or "gremlin plugin loading".
 
 # The solution
 This is a simple one, go back to an earlier minor release of Gremlin console. For me, going back to 3.2.6 was a success. Here's a link to the Apache mirror listing for 3.2.6 https://www.apache.org/dyn/closer.lua/tinkerpop/3.2.6/apache-tinkerpop-gremlin-console-3.2.6-bin.zip.
