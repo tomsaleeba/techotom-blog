@@ -1,0 +1,17 @@
+baseURL: http://blog.techotom.com
+disablePathToLower: true
+languageCode: en-us
+title: TechoTom
+theme: noteworthy
+
+# Main
+email: "blog@techotom.com"
+twitter: "https://twitter.com/techotom"
+linkedin: "https://au.linkedin.com/in/tom-saleeba-9781745a"
+
+# Programming
+github: "https://github.com/tomsaleeba"
+stackoverflow: "https://stackoverflow.com/users/1410035/tom-saleeba"
+
+disqusShortname: techotom
+googleAnalytics: UA-101335262-2
