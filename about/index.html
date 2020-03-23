@@ -159,67 +159,31 @@ if (!doNotTrack) {
 </nav>
         <div id="content" class="content-container">
         
-<h1 class="post-title">Ejecting an ISO from a VirtualBox VM using VBoxManage</h1>
-    
-    <time>September 22, 2012</time>
+<h1 class="post-title">About</h1>
     
     <div>
         <p>
-        <h1 id="the-problem">The problem</h1>
-<p>You&rsquo;ve connected an ISO to your vm already and now you want to leave the drive connected to the controller but eject the medium from it. This isn&rsquo;t a particularly challenging problem but it wasn&rsquo;t immediately apparent to me so hopefully this saves someone else some time.</p>
-<h1 id="how-to">How-To</h1>
-<ol>
-<li>
-<p>Let&rsquo;s make sure we get all the right details for the command first up, so we want to look at the info about our vm. All you need to know at this stage is the name or the UUID of the vm. The information we&rsquo;re looking for is the name of the controller, the port on the controller and the device number of the CD/DVD drive.<br>
-This is the format of the command:<br>
-<code>$ VBoxManage showvminfo &lt;name|uuid&gt;</code><br>
-So as an example, when my vm is named &ldquo;xp&rdquo;, we&rsquo;d do this (I prefer names to UUIDs):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ VBoxManage showvminfo <span style="color:#e6db74">&#34;xp&#34;</span>
-_...unimportant stuff ommitted..._
-Storage Controller Name <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>:IDE Controller
-Storage Controller Type <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: PIIX4
-Storage Controller Instance Number <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: <span style="color:#ae81ff">0</span>
-Storage Controller Max Port Count <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: <span style="color:#ae81ff">2</span>
-Storage Controller Port Count <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: <span style="color:#ae81ff">2</span>
-Storage Controller Bootable <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: on
-IDE Controller <span style="color:#f92672">(</span>0, 0<span style="color:#f92672">)</span>: /path/to/hdd.vdi <span style="color:#f92672">(</span>UUID: 00000000-0000-0000-0000-000000000000<span style="color:#f92672">)</span>
-IDE Controller <span style="color:#f92672">(</span>0, 1<span style="color:#f92672">)</span>: /usr/share/virtualbox/VBoxGuestAdditions.iso <span style="color:#f92672">(</span>UUID: 4bbb3ddf-b5f2-47ae-92f5-fbc23a304fae<span style="color:#f92672">)</span> // this is the important stuff
-_...unimportant stuff ommitted..._
-</code></pre></div><p>The information we get from this is the controller&rsquo;s name is <code>IDE Controller</code>, the port on the controller is <code>0</code> and the device number on the port is <code>1</code>.</p>
-</li>
-<li>
-<p>We then use these values that we found in the command to eject the disc or make the drive empty. This is the format that we use (the <code>\</code> lets you continue commands on a new line):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ VBoxManage storageattach <span style="color:#e6db74">&#34;&lt;vm name&gt;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --storagectl <span style="color:#e6db74">&#34;&lt;storage controller name&gt;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --port &lt;port number on controller&gt; <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --device &lt;device number on port&gt; <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --medium emptydrive
-</code></pre></div><p>So for my &ldquo;xp&rdquo; vm and using the values I found in the previous step, I would run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ VBoxManage storageattach <span style="color:#e6db74">&#34;xp&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --storagectl <span style="color:#e6db74">&#34;IDE Controller&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --port <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --device <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --medium emptydrive**
-</code></pre></div></li>
-<li>
-<p>If the command ran successfully, there won&rsquo;t be any output to the console. You can double check that it worked by running the showvminfo command again and checking to see that the device is now empty:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ VBoxManage showvminfo <span style="color:#e6db74">&#34;xp&#34;</span>**
-_...unimportant stuff ommitted..._
-Storage Controller Name <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: IDE Controller
-Storage Controller Type <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: PIIX4
-Storage Controller Instance Number <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: <span style="color:#ae81ff">0</span>
-Storage Controller Max Port Count <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: <span style="color:#ae81ff">2</span>
-Storage Controller Port Count <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: <span style="color:#ae81ff">2</span>
-Storage Controller Bootable <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>: on
-IDE Controller <span style="color:#f92672">(</span>0, 0<span style="color:#f92672">)</span>: /path/to/hdd.vdi <span style="color:#f92672">(</span>UUID: 00000000-0000-0000-0000-000000000000<span style="color:#f92672">)</span>
-IDE Controller <span style="color:#f92672">(</span>0, 1<span style="color:#f92672">)</span>: Empty // yay, it<span style="color:#960050;background-color:#1e0010">&#39;</span>s empty!
-_...unimportant stuff ommitted..._
-</code></pre></div></li>
-</ol>
-<h1 id="errors-you-might-encounter">Errors you might encounter</h1>
-<pre><code>VBoxManage: error: No DVD/Floppy Drive attached to the controller 'IDE Controller'at the port: 1, device: 0
-</code></pre><p>If you get an error like this, make sure that you didn&rsquo;t get the port and device numbers around the wrong way. The example I&rsquo;ve got here is because I should have used <code>port = 0</code> and <code>device = 1</code>. In fact, on my VM, there isn&rsquo;t anything plugged into port <code>1</code> at all.</p>
-<p>Credit to <a href="">https://forums.virtualbox.org/viewtopic.php?f=6&amp;t=46265</a>.</p>
+        <figure>
+    <img src="tom.png"/> 
+</figure>
+
+<p>I&rsquo;ve been a professional software developer since the start of 2009 and I <em>love</em>
+my job. Honestly, if money wasn&rsquo;t an issue then I&rsquo;d be doing the same thing for
+free. I love building things and learning so this is the perfect industry for
+me.</p>
+<p>Early on I did a lot of Java webapps. These days I&rsquo;m doing Vue.js based apps
+that connect to whatever server we&rsquo;re using for the job.</p>
+<p>I guess the best classification for me is &ldquo;web developer&rdquo; but when working in
+small teams you never have one role. I the person who gets whatever needs doing
+done. I don&rsquo;t know how long the term will survive for but let&rsquo;s just say DevOps.</p>
+<p>I really enjoy mentoring and teaching so this blog is a way for me to share the
+knowledge I have with others. I only post when I have something that <em>needs</em> to
+be said. For me, that&rsquo;s when I have a solution that isn&rsquo;t available elsewhere on
+the web.</p>
+<p>Oh, I also designed a mechanical keyboard. The
+<a href="https://github.com/tomsaleeba/ergoslab">ErgoSlab</a>. I stood on the shoulders of
+giants to achieve it but I&rsquo;m still super proud of it and I&rsquo;m typing this on it
+right now.</p>
 
         </p>
     </div>
@@ -246,11 +210,6 @@ _...unimportant stuff ommitted..._
 
     <div class="page-footer">
         
-        <hr class="footer-divider">
-        
-            <a class="tag" href="/tags/virtualbox">#virtualbox</a>
-        
-      
     </div>
 
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on TechoTom</title>
+    <title>Tags on Tom Saleeba (TechoTom)</title>
     <link>http://blog.techotom.com/tags/</link>
-    <description>Recent content in Tags on TechoTom</description>
+    <description>Recent content in Tags on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
@@ -260,42 +260,6 @@
       <pubDate>Mon, 21 May 2012 10:58:40 +0000</pubDate>
       
       <guid>http://blog.techotom.com/tags/XenServer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>http://blog.techotom.com/tags/java/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mint</title>
-      <link>http://blog.techotom.com/tags/mint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/tags/mint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Development</title>
-      <link>http://blog.techotom.com/tags/Software-Development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/tags/Software-Development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>yegor</title>
-      <link>http://blog.techotom.com/tags/yegor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/tags/yegor/</guid>
       <description></description>
     </item>
     

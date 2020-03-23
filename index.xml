@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TechoTom</title>
+    <title>Tom Saleeba (TechoTom)</title>
     <link>http://blog.techotom.com/</link>
-    <description>Recent content on TechoTom</description>
+    <description>Recent content on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
@@ -317,58 +317,21 @@ First lets look at (a snippet of) the Super POM to see what we get by default:
     
     <item>
       <title></title>
-      <link>http://blog.techotom.com/post/_drafts/jasmine-testing-aws-lambda/</link>
+      <link>http://blog.techotom.com/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/_drafts/jasmine-testing-aws-lambda/</guid>
-      <description>Talk about how testing with exceptions in the callback causes confusing error messages. Your callback will get called twice (if you coded it like me) and you&amp;rsquo;ll see errors relating to the jasmine framework (as it throws).
-TL;DR summary here
-Background what&amp;rsquo;s the situation?
-The problem what&amp;rsquo;s the specific problem?
-The solution how&amp;rsquo;d you fix it?</description>
+      <guid>http://blog.techotom.com/archives/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Linux Mint and Gnome keyring</title>
-      <link>http://blog.techotom.com/post/_drafts/linux-mint-and-gnome-keyring/</link>
+      <title>About</title>
+      <link>http://blog.techotom.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/_drafts/linux-mint-and-gnome-keyring/</guid>
-      <description>TL;DR Follow what it says https://wiki.gnome.org/Projects/GnomeKeyring/Ssh#Automatically_loading_SSH_Keys but instead of copying your keys into .ssh, just symlink them
-ln -s /path/to/private.pem /home/user/.ssh/id_rsa # link private key ln -s /path/to/private.pem.pub /home/user/.ssh/id_rsa.pub # link public key (you NEED to do this too)  Background what&amp;rsquo;s the situation?
-The problem what&amp;rsquo;s the specific problem?
-The solution how&amp;rsquo;d you fix it?</description>
-    </item>
-    
-    <item>
-      <title>MethodNotFoundException using Tomcat inside Eclipse</title>
-      <link>http://blog.techotom.com/post/_drafts/methodnotfoundexception-using-tomcat-inside-eclipse/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/post/_drafts/methodnotfoundexception-using-tomcat-inside-eclipse/</guid>
-      <description>running tomcat (actually vfabric tc) in eclipse (actually STS) and using a web deployment descriptor thingo.
-it worked when you built using maven and deployed manually and when you looked in the debugger you&#39;d see the right class source but the object itself wouldn&#39;t have the property/method.
-problem caused by updating a dependency JAR version and updating it in the referencing POM but the deployment descriptor is never updated because the POM is missing:</description>
-    </item>
-    
-    <item>
-      <title>My workstation setup</title>
-      <link>http://blog.techotom.com/post/_drafts/my-workstation-setup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/post/_drafts/my-workstation-setup/</guid>
-      <description>Extra APT packages:  openconnect sqlite3 virtualbox-5.1 (from https://www.virtualbox.org/wiki/Linux_Downloads#Debian-basedLinuxdistributions)  extensions pack   dropbox  python-gpgme   fish  oh my fish bobthefish [https://github.com/ryanoasis/nerd-fonts/releases/download/v1.0.0/Meslo.zip](Meslo LG S Nerd Font) (install to ~/.local/share/fonts/)   code (VSCode)  chenxsan.vscode-standardjs - standardjs linter ow.vscode-subword-navigation - make the cursor move like it should kaiwood.center-editor-window - to save time wasted when scrolling   gparted python-pip (and setuptools) using: sudo pip install -U setuptools awscli meld java 8 JDK (from [http://www.</description>
-    </item>
-    
-    <item>
-      <title>re:How I Would Re-design equals()</title>
-      <link>http://blog.techotom.com/post/_drafts/re-how-to-redesign-equals/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.techotom.com/post/_drafts/re-how-to-redesign-equals/</guid>
-      <description>I do agree with what your saying. I hate the look of equals() methods.
-Does this effect hasCode()?
-I prefer using guard clauses.</description>
+      <guid>http://blog.techotom.com/about/</guid>
+      <description>I&amp;rsquo;ve been a professional software developer since the start of 2009 and I love my job. Honestly, if money wasn&amp;rsquo;t an issue then I&amp;rsquo;d be doing the same thing for free. I love building things and learning so this is the perfect industry for me.
+Early on I did a lot of Java webapps. These days I&amp;rsquo;m doing Vue.js based apps that connect to whatever server we&amp;rsquo;re using for the job.</description>
     </item>
     
   </channel>
