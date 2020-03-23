@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2017-11-09T00:00:00Z"
 summary: What to do when you're trying to pull an image that DockerHub hasn't built
   yet.

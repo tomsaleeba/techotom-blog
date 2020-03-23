@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2018-02-03T00:00:00Z"
 summary: How to make your own homing keys with inset ball bearings.
 tags:

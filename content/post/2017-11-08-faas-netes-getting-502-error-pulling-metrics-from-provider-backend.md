@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2017-11-08T00:00:00Z"
 summary: How I caused headaches for myself by deploying faas-netes to a different
   namespace when it only wants to run in the default one.

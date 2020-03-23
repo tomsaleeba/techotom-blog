@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 categories:
 - Linux
 date: "2016-05-31T03:00:40Z"

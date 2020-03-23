@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 categories: android
 date: "2017-03-17T11:55:43Z"
 summary: Work around this annoying notification by manually enabling the permission

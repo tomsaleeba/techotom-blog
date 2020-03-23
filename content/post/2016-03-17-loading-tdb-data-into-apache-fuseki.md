@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 categories:
 - Software Development
 date: "2016-03-17T06:32:56Z"

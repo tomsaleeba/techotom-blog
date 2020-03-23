@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2018-02-21T00:00:00Z"
 summary: Get that newly provisioned VM running like you want.
 tags:

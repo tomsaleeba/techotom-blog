@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2017-07-07T00:00:00Z"
 summary: How to create a 3 level failover DNS setup from the AWS web console
 tags:

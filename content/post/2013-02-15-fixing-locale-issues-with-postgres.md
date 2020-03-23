@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 categories:
 - Linux
 - Software Development

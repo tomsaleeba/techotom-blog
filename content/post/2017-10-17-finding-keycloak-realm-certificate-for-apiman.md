@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2017-10-17T00:00:00Z"
 summary: The blog post on setting up OAuth2 with apiman has some out of date bits
   when using apiman v1.3.1. I'll show you where to find that realm certificate.

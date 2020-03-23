@@ -1,7 +1,6 @@
 ---
-layout: post
+draft: true
 title: #%title here%
-author: Tom Saleeba
 tags:
   - #%tag here%
 excerpt: #%excerpt here%

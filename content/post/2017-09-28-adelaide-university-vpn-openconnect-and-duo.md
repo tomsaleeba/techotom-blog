@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2017-09-28T00:00:00Z"
 summary: How to connect to Adelaide University's VPN using openconnect from the command
   line in *nix based systems now that they're introduced 2FA using Duo.

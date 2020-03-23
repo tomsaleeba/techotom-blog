@@ -1,5 +1,4 @@
 ---
-author: Tom Saleeba
 date: "2017-12-18T00:00:00Z"
 summary: You've followed the instructions to install the plugin and it doesn't load,
   now what?

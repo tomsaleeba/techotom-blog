@@ -1,7 +1,6 @@
 ---
-layout: post
+draft: true
 title: My workstation setup
-author: Tom Saleeba
 excerpt: #%excerpt here%
 ---
 

@@ -1,17 +1,36 @@
 baseURL: http://blog.techotom.com
 disablePathToLower: true
 languageCode: en-us
-title: TechoTom
+title: Tom Saleeba (TechoTom)
 theme: noteworthy
 
-# Main
-email: "blog@techotom.com"
-twitter: "https://twitter.com/techotom"
-linkedin: "https://au.linkedin.com/in/tom-saleeba-9781745a"
-
-# Programming
-github: "https://github.com/tomsaleeba"
-stackoverflow: "https://stackoverflow.com/users/1410035/tom-saleeba"
+author:
+  name: "Tom Saleeba"
 
 disqusShortname: techotom
 googleAnalytics: UA-101335262-2
+
+params:
+  # Main
+  email: "mailto:blog@techotom.com"
+  twitter: "https://twitter.com/techotom"
+  linkedin: "https://au.linkedin.com/in/tom-saleeba-9781745a"
+
+  # Programming
+  github: "https://github.com/tomsaleeba"
+  stackoverflow: "https://stackoverflow.com/users/1410035/tom-saleeba"
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 1
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 2
+    - name: Archives
+      identifier: archives
+      url: /archives/
+      weight: 3

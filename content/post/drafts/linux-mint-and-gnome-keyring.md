@@ -1,7 +1,6 @@
 ---
-layout: post
+draft: true
 title: Linux Mint and Gnome keyring
-author: Tom Saleeba
 tags:
   - mint
 excerpt: How to set up the keyring to automatically load your SSH key
