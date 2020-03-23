@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu Server on TechoTom</title>
+    <link>http://blog.techotom.com/tags/Ubuntu-Server/</link>
+    <description>Recent content in Ubuntu Server on TechoTom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 May 2012 11:48:28 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.techotom.com/tags/Ubuntu-Server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blacklisting a module on Ubuntu Server 11.10 Oneiric Ocelot</title>
+      <link>http://blog.techotom.com/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</link>
+      <pubDate>Mon, 21 May 2012 11:48:28 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</guid>
+      <description>This assumes you have vim (the command line text editor) installed. If not, you can use vi or any command line text editor in its place.
+ Change to the modprobe directory: cd /etc/modprobe  We need to create a new blacklist file to store our blacklistings in. If there are already other files in this directory, you can reuse one of them but for the sake of separating configuration you&amp;rsquo;ve made from the out-of-the-box setup, we&amp;rsquo;ll create a new file.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>TechoTom</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://blog.techotom.com/css/main.min.03322cbe6bddfc28e7b17b84bc5446282a510b14b57be3371ba1f68ef1ab9ce8.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101335262-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">TechoTom</a>
+    </div>  
+</header>
+  <div class="nav-menu">
+  
+  <a class="color-link nav-link" href="http://blog.techotom.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+</nav>
+        <div id="content" class="content-container">
+        
+<h1 class="post-title">Mocking remoteAddr with Spring-mvc</h1>
+    
+    <time>November 12, 2014</time>
+    
+    <div>
+        <p>
+        <h1 id="the-problem">The problem</h1>
+<p>We developed a Spring MVC controller that needs to know who the client is. We achieved this using a <code>HttpServletRequest</code> parameter and then calling <code>getRemoteAddr()</code> on it. The challenge then was how to test this because we need to be able to mock this value.</p>
+<h1 id="the-fix">The fix</h1>
+<p>The Spring test helpers don&rsquo;t provide a way to set this value with a helper method but they do provide an extension point that we can use to do it ourselves. The extension point is the <code>.with(RequestPostProcessor)</code> method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import static</span> org.hamcrest.MatcherAssert.assertThat<span style="color:#f92672">;</span>
+<span style="color:#f92672">import static</span> org.hamcrest.Matchers.is<span style="color:#f92672">;</span>
+<span style="color:#f92672">import static</span> org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post<span style="color:#f92672">;</span>
+<span style="color:#f92672">import static</span> org.springframework.test.web.servlet.result.MockMvcResultMatchers.status<span style="color:#f92672">;</span>
+<span style="color:#f92672">import static</span> org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> org.junit.Before<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.junit.runner.RunWith<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.mock.web.MockHttpServletRequest<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.context.ContextConfiguration<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.context.junit4.SpringJUnit4ClassRunner<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.context.web.WebAppConfiguration<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.web.servlet.MockMvc<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.web.servlet.MvcResult<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.web.servlet.ResultHandler<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.test.web.servlet.request.RequestPostProcessor<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.web.context.WebApplicationContext<span style="color:#f92672">;</span>
+
+<span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>SpringJUnit4ClassRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@WebAppConfiguration</span>
+<span style="color:#a6e22e">@ContextConfiguration</span><span style="color:#f92672">(</span>locations <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;classpath:test-servlet-context.xml&#34;</span> <span style="color:#f92672">})</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RestDoThingControllerTest</span> <span style="color:#f92672">{</span>
+
+  <span style="color:#a6e22e">@Autowired</span>
+  <span style="color:#66d9ef">private</span> WebApplicationContext wac<span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">private</span> MockMvc mockMvc<span style="color:#f92672">;</span>
+
+  <span style="color:#a6e22e">@Before</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockMvc</span> <span style="color:#f92672">=</span> webAppContextSetup <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">wac</span><span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">   * Can we do that thing?
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#a6e22e">@Test</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testdoThing01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    ResultHandler assertPayloadIsAccepted <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ResultHandler<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#a6e22e">@Override</span>
+      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>MvcResult result<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">getResponse</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getContentAsString</span><span style="color:#f92672">(),</span> is<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some payload&#34;</span><span style="color:#f92672">));</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">};</span>
+    mockMvc<span style="color:#f92672">.</span><span style="color:#a6e22e">perform</span><span style="color:#f92672">(</span>post<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/doThing&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">with</span><span style="color:#f92672">(</span>remoteAddr<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;192.168.0.1&#34;</span><span style="color:#f92672">))</span> <span style="color:#75715e">// we can supply a mock IP now :D
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">content</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;some payload&#34;</span><span style="color:#f92672">))</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">andExpect</span><span style="color:#f92672">(</span>status<span style="color:#f92672">().</span><span style="color:#a6e22e">isOk</span><span style="color:#f92672">())</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">andDo</span><span style="color:#f92672">(</span>assertPayloadIsAccepted<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+ <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> RequestPostProcessor <span style="color:#a6e22e">remoteAddr</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> String remoteAddr<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// it&#39;s nice to extract into a helper
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> RequestPostProcessor<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#a6e22e">@Override</span>
+      <span style="color:#66d9ef">public</span> MockHttpServletRequest <span style="color:#a6e22e">postProcessRequest</span><span style="color:#f92672">(</span>MockHttpServletRequest request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        request<span style="color:#f92672">.</span><span style="color:#a6e22e">setRemoteAddr</span><span style="color:#f92672">(</span>remoteAddr<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> request<span style="color:#f92672">;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">};</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>You can then easily move our static helper method to some other class and then use it wherever you like. You can even have it as readable as it is here thanks to <code>import static ...</code>.</p>
+
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <div class="page-footer">
+        
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+    </body>
+</html>

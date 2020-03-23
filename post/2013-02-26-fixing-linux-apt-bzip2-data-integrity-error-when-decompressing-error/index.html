@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>TechoTom</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://blog.techotom.com/css/main.min.03322cbe6bddfc28e7b17b84bc5446282a510b14b57be3371ba1f68ef1ab9ce8.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101335262-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">TechoTom</a>
+    </div>  
+</header>
+  <div class="nav-menu">
+  
+  <a class="color-link nav-link" href="http://blog.techotom.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+</nav>
+        <div id="content" class="content-container">
+        
+<h1 class="post-title">Fixing linux apt &#34;bzip2: Data integrity error when decompressing.&#34; error</h1>
+    
+    <time>February 26, 2013</time>
+    
+    <div>
+        <p>
+        <h1 id="background">Background</h1>
+<p>I came across this problem when I was setting up a new box with Linux Mint 13 Cinnamon (64-bit). This machine lives in a corporate type environment and needs to have a proxy configured to have internet access so I suspect that some incorrect proxy settings could&rsquo;ve caused this scenario.</p>
+<h1 id="the-symptoms">The symptoms</h1>
+<p>Here&rsquo;s the output (with boring bits removed) that I got from running <code>sudo apt-get update</code>:</p>
+<pre><code>...snip...
+Get:1 http://archive.canonical.com precise/partner i386 Packages [6,030 B]
+100% [1 Packages bzip2 15.0 kB] [Waiting for headers] [Waiting for headers] [Waiting for headers] [Waiting for headers]
+bzip2: Data integrity error when decompressing.
+Input file = (stdin), output file = (stdout)  
+
+It is possible that the compressed file(s) have become corrupted.
+You can use the -tvv option to test integrity of such files.  
+
+You can use the `bzip2recover' program to attempt to recover
+data from undamaged sections of corrupted files.  
+
+Hit http://security.ubuntu.com precise-security/universe amd64 Packages
+...snip...
+Err http://archive.canonical.com precise/partner i386 Packages
+404 Not Found
+Hit http://archive.ubuntu.com precise/main i386 Packages
+...snip...
+Ign http://packages.medibuntu.org precise/non-free Translation-en_AU
+Get:2 http://archive.ubuntu.com precise/multiverse Translation-en_AU [113 kB]
+Ign http://packages.medibuntu.org precise/non-free Translation-en
+Fetched 2 B in 18s (0 B/s)
+W: Failed to fetch http://archive.canonical.com/ubuntu/dists/precise/partner/binary-i386/Packages 404 Not Found  
+
+W: Failed to fetch gzip:/var/lib/apt/lists/partial/archive.ubuntu.com_ubuntu_dists_precise_multiverse_i18n_Translation-en%5fAU Encountered a section with no Package: header  
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+</code></pre><p>You&rsquo;ll notice the second to last line speaks about a local path, which made me think that the issue is with some data that we&rsquo;ve cached locally and it&rsquo;s not being overwritten with fresh stuff.</p>
+<h1 id="the-fix">The fix</h1>
+<p>The fix is to delete (or rename) the cached data that apt keeps so it&rsquo;ll refresh everything. I found there&rsquo;s two locations that needed to be deleted/renamed:<br>
+<code>/var/lib/apt</code><br>
+<code>/var/cache/apt</code></p>
+<p>Then run <code>sudo apt-get update</code> to get fresh copies of all the indexes, etc.</p>
+<p>You should be good to go :D</p>
+
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <div class="page-footer">
+        
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+    </body>
+</html>

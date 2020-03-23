@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>TechoTom</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://blog.techotom.com/css/main.min.03322cbe6bddfc28e7b17b84bc5446282a510b14b57be3371ba1f68ef1ab9ce8.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101335262-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">TechoTom</a>
+    </div>  
+</header>
+  <div class="nav-menu">
+  
+  <a class="color-link nav-link" href="http://blog.techotom.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+</nav>
+        <div id="content" class="content-container">
+        
+<h1 class="post-title">PluralSight custom playback speeds</h1>
+    
+    <time>December 6, 2016</time>
+    
+    <div>
+        <p>
+        <p><strong>Edit 10 April 2017</strong>: there&rsquo;s now a GitHub repo for this script at https://github.com/tomsaleeba/custom-pluralsight-playback-speed and it contains the fix for the new player released over the past few days. They changed <code>playbackSpeed</code> to <code>playbackRate</code> and it&rsquo;s no longer multiplied by 10.</p>
+<p><strong>Edit 13 Feb 2017</strong>: added instructions on how to use the script</p>
+<p>I&rsquo;ve been getting into PluralSight recently and I think it&rsquo;s pretty great. As of writing this (Dec 2016) the player has a widget to adjust playback speed but it won&rsquo;t go any higher than 2.0x. For me, I need it to go a bit higher on some videos.</p>
+<p>I contacted them to ask about getting more speeds added to the widget or telling me how to do it in the developer tools myself but they weren&rsquo;t keen on either, so <em>puts hacker hat on</em>.</p>
+<p>The current playback speed is stored in the browser&rsquo;s <strong>Local Storage</strong> under the key <code>playbackSpeed</code>. You can adjust this value really easily in the developer console of your browser like you would for any value:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;playbackRate&#34;</span>,  <span style="color:#ae81ff">2.1</span>);
+</code></pre></div><p>You need to pause and unpause the player to make that take effect. You can achieve this programatically with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;play-control&#39;</span>).<span style="color:#a6e22e">click</span>();
+document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;play-control&#39;</span>).<span style="color:#a6e22e">click</span>();
+</code></pre></div><p>That&rsquo;s the basics of it. Of course it&rsquo;s nice to have a UI with your own custom speeds on it so I wrote the following Grease/Tamper Monkey script to add a div over the video, populate it with some custom speeds and bind the click events to make the change for me. Yeah, it looks horrible but I&rsquo;m the type of person that watches videos faster than 2x (sometimes at least) so ain&rsquo;t nobody got time for styling.</p>
+<h3 id="note-about-using-the-script">Note about using the script</h3>
+<p>This is a script for <a href="https://tampermonkey.net/">Tampermonkey for Google Chrome</a> or presumably <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey for Firefox</a> although I haven&rsquo;t tested that. The steps below are asking you to install my script in your browser so it can run on the PluralSight video player. All the code is there so you can audit it but if you&rsquo;re security conscious and don&rsquo;t trust me, don&rsquo;t install the script. In order to use it:</p>
+<ol>
+<li>install the appropriate add-on for your browser, either Tampermoney or Greasemonkey</li>
+<li>open the dashboard for the add-on</li>
+<li>create a new, empty script (as if you were about to write your own)</li>
+<li>copy and paste my follow script into the editor (overwrite everything already there)</li>
+<li>save the script</li>
+<li>go to PluralSight and start a video</li>
+<li>enjoy custom playback speeds</li>
+</ol>
+<h3 id="the-script">The script</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ==UserScript==
+</span><span style="color:#75715e">// @name PluralSight custom speeds
+</span><span style="color:#75715e">// @namespace http://techotom.wordpress.com
+</span><span style="color:#75715e">// @version 0.2
+</span><span style="color:#75715e">// @description more fasterer
+</span><span style="color:#75715e">// @author Tom
+</span><span style="color:#75715e">// @match https://app.pluralsight.com/player*
+</span><span style="color:#75715e">// @grant none
+</span><span style="color:#75715e">// ==/UserScript==
+</span><span style="color:#75715e"></span>
+(<span style="color:#66d9ef">function</span>() {
+    <span style="color:#e6db74">&#39;use strict&#39;</span>;
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">console</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">console</span> <span style="color:#f92672">||</span> {};
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;speed-selector&#39;</span>;
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">resetBoldness</span>() {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">speedSelectors</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#a6e22e">className</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>; <span style="color:#a6e22e">speedSelectors</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">curr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">speedSelectors</span>[<span style="color:#a6e22e">i</span>];
+            <span style="color:#a6e22e">curr</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">fontWeight</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;normal&#39;</span>;
+        }
+    }
+
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#a6e22e">speed</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">speedAnchor</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
+        <span style="color:#a6e22e">speedAnchor</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
+        <span style="color:#a6e22e">speedAnchor</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">cursor</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pointer&#34;</span>;
+        <span style="color:#a6e22e">speedAnchor</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+            <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;playbackRate&#34;</span>, (<span style="color:#a6e22e">speed</span>));
+            document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;play-control&#39;</span>).<span style="color:#a6e22e">click</span>();
+            document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;play-control&#39;</span>).<span style="color:#a6e22e">click</span>();
+            <span style="color:#a6e22e">resetBoldness</span>();
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">fontWeight</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bold&#34;</span>;
+        };
+        <span style="color:#a6e22e">speedAnchor</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;speed-selector&#39;</span>);
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">label</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#a6e22e">speed</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;x&#34;</span>);
+        <span style="color:#a6e22e">speedAnchor</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">label</span>);
+        <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">speedAnchor</span>);
+    }
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;body&#39;</span>)[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;div&#34;</span>);
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">position</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fixed&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">margin</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1em&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">fontSize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.5em&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">background</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#FFF&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">zIndex</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;3em&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">marginTop</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;6em&#34;</span>;
+    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.5&#34;</span>;
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">1</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">1.2</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">1.3</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">1.5</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">1.7</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">1.8</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">2</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">2.1</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">2.2</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">2.5</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">2.7</span>);
+    <span style="color:#a6e22e">appendSpeedControl</span>(<span style="color:#a6e22e">div</span>, <span style="color:#ae81ff">3</span>);
+    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">div</span>, <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">childNodes</span>[<span style="color:#ae81ff">0</span>]);
+})();
+</code></pre></div>
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <div class="page-footer">
+        
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>TechoTom</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://blog.techotom.com/css/main.min.03322cbe6bddfc28e7b17b84bc5446282a510b14b57be3371ba1f68ef1ab9ce8.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101335262-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">TechoTom</a>
+    </div>  
+</header>
+  <div class="nav-menu">
+  
+  <a class="color-link nav-link" href="http://blog.techotom.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+</nav>
+        <div id="content" class="content-container">
+        
+<h1 class="post-title">Can&#39;t rename files in Linux Mint using Nemo</h1>
+    
+    <time>May 31, 2016</time>
+    
+    <div>
+        <p>
+        <h1 id="tldr">TL;DR:</h1>
+<p>I installed Zoom which brought ibus in as a dependency. During a dist-update
+ibus was set to my main input method and it doesn&rsquo;t work well (for me). Use the
+Input Method app to set the input method back to XIM and restart the display
+manager.</p>
+<h1 id="background">Background:</h1>
+<p>I&rsquo;m running Linux Mint 17.1 and I recently experienced the same issue described
+in this
+thread: <a href="https://forums.linuxmint.com/viewtopic.php?t=171086">https://forums.linuxmint.com/viewtopic.php?t=171086</a>.
+Basically, I could press F2 to rename a file using Nemo, the out-of-the-box file
+manager but then I typing would have no effect. All permissions were OK as I
+could rename the file from the terminal so it was a problem with the UI.</p>
+<p>I was having some other problems too:</p>
+<ul>
+<li>I couldn&rsquo;t find files in Nemo by typing the start of the file name</li>
+<li>some keyboard shortcuts like launching the calculator or locking the screen no longer worked, and</li>
+<li>a few other apps weren&rsquo;t responding to tab and enter key presses like they used to.</li>
+</ul>
+<p>I had recently done a dist-upgrade so I was worried that something had broken
+because of that. I had installed Zoom (a web-meeting client, not important for
+this though) before the upgrade but my system was still working fine. Zoom
+depends on the ibus package and during the upgrade, my input method must&rsquo;ve been
+updated to start using ibus. I also got  a new system tray icon for ibus: a
+black keyboard with a transparent background</p>
+<figure>
+    <img src="ibus-icon.png"
+         alt="ibus icon"/> 
+</figure>
+
+<h1 id="the-fix">The fix:</h1>
+<p>I don&rsquo;t need to use languages other than English and it seems the reason to use
+ibus is for other languages. This means the fix for me was to swap from ibus
+back to whatever I had before, because that worked well. Note that I couldn&rsquo;t
+uninstall ibus because Zoom depends on it.</p>
+<p>I used the Input Method app that you can find in the applications menu:</p>
+<figure>
+    <img src="selection_012.jpg"/> 
+</figure>
+
+<ol>
+<li>I pressed OK to the first dialogue</li>
+<li>Then I selected <strong>Yes</strong> on the second dialogue because I do want to select a new method</li>
+<li>And finally I selected XIM as the input method, the good old trusty one</li>
+</ol>
+<figure>
+    <img src="input-method-configuration-im-config-ver-0-24-1ubuntu4-2_013.jpg"
+         alt="Input Method Configuration (im-config, ver. 0.24-1ubuntu4.2)_013"/> 
+</figure>
+
+<p>Once you press OK, you&rsquo;re told what to do next but basically, you have to
+restart the display manager. You can restart the machine or in a terminal run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo service mdm restart
+</code></pre></div><p>You should have a working system back.</p>
+
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <div class="page-footer">
+        
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+    </body>
+</html>

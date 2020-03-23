@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>TechoTom</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://blog.techotom.com/css/main.min.03322cbe6bddfc28e7b17b84bc5446282a510b14b57be3371ba1f68ef1ab9ce8.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101335262-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">TechoTom</a>
+    </div>  
+</header>
+  <div class="nav-menu">
+  
+  <a class="color-link nav-link" href="http://blog.techotom.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+</nav>
+        <div id="content" class="content-container">
+        
+<h1 class="post-title">Three level failover with AWS Route53</h1>
+    
+    <time>July 7, 2017</time>
+    
+    <div>
+        <p>
+        <h1 id="tldr">TL;DR</h1>
+<p>{% capture main_dns_layout %}
+resilient-site.techotom.com
+Type: CNAME
+Alias: No
+Value: primary.resilient-site.techotom.com
+Routing Policy: Failover
+Failover record type: Primary
+Associate with health check: Yes
+Health check to associate: primary.resilient-site</p>
+<pre><code>resilient-site.techotom.com
+    Type: CNAME
+    Alias: No
+    Value: backup.resilient-site.techotom.com
+    Routing Policy: Failover
+    Failover record type: Secondary
+    Associate with health check: No
+</code></pre>
+<p>{% endcapture %}
+{% capture backup_dns_layout %}
+backup.resilient-site.techotom.com
+Type: CNAME
+Alias: No
+Value: secondary.resilient-site.techotom.com
+Routing Policy: Failover
+Failover record type: Primary
+Associate with health check: Yes
+Health check to associate: secondary.resilient-site</p>
+<pre><code>backup.resilient-site.techotom.com
+    Type: CNAME
+    Alias: No
+    Value: tertiary.resilient-site.techotom.com
+    Routing Policy: Failover
+    Failover record type: Secondary
+    Associate with health check: No
+</code></pre>
+<p>{% endcapture %}</p>
+<p>Configure a health check for the primary and secondary hosts. Configure a pair of failover DNS records named <code>backup.resilient-site.</code> that is a traditional failover between <code>secondary.</code> and <code>tertiary.</code>. Then configure the DNS name you want to use as a traditional failover between <code>primary.</code> and <code>backup.</code>. For example:
+{{ main_dns_layout }}{{ backup_dns_layout }}</p>
+<h1 id="background">Background</h1>
+<p>AWS Route53 supports a two level failover configuartion for DNS out of the box but I wanted to create a three level setup. Let&rsquo;s not get too worried about why I wanted to do this, because I&rsquo;m not sure I could make a convincing argument. If you&rsquo;re running 3 servers anyway, then you might be better off doing a load balancing setup to get more use of what you&rsquo;re paying for.</p>
+<h1 id="the-problem">The problem</h1>
+<p>You can&rsquo;t configure a three level failover directly in the console so instead, we&rsquo;ll construct it with two, two-level setups.</p>
+<h1 id="the-solution">The solution</h1>
+<p>Let&rsquo;s assume we have the following:</p>
+<pre><code>resilient-site.techotom.com: domain we want to have 3 levels of failover
+1.1.1.1:                     IP of the primary server
+2.2.2.2:                     IP of the seconary server
+3.3.3.3:                     IP of the tertiary server
+</code></pre>
+<p>To test our DNS configuration, it&rsquo;ll be handy to have a simple server that we can run on any port and easily bring up and down. Netcat is a great tool for the job and is available on (most?) Linux out of the box. It might go by the name <code>nc</code> as it does for me. I&rsquo;ll explain how to run it later but for now, let&rsquo;s say our server will run on port <code>8888</code>.</p>
+<p>Let&rsquo;s assign some domain names to our three servers to make life easier for ourselves. We&rsquo;ll <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html">create one A record</a> for each:</p>
+<pre><code>primary.resilient-site.techotom.com -&gt;   1.1.1.1
+secondary.resilient-site.techotom.com -&gt; 2.2.2.2
+tertiary.resilient-site.techotom.com -&gt;  3.3.3.3
+</code></pre>
+<p><strong>Health checks</strong></p>
+<p>Next we need to <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html">create some health checks</a>. The health checks are what Route53 will use to decide if it should route to a particular host. If a host fails a health check (it&rsquo;s unhealthy) then route53 won&rsquo;t route to it and will instead go to the next host in the failover chain. We only need two health checks; one for <code>primary</code> and another for <code>secondary</code>. There&rsquo;s no point health checking the <code>tertiary</code> record because if it&rsquo;s unhealthy, there&rsquo;s nothing we can do, we have nowhere else to send traffic. We&rsquo;ll create the two health checks as:</p>
+<pre><code>Name: primary.resilient-site
+What to monitor: Endpoint
+IP address: 1.1.1.1
+Port: 8888
+
+Name: secondary.resilient-site
+What to monitor: Endpoint
+IP address: 2.2.2.2
+Port: 8888
+</code></pre>
+<p><strong>Backup failover records</strong></p>
+<p>We need to encapsulate the <code>secondary.</code> and <code>tertiary.</code> failover behaviour inside a single domain name, which we&rsquo;ll call <code>backup.resilient-site.techotom.com</code>. So let&rsquo;s create the following two records to achieve that:</p>
+<p>{{ backup_dns_layout }}</p>
+<p><strong>Main failover records</strong></p>
+<p>Now we can create the &ldquo;main&rdquo; domain name record pair in basically the same fashion as we just did for the &ldquo;backup&rdquo;. The point to focus on here is that the health check secondary for this record we&rsquo;re about to create points to <code>backup.resilient-site.techotom.com</code>. This target encapsulates a health check to so by pointing to it, we&rsquo;ll get <code>secondary.</code> if it&rsquo;s healthy, otherwise <code>tertiary.</code>. So let&rsquo;s create two more record as:</p>
+<p>{{ main_dns_layout }}</p>
+<p><strong>Testing it all</strong></p>
+<p>Let&rsquo;s make sure what we&rsquo;ve created works. As mentioned earlier, we&rsquo;ll use netcat for the task of a simple server. Here&rsquo;s a script that will create a simple netcat server that will respond multiple times. The loop achieves the multiple responses, without it, the &ldquo;server&rdquo; will respond once, then exit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>srvnum<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#75715e"># edit for each server</span>
+port<span style="color:#f92672">=</span><span style="color:#ae81ff">8888</span>
+<span style="color:#66d9ef">while</span> true; <span style="color:#66d9ef">do</span>
+    echo -e <span style="color:#e6db74">&#34;HTTP/1.1 200 OK\n\n </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74"> on server #</span>$srvnum<span style="color:#e6db74">&#34;</span> | nc -l -p $port -q <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>You&rsquo;ll need to SSH into each of the 3 servers and run the script on each. Make sure to change the <code>srvnum</code> variable for each so you know which server you end up at.</p>
+<p>Once you start the &ldquo;servers&rdquo; on <code>primary.</code> and <code>secondary.</code>, you&rsquo;ll see the AWS health check requests coming in, like:</p>
+<pre><code>GET / HTTP/1.1
+Host: 1.1.1.1:8888
+Connection: close
+User-Agent: Amazon Route 53 Health Check Service; ref:97aace80-62b8-a461-bd0f-580344e8b53a; report http://amzn.to/1vsZADi
+Accept: */*
+Accept-Encoding: *
+</code></pre>
+<p>At this stage, you should be able to go to your main domain name (either in a browser or using cURL), <code>resilient-site.techotom.com</code> in our example, and get a response like:</p>
+<pre><code>Fri Jul  7 12:26:21 ACST 2017 on server #1
+</code></pre>
+<p>The main thing is we&rsquo;re getting a response from server <strong>#1</strong>. You did remember to change the variable for each server, right?</p>
+<p>Now we can kill (ctrl+c) the server on <code>primary.</code> (<code>1.1.1.1</code>) to simulate our primary server going down. Route53 doesn&rsquo;t react instantly, it takes ~30-60 seconds according to my tests. During this time you&rsquo;ll probably get errors when you try to connect to the, now dead, primary server. Once the DNS records update, you should start seeing a response that has server <strong>#2</strong> in it. This is great! It means we&rsquo;ve failover-ed to the <code>seconary.</code> host (or the primary of the <code>backup.</code> domain).</p>
+<p>Finally we can kill the netcat server on the <code>secondary.</code> (<code>2.2.2.2</code>) host. After the 30-60 second wait we should see a response containing server <strong>#3</strong>. Yay, it&rsquo;s all working.</p>
+<p>You can test servers coming back online by starting the netcat &ldquo;server&rdquo; on <code>seconary.</code> or <code>primary.</code> and seeing the responses change.</p>
+
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/aws">#aws</a>
+        
+            <a class="tag" href="/tags/route53">#route53</a>
+        
+      
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+    </body>
+</html>

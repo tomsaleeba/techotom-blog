@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on TechoTom</title>
+    <link>http://blog.techotom.com/tags/</link>
+    <description>Recent content in Tags on TechoTom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.techotom.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cloud</title>
+      <link>http://blog.techotom.com/tags/cloud/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diy</title>
+      <link>http://blog.techotom.com/tags/diy/</link>
+      <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/diy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mechanical keyboards</title>
+      <link>http://blog.techotom.com/tags/mechanical-keyboards/</link>
+      <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/mechanical-keyboards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gremlin</title>
+      <link>http://blog.techotom.com/tags/gremlin/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/gremlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stardog</title>
+      <link>http://blog.techotom.com/tags/stardog/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/stardog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tinkerpop</title>
+      <link>http://blog.techotom.com/tags/tinkerpop/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/tinkerpop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>http://blog.techotom.com/tags/docker/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>http://blog.techotom.com/tags/kubernetes/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>faas-netes</title>
+      <link>http://blog.techotom.com/tags/faas-netes/</link>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/faas-netes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openfaas</title>
+      <link>http://blog.techotom.com/tags/openfaas/</link>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/openfaas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apiman</title>
+      <link>http://blog.techotom.com/tags/apiman/</link>
+      <pubDate>Tue, 17 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/apiman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keycloak</title>
+      <link>http://blog.techotom.com/tags/keycloak/</link>
+      <pubDate>Tue, 17 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/keycloak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2fa</title>
+      <link>http://blog.techotom.com/tags/2fa/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/2fa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>adelaide university</title>
+      <link>http://blog.techotom.com/tags/adelaide-university/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/adelaide-university/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>duo</title>
+      <link>http://blog.techotom.com/tags/duo/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/duo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://blog.techotom.com/tags/linux/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openconnect</title>
+      <link>http://blog.techotom.com/tags/openconnect/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/openconnect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>http://blog.techotom.com/tags/aws/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>route53</title>
+      <link>http://blog.techotom.com/tags/route53/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/route53/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtualbox</title>
+      <link>http://blog.techotom.com/tags/virtualbox/</link>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/virtualbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>http://blog.techotom.com/tags/windows/</link>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jersey</title>
+      <link>http://blog.techotom.com/tags/jersey/</link>
+      <pubDate>Fri, 19 Apr 2013 08:20:40 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/jersey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eclipse</title>
+      <link>http://blog.techotom.com/tags/eclipse/</link>
+      <pubDate>Sat, 10 Nov 2012 00:19:20 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/eclipse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>http://blog.techotom.com/tags/maven/</link>
+      <pubDate>Sat, 10 Nov 2012 00:19:20 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oneiric Ocelot</title>
+      <link>http://blog.techotom.com/tags/Oneiric-Ocelot/</link>
+      <pubDate>Mon, 21 May 2012 11:48:28 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/Oneiric-Ocelot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>http://blog.techotom.com/tags/Ubuntu/</link>
+      <pubDate>Mon, 21 May 2012 11:48:28 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/Ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Server</title>
+      <link>http://blog.techotom.com/tags/Ubuntu-Server/</link>
+      <pubDate>Mon, 21 May 2012 11:48:28 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/Ubuntu-Server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XenServer</title>
+      <link>http://blog.techotom.com/tags/XenServer/</link>
+      <pubDate>Mon, 21 May 2012 10:58:40 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/XenServer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>http://blog.techotom.com/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mint</title>
+      <link>http://blog.techotom.com/tags/mint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/mint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Development</title>
+      <link>http://blog.techotom.com/tags/Software-Development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/Software-Development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yegor</title>
+      <link>http://blog.techotom.com/tags/yegor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/tags/yegor/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

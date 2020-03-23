@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Development on TechoTom</title>
+    <link>http://blog.techotom.com/tags/Software-Development/</link>
+    <description>Recent content in Software Development on TechoTom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://blog.techotom.com/tags/Software-Development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MethodNotFoundException using Tomcat inside Eclipse</title>
+      <link>http://blog.techotom.com/post/_drafts/methodnotfoundexception-using-tomcat-inside-eclipse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/_drafts/methodnotfoundexception-using-tomcat-inside-eclipse/</guid>
+      <description>running tomcat (actually vfabric tc) in eclipse (actually STS) and using a web deployment descriptor thingo.
+it worked when you built using maven and deployed manually and when you looked in the debugger you&#39;d see the right class source but the object itself wouldn&#39;t have the property/method.
+problem caused by updating a dependency JAR version and updating it in the referencing POM but the deployment descriptor is never updated because the POM is missing:</description>
+    </item>
+    
+  </channel>
+</rss>

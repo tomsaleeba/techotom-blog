@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gremlin on TechoTom</title>
+    <link>http://blog.techotom.com/tags/gremlin/</link>
+    <description>Recent content in gremlin on TechoTom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.techotom.com/tags/gremlin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stardog plugin and Gremlin console not working</title>
+      <link>http://blog.techotom.com/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</guid>
+      <description>You&amp;rsquo;ve followed the instructions to install the plugin and it doesn&amp;rsquo;t load, now what?</description>
+    </item>
+    
+  </channel>
+</rss>

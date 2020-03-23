@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TechoTom</title>
+    <link>http://blog.techotom.com/</link>
+    <description>Recent content on TechoTom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.techotom.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>eRSA Tango Ubuntu VM setup</title>
+      <link>http://blog.techotom.com/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</guid>
+      <description>Get that newly provisioned VM running like you want.</description>
+    </item>
+    
+    <item>
+      <title>Ball bearing homing bumps on keycaps</title>
+      <link>http://blog.techotom.com/post/2018-02-03-ball-bearing-homing-bumps-on-keycaps/</link>
+      <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2018-02-03-ball-bearing-homing-bumps-on-keycaps/</guid>
+      <description>How to make your own homing keys with inset ball bearings.</description>
+    </item>
+    
+    <item>
+      <title>Stardog plugin and Gremlin console not working</title>
+      <link>http://blog.techotom.com/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</guid>
+      <description>You&amp;rsquo;ve followed the instructions to install the plugin and it doesn&amp;rsquo;t load, now what?</description>
+    </item>
+    
+    <item>
+      <title>Docker &#39;no supported platform found in manifest&#39;</title>
+      <link>http://blog.techotom.com/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</guid>
+      <description>What to do when you&amp;rsquo;re trying to pull an image that DockerHub hasn&amp;rsquo;t built yet.</description>
+    </item>
+    
+    <item>
+      <title>faas-netes getting 502 &#39;Error pulling metrics from provider/backend&#39;</title>
+      <link>http://blog.techotom.com/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</link>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</guid>
+      <description>How I caused headaches for myself by deploying faas-netes to a different namespace when it only wants to run in the default one.</description>
+    </item>
+    
+    <item>
+      <title>Finding keycloak realm certificate for apiman</title>
+      <link>http://blog.techotom.com/post/2017-10-17-finding-keycloak-realm-certificate-for-apiman/</link>
+      <pubDate>Tue, 17 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-10-17-finding-keycloak-realm-certificate-for-apiman/</guid>
+      <description>The blog post on setting up OAuth2 with apiman has some out of date bits when using apiman v1.3.1. I&amp;rsquo;ll show you where to find that realm certificate.</description>
+    </item>
+    
+    <item>
+      <title>Adelaide University VPN, Openconnect and Duo</title>
+      <link>http://blog.techotom.com/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</guid>
+      <description>How to connect to Adelaide University&amp;rsquo;s VPN using openconnect from the command line in *nix based systems now that they&amp;rsquo;re introduced 2FA using Duo.</description>
+    </item>
+    
+    <item>
+      <title>Three level failover with AWS Route53</title>
+      <link>http://blog.techotom.com/post/2017-07-07-three-level-failover-with-aws-route53/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-07-07-three-level-failover-with-aws-route53/</guid>
+      <description>How to create a 3 level failover DNS setup from the AWS web console</description>
+    </item>
+    
+    <item>
+      <title>Windows 10 won&#39;t start as VirtualBox guest</title>
+      <link>http://blog.techotom.com/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</link>
+      <pubDate>Wed, 05 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</guid>
+      <description>Updating to a newer version of VirtualBox is required to get Windows 10 version 1703 to run as a guest.</description>
+    </item>
+    
+    <item>
+      <title>Alternative way to fix the &#34;Screen Overlay Detected&#34; error on Android</title>
+      <link>http://blog.techotom.com/post/2017-03-17-alternative-way-to-fix-the-screen-overlay-detected-error-on-android/</link>
+      <pubDate>Fri, 17 Mar 2017 11:55:43 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2017-03-17-alternative-way-to-fix-the-screen-overlay-detected-error-on-android/</guid>
+      <description>Work around this annoying notification by manually enabling the permission from the settings menu.</description>
+    </item>
+    
+    <item>
+      <title>PluralSight custom playback speeds</title>
+      <link>http://blog.techotom.com/post/2016-12-06-pluralsight-custom-playback-speeds/</link>
+      <pubDate>Tue, 06 Dec 2016 04:21:48 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2016-12-06-pluralsight-custom-playback-speeds/</guid>
+      <description>Learn even faster by watching videos at faster than 2x playback speed.</description>
+    </item>
+    
+    <item>
+      <title>Can&#39;t rename files in Linux Mint using Nemo</title>
+      <link>http://blog.techotom.com/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</link>
+      <pubDate>Tue, 31 May 2016 03:00:40 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</guid>
+      <description>TL;DR: I installed Zoom which brought ibus in as a dependency. During a dist-update ibus was set to my main input method and it doesn&amp;rsquo;t work well (for me). Use the Input Method app to set the input method back to XIM and restart the display manager.
+Background: I&amp;rsquo;m running Linux Mint 17.1 and I recently experienced the same issue described in this thread: https://forums.linuxmint.com/viewtopic.php?t=171086. Basically, I could press F2 to rename a file using Nemo, the out-of-the-box file manager but then I typing would have no effect.</description>
+    </item>
+    
+    <item>
+      <title>Xtend 2.8.2, Java 8 and .sort()</title>
+      <link>http://blog.techotom.com/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</link>
+      <pubDate>Tue, 22 Mar 2016 07:23:14 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</guid>
+      <description>Background Warning: this post could probably be countered with a simple RTFM! But for those who are Googling for this, I hope it helps.
+Today I tested out how our Xtend 2.8 code that works in Java 7 would go in a Java 8 JDK. For the most part it was ok but one problem that we experienced was related to sorting collections.
+We had code like:
+val someCustomerComparator = .</description>
+    </item>
+    
+    <item>
+      <title>Loading TDB data into Apache Fuseki</title>
+      <link>http://blog.techotom.com/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</link>
+      <pubDate>Thu, 17 Mar 2016 06:32:56 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</guid>
+      <description>Background I&amp;rsquo;m working with Apache Jena and Apache Fuseki (v2.3.1) at the moment and today I had the need to load more than one lot of data into Fuseki on start up. I thought I needed an assembler file, and I probably could&amp;rsquo;ve used one, but I&amp;rsquo;ve ended up using config file for Fuseki.
+I was Googling for &amp;lsquo;example Fuseki config files&amp;rsquo; to get up and running quickly but didn&amp;rsquo;t find anything so it&amp;rsquo;s my hope that others can use this blog post to get a TDB data directory loaded into Fuseki using a config file quickly.</description>
+    </item>
+    
+    <item>
+      <title>Fixing &#34;XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release&#34;</title>
+      <link>http://blog.techotom.com/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</link>
+      <pubDate>Tue, 03 Feb 2015 07:43:51 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</guid>
+      <description>Background: I wrote some code that required an XMLGregorianCalendar so when I poked around with code completion, the first thing I found was a constructor on com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl. This got my code working but when you build with Maven, you get given a warning (and rightly so):
+ XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release
+ The fix: The correct way to get something that conforms to the XMLGregorianCalendar interface is to call this factory:</description>
+    </item>
+    
+    <item>
+      <title>Mocking remoteAddr with Spring-mvc</title>
+      <link>http://blog.techotom.com/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</link>
+      <pubDate>Wed, 12 Nov 2014 03:00:42 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</guid>
+      <description>The problem We developed a Spring MVC controller that needs to know who the client is. We achieved this using a HttpServletRequest parameter and then calling getRemoteAddr() on it. The challenge then was how to test this because we need to be able to mock this value.
+The fix The Spring test helpers don&amp;rsquo;t provide a way to set this value with a helper method but they do provide an extension point that we can use to do it ourselves.</description>
+    </item>
+    
+    <item>
+      <title>tycho-p2-director-plugin &#34;Error packing product:  isn&#39;t a directory&#34; problem</title>
+      <link>http://blog.techotom.com/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</link>
+      <pubDate>Mon, 27 Oct 2014 00:00:58 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</guid>
+      <description>The problem You&amp;rsquo;re trying to build an Eclipse update site project, specifically &amp;lt;packaging&amp;gt;eclipse-repository&amp;lt;/packaging&amp;gt;, with maven and you&amp;rsquo;re getting the following error:
+This error message is specific to this environment block that you would have defined in your POM:
+&amp;lt;environment&amp;gt; &amp;lt;os&amp;gt;linux&amp;lt;/os&amp;gt; &amp;lt;ws&amp;gt;gtk&amp;lt;/ws&amp;gt; &amp;lt;arch&amp;gt;x86&amp;lt;/arch&amp;gt; &amp;lt;/environment&amp;gt; For the sake of making this post easier to find for people Googling for error messages, you might get one of the following error messages for other common environments:</description>
+    </item>
+    
+    <item>
+      <title>Fixing &#34;The default package &#39;.&#39; is not permitted by the Import-Package syntax.&#34; with maven-bundle-plugin</title>
+      <link>http://blog.techotom.com/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</link>
+      <pubDate>Tue, 21 Oct 2014 01:05:03 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</guid>
+      <description>Overview I found this problem when I was trying to bundle a maven project as an OSGi bundle to use with Tycho. The bundle I was trying to make was effectively a shaded/uber JAR that has all the dependencies inlined inside of the final artifact JAR.
+The cause This problem is caused by a Java class file existing in the default/unamed package. It could come from anywhere in the dependency chain, including your own project, but in this case it came from one of my dependencies; JDOM.</description>
+    </item>
+    
+    <item>
+      <title>Changing mwe2 src directory for Xtext 2.3.1</title>
+      <link>http://blog.techotom.com/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</link>
+      <pubDate>Fri, 06 Jun 2014 06:51:54 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</guid>
+      <description>Problem
+The Xtext project I&amp;rsquo;m working with had, what I assume is, the default project structure where all the java source code lives in a src directory and the generated code goes into src-gen. I wanted to change the structure to a more maven-like structure and have the java code living under src/main/java. I wasn&amp;rsquo;t too fussed about the src-gen directory, that can stay where it is. I Googled for a while but I couldn&amp;rsquo;t find anyone asking the same question as me so hopefully this will help any others (and my future self).</description>
+    </item>
+    
+    <item>
+      <title>Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code</title>
+      <link>http://blog.techotom.com/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</link>
+      <pubDate>Tue, 10 Dec 2013 06:32:17 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</guid>
+      <description>Note: I&amp;rsquo;m working in Eclipse with Spring 3 and using jUnit for my tests.
+Background
+I was writing a unit test for a file upload method on a controller that looks like:
+mockMvc.perform(fileUpload(&amp;#34;/fileUpload&amp;#34;) .param(&amp;#34;description&amp;#34;, &amp;#34;blah&amp;#34;) ) .andExpect(status().isOk()); The test was failing with the message:
+java.lang.AssertionError: Status expected:&amp;lt;200&amp;gt; but was:&amp;lt;400&amp;gt; This isn&amp;rsquo;t super helpful because I wasn&amp;rsquo;t sure why I was getting the 400. I tried changing the URL that I was testing and the error code changed to a 404 so I knew the request was trying to get to the right controller method.</description>
+    </item>
+    
+    <item>
+      <title>How to time-hack TinyDeathStar without losing a Bitizen to the airlock</title>
+      <link>http://blog.techotom.com/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</link>
+      <pubDate>Mon, 09 Dec 2013 09:45:31 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</guid>
+      <description>Note: this was done on a rooted Android. It may work on Apple devices but you definitely require root on Android.
+Background
+I&amp;rsquo;ve become a bit addicted to this game and in the course of playing it, I&amp;rsquo;ve had it rip me off a few times. This happened when I&amp;rsquo;d open the game after, it&amp;rsquo;d been sitting for a while, but then it would crash a few seconds after and when I relaunched it, the extra money I&amp;rsquo;d earned wouldn&amp;rsquo;t be there.</description>
+    </item>
+    
+    <item>
+      <title>Fixing SEVERE errors with Jersey on WebApp startup</title>
+      <link>http://blog.techotom.com/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</link>
+      <pubDate>Fri, 19 Apr 2013 08:20:40 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</guid>
+      <description>The problem As some background, I&amp;rsquo;m running the following:
+ Jersey 1.15 Apache Tomcat 7  The specific error that we&amp;rsquo;re going to fix is:
+SEVERE: The following errors and warnings have been detected with resource and/or provider classes: SEVERE: Missing dependency for method public au.com.your.package.YourResponse au.com.your.package.YourClass.someMethod(au.com.your.package.YourRequest) at parameter at index 0 SEVERE: Method, public au.com.your.package.YourResponse au.com.your.package.YourClass.someMethod(au.com.your.package.YourRequest), annotated with GET of resource, class au.com.your.package.YourClass, is not recognized as valid resource method.</description>
+    </item>
+    
+    <item>
+      <title>Fixing linux apt &#34;bzip2: Data integrity error when decompressing.&#34; error</title>
+      <link>http://blog.techotom.com/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</link>
+      <pubDate>Tue, 26 Feb 2013 01:27:28 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</guid>
+      <description>How to clear the APT cache to fix failing updates.</description>
+    </item>
+    
+    <item>
+      <title>Fixing locale issues with postgres</title>
+      <link>http://blog.techotom.com/post/2013-02-15-fixing-locale-issues-with-postgres/</link>
+      <pubDate>Fri, 15 Feb 2013 02:25:55 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2013-02-15-fixing-locale-issues-with-postgres/</guid>
+      <description>I came across this problem the other day and thought I&amp;rsquo;d post up the fix because it&amp;rsquo;s simple to fix but a show stopper if you can&amp;rsquo;t.
+I&amp;rsquo;m running Linux Mint 64-bit Cinnamon and Postgres 9.1 as a refenece in case you can&amp;rsquo;t copy-paste my commands.
+Basically, when I copied an already running version of postgres to a new box and it failed to start. When I took a look in the postgres log for when you try to start it, I could see that it was complaining about a missing locale.</description>
+    </item>
+    
+    <item>
+      <title>&#34;Could not open a connection to your authentication agent.&#34; when trying to ssh-add</title>
+      <link>http://blog.techotom.com/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</link>
+      <pubDate>Tue, 22 Jan 2013 12:58:55 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</guid>
+      <description>How to &lt;code&gt;ssh-add&lt;/code&gt; on a remote machine.</description>
+    </item>
+    
+    <item>
+      <title>Maven deploy to Sonatype Nexus &#34;401 Premission Denied&#34; workaround</title>
+      <link>http://blog.techotom.com/post/2012-12-24-maven-deploy-401-workaround/</link>
+      <pubDate>Mon, 24 Dec 2012 05:37:53 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-12-24-maven-deploy-401-workaround/</guid>
+      <description>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus&amp;rsquo; RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Eclipse source directories with maven</title>
+      <link>http://blog.techotom.com/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</link>
+      <pubDate>Sat, 10 Nov 2012 00:19:20 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</guid>
+      <description>When you generate a Java project using maven and then import it into Eclipse, often you want to add extra directories that are treated as source directories. This guide will show you how to do it.
+First lets look at (a snippet of) the Super POM to see what we get by default:
+&amp;lt;build&amp;gt; &amp;lt;sourceDirectory&amp;gt;src/main/java&amp;lt;/sourceDirectory&amp;gt; &amp;lt;scriptSourceDirectory&amp;gt;src/main/scripts&amp;lt;/scriptSourceDirectory&amp;gt; &amp;lt;testSourceDirectory&amp;gt;src/test/java&amp;lt;/testSourceDirectory&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;resource&amp;gt; &amp;lt;directory&amp;gt;src/main/resources&amp;lt;/directory&amp;gt; &amp;lt;/resource&amp;gt; &amp;lt;/resources&amp;gt; &amp;lt;/build&amp;gt; We can override what we get from here which is probably what you&amp;rsquo;ll do most of the time; adding another resource directory.</description>
+    </item>
+    
+    <item>
+      <title>Ejecting an ISO from a VirtualBox VM using VBoxManage</title>
+      <link>http://blog.techotom.com/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</link>
+      <pubDate>Sat, 22 Sep 2012 01:19:45 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</guid>
+      <description>How to eject an ISO when you only have the command line (no GUI).</description>
+    </item>
+    
+    <item>
+      <title>Removing 10 minute screen timeout for Ubuntu Server</title>
+      <link>http://blog.techotom.com/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</link>
+      <pubDate>Wed, 15 Aug 2012 01:59:47 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</guid>
+      <description>The problem My situation is that I run an Ubuntu Server for normal server-like tasks; web server, file server, etc. I decided to install XMBC on it so I could make it into a HTPC because after all, it already had all my media stored on it. Installing XMBC meant that I also had to install Xserver and along with that install, I scored some defaults for screen saver timeout and monitor timeout (all set to 10 minutes) and this really sucks when you&amp;rsquo;re watching a movie and even 10 minutes the display would turn off unless you gave some input (keyboard, mouse, remote).</description>
+    </item>
+    
+    <item>
+      <title>Blacklisting a module on Ubuntu Server 11.10 Oneiric Ocelot</title>
+      <link>http://blog.techotom.com/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</link>
+      <pubDate>Mon, 21 May 2012 11:48:28 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</guid>
+      <description>This assumes you have vim (the command line text editor) installed. If not, you can use vi or any command line text editor in its place.
+ Change to the modprobe directory: cd /etc/modprobe  We need to create a new blacklist file to store our blacklistings in. If there are already other files in this directory, you can reuse one of them but for the sake of separating configuration you&amp;rsquo;ve made from the out-of-the-box setup, we&amp;rsquo;ll create a new file.</description>
+    </item>
+    
+    <item>
+      <title>XenServer 5.6.1 FP1: Mounting a guest VM&#39;s hard drive (VDI) on the host</title>
+      <link>http://blog.techotom.com/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</link>
+      <pubDate>Mon, 21 May 2012 10:58:40 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</guid>
+      <description>Back story This is a problem that I ran up against because I was running the host machine as a bare host and all the functionality that I needed was in the guest machine. The purpose of this was to insulate myself from changes in hardware and to be able to easily backup the entire server (the guest) so it could be restored from image. This meant that occasionally I&amp;rsquo;d need to access files on the guest machine&amp;rsquo;s &amp;ldquo;hard drive&amp;rdquo; but it wasn&amp;rsquo;t running so methods that require networking were out.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://blog.techotom.com/post/_drafts/jasmine-testing-aws-lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/_drafts/jasmine-testing-aws-lambda/</guid>
+      <description>Talk about how testing with exceptions in the callback causes confusing error messages. Your callback will get called twice (if you coded it like me) and you&amp;rsquo;ll see errors relating to the jasmine framework (as it throws).
+TL;DR summary here
+Background what&amp;rsquo;s the situation?
+The problem what&amp;rsquo;s the specific problem?
+The solution how&amp;rsquo;d you fix it?</description>
+    </item>
+    
+    <item>
+      <title>Linux Mint and Gnome keyring</title>
+      <link>http://blog.techotom.com/post/_drafts/linux-mint-and-gnome-keyring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/_drafts/linux-mint-and-gnome-keyring/</guid>
+      <description>TL;DR Follow what it says https://wiki.gnome.org/Projects/GnomeKeyring/Ssh#Automatically_loading_SSH_Keys but instead of copying your keys into .ssh, just symlink them
+ln -s /path/to/private.pem /home/user/.ssh/id_rsa # link private key ln -s /path/to/private.pem.pub /home/user/.ssh/id_rsa.pub # link public key (you NEED to do this too)  Background what&amp;rsquo;s the situation?
+The problem what&amp;rsquo;s the specific problem?
+The solution how&amp;rsquo;d you fix it?</description>
+    </item>
+    
+    <item>
+      <title>MethodNotFoundException using Tomcat inside Eclipse</title>
+      <link>http://blog.techotom.com/post/_drafts/methodnotfoundexception-using-tomcat-inside-eclipse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/_drafts/methodnotfoundexception-using-tomcat-inside-eclipse/</guid>
+      <description>running tomcat (actually vfabric tc) in eclipse (actually STS) and using a web deployment descriptor thingo.
+it worked when you built using maven and deployed manually and when you looked in the debugger you&#39;d see the right class source but the object itself wouldn&#39;t have the property/method.
+problem caused by updating a dependency JAR version and updating it in the referencing POM but the deployment descriptor is never updated because the POM is missing:</description>
+    </item>
+    
+    <item>
+      <title>My workstation setup</title>
+      <link>http://blog.techotom.com/post/_drafts/my-workstation-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/_drafts/my-workstation-setup/</guid>
+      <description>Extra APT packages:  openconnect sqlite3 virtualbox-5.1 (from https://www.virtualbox.org/wiki/Linux_Downloads#Debian-basedLinuxdistributions)  extensions pack   dropbox  python-gpgme   fish  oh my fish bobthefish [https://github.com/ryanoasis/nerd-fonts/releases/download/v1.0.0/Meslo.zip](Meslo LG S Nerd Font) (install to ~/.local/share/fonts/)   code (VSCode)  chenxsan.vscode-standardjs - standardjs linter ow.vscode-subword-navigation - make the cursor move like it should kaiwood.center-editor-window - to save time wasted when scrolling   gparted python-pip (and setuptools) using: sudo pip install -U setuptools awscli meld java 8 JDK (from [http://www.</description>
+    </item>
+    
+    <item>
+      <title>re:How I Would Re-design equals()</title>
+      <link>http://blog.techotom.com/post/_drafts/re-how-to-redesign-equals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.techotom.com/post/_drafts/re-how-to-redesign-equals/</guid>
+      <description>I do agree with what your saying. I hate the look of equals() methods.
+Does this effect hasCode()?
+I prefer using guard clauses.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>TechoTom</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://blog.techotom.com/css/main.min.03322cbe6bddfc28e7b17b84bc5446282a510b14b57be3371ba1f68ef1ab9ce8.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101335262-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">TechoTom</a>
+    </div>  
+</header>
+  <div class="nav-menu">
+  
+  <a class="color-link nav-link" href="http://blog.techotom.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+</nav>
+        <div id="content" class="content-container">
+        
+<h1 class="post-title">XenServer 5.6.1 FP1: Mounting a guest VM&#39;s hard drive (VDI) on the host</h1>
+    
+    <time>May 21, 2012</time>
+    
+    <div>
+        <p>
+        <h1 id="back-story">Back story</h1>
+<p>This is a problem that I ran up against because I was running the host machine as a bare host and all the functionality that I needed was in the guest machine. The purpose of this was to insulate myself from changes in hardware and to be able to easily backup the entire server (the guest) so it could be restored from image. This meant that occasionally I&rsquo;d need to access files on the guest machine&rsquo;s &ldquo;hard drive&rdquo; but it wasn&rsquo;t running so methods that require networking were out. The  solution is to mount the guest&rsquo;s hard drive image on the host to access it like any other partition.</p>
+<h1 id="assumptions">Assumptions</h1>
+<ol>
+<li>You&rsquo;re running XenServer 5.6.1 Feature Pack 1. It may work with other versions but I haven&rsquo;t tested.</li>
+<li>If you need to mount the file systems on the VDI then your host machine needs to be able to read the file system of the guest&rsquo;s VDI</li>
+</ol>
+<h1 id="prerequisites">Prerequisites</h1>
+<ol>
+<li>The guest VM must be turned off</li>
+<li>No other machines are accessing the disk image (two machines cannot share the same disk image)</li>
+</ol>
+<h1 id="basic-glossary">Basic glossary</h1>
+<ul>
+<li>UUID: Universally unique identifier. It&rsquo;s a long string of characters that XenServer, in this case, will use to uniqely identify a particular object. You can read more at <a href="">http://en.wikipedia.org/wiki/UUID</a></li>
+<li>Host: the machine that runs XenServer</li>
+<li>Guest: virtual machines that run within the XenServer process</li>
+<li>Dom0: A virtual machine that represents the XenServer host</li>
+<li>VBD: Virtual Block Device, a way to connect a VDI to a virtual machine</li>
+<li>VDI: Virtual Disk Image, an image or file that represents a virtual hard disk.</li>
+</ul>
+<h1 id="how-to-do-it">How to do it</h1>
+<p>These instructions are for mounting a guest VM&rsquo;s hard drive, stored in the VDI format on the host.</p>
+<ol>
+<li>Get the UUID of the Dom0 machine (the host) with
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xe vm-list
+</code></pre></div></li>
+<li>Get the UUID of the VDI (the virtual disk hooked up to the VM) with
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xe vm-disk-list --multiple
+</code></pre></div></li>
+<li>Create a new VBD to plug the virtual disk into the host machine (Dom0) with
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xe vbd-create <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  device<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  vm-uuid<span style="color:#f92672">=</span>&lt;uuid-of-dom0&gt; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  vdi-uuid<span style="color:#f92672">=</span>&lt;uuid-of-the-vm-disk&gt; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  bootable<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  mode<span style="color:#f92672">=</span>RW <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  type<span style="color:#f92672">=</span>Disk
+</code></pre></div></li>
+<li>The previous command would&rsquo;ve returned a UUID. This is the UUID of the newly created VBD. Now we need to plug the newly created VBD in with
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xe vbd-plug <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  uuid<span style="color:#f92672">=</span>&lt;uuid-of-new-vbd-returned-from previous-command&gt;
+</code></pre></div></li>
+</ol>
+<p>The trick is that <code>Dom0</code> represents the host machine but behaves exactly like a virtual machines so we simply need to create a new VDB that allows a disk image (VDI) to be connected to that machine. The same method works when connecting a VDI to any other guest.</p>
+<h1 id="what-now">What now?</h1>
+<p>You should be able to see the disk just like you would with any other physical disk attached to the host, so running something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h
+</code></pre></div><p>&hellip;should list all the disks attached to the machine and you can then use something like this to mount the disk to a mount point (note you might need to be superuser for this):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mount /dev/sdb1 /mnt/point
+</code></pre></div>
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/XenServer">#XenServer</a>
+        
+      
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="http://blog.techotom.com/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww="></script>
+</footer>
+    </body>
+</html>
