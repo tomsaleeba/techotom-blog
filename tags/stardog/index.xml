@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>stardog on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/stardog/</link>
+    <link>/tags/stardog/</link>
     <description>Recent content in stardog on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/stardog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/stardog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stardog plugin and Gremlin console not working</title>
-      <link>http://blog.techotom.com/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</link>
+      <link>/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</guid>
+      <guid>/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</guid>
       <description>You&amp;rsquo;ve followed the instructions to install the plugin and it doesn&amp;rsquo;t load, now what?</description>
     </item>
     

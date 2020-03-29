@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>windows on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/windows/</link>
+    <link>/tags/windows/</link>
     <description>Recent content in windows on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 10 won&#39;t start as VirtualBox guest</title>
-      <link>http://blog.techotom.com/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</link>
+      <link>/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</link>
       <pubDate>Wed, 05 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</guid>
+      <guid>/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</guid>
       <description>Updating to a newer version of VirtualBox is required to get Windows 10 version 1703 to run as a guest.</description>
     </item>
     

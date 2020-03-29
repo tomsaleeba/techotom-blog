@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Mar 2017 11:55:43 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>android</title>
-      <link>http://blog.techotom.com/categories/android/</link>
+      <link>/categories/android/</link>
       <pubDate>Fri, 17 Mar 2017 11:55:43 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/categories/android/</guid>
+      <guid>/categories/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software Development</title>
-      <link>http://blog.techotom.com/categories/Software-Development/</link>
+      <link>/categories/Software-Development/</link>
       <pubDate>Tue, 06 Dec 2016 04:21:48 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/categories/Software-Development/</guid>
+      <guid>/categories/Software-Development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://blog.techotom.com/categories/Linux/</link>
+      <link>/categories/Linux/</link>
       <pubDate>Tue, 31 May 2016 03:00:40 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/categories/Linux/</guid>
+      <guid>/categories/Linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IT</title>
-      <link>http://blog.techotom.com/categories/IT/</link>
+      <link>/categories/IT/</link>
       <pubDate>Mon, 27 Oct 2014 00:00:58 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/categories/IT/</guid>
+      <guid>/categories/IT/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Infrastructure</title>
-      <link>http://blog.techotom.com/categories/Infrastructure/</link>
+      <link>/categories/Infrastructure/</link>
       <pubDate>Mon, 24 Dec 2012 05:37:53 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/categories/Infrastructure/</guid>
+      <guid>/categories/Infrastructure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Virtualisation</title>
-      <link>http://blog.techotom.com/categories/Virtualisation/</link>
+      <link>/categories/Virtualisation/</link>
       <pubDate>Sat, 22 Sep 2012 01:19:45 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/categories/Virtualisation/</guid>
+      <guid>/categories/Virtualisation/</guid>
       <description></description>
     </item>
     

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Development on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/categories/Software-Development/</link>
+    <link>/categories/Software-Development/</link>
     <description>Recent content in Software Development on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Dec 2016 04:21:48 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/categories/Software-Development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/Software-Development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PluralSight custom playback speeds</title>
-      <link>http://blog.techotom.com/post/2016-12-06-pluralsight-custom-playback-speeds/</link>
+      <link>/post/2016-12-06-pluralsight-custom-playback-speeds/</link>
       <pubDate>Tue, 06 Dec 2016 04:21:48 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2016-12-06-pluralsight-custom-playback-speeds/</guid>
+      <guid>/post/2016-12-06-pluralsight-custom-playback-speeds/</guid>
       <description>Learn even faster by watching videos at faster than 2x playback speed.</description>
     </item>
     
     <item>
       <title>Xtend 2.8.2, Java 8 and .sort()</title>
-      <link>http://blog.techotom.com/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</link>
+      <link>/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</link>
       <pubDate>Tue, 22 Mar 2016 07:23:14 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</guid>
+      <guid>/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</guid>
       <description>Background Warning: this post could probably be countered with a simple RTFM! But for those who are Googling for this, I hope it helps.
 Today I tested out how our Xtend 2.8 code that works in Java 7 would go in a Java 8 JDK. For the most part it was ok but one problem that we experienced was related to sorting collections.
 We had code like:
@@ -34,20 +34,20 @@ val someCustomerComparator = .</description>
     
     <item>
       <title>Loading TDB data into Apache Fuseki</title>
-      <link>http://blog.techotom.com/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</link>
+      <link>/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</link>
       <pubDate>Thu, 17 Mar 2016 06:32:56 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</guid>
+      <guid>/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</guid>
       <description>Background I&amp;rsquo;m working with Apache Jena and Apache Fuseki (v2.3.1) at the moment and today I had the need to load more than one lot of data into Fuseki on start up. I thought I needed an assembler file, and I probably could&amp;rsquo;ve used one, but I&amp;rsquo;ve ended up using config file for Fuseki.
 I was Googling for &amp;lsquo;example Fuseki config files&amp;rsquo; to get up and running quickly but didn&amp;rsquo;t find anything so it&amp;rsquo;s my hope that others can use this blog post to get a TDB data directory loaded into Fuseki using a config file quickly.</description>
     </item>
     
     <item>
       <title>Fixing &#34;XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release&#34;</title>
-      <link>http://blog.techotom.com/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</link>
+      <link>/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</link>
       <pubDate>Tue, 03 Feb 2015 07:43:51 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</guid>
+      <guid>/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</guid>
       <description>Background: I wrote some code that required an XMLGregorianCalendar so when I poked around with code completion, the first thing I found was a constructor on com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl. This got my code working but when you build with Maven, you get given a warning (and rightly so):
  XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release
  The fix: The correct way to get something that conforms to the XMLGregorianCalendar interface is to call this factory:</description>
@@ -55,20 +55,20 @@ I was Googling for &amp;lsquo;example Fuseki config files&amp;rsquo; to get up 
     
     <item>
       <title>Mocking remoteAddr with Spring-mvc</title>
-      <link>http://blog.techotom.com/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</link>
+      <link>/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</link>
       <pubDate>Wed, 12 Nov 2014 03:00:42 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</guid>
+      <guid>/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</guid>
       <description>The problem We developed a Spring MVC controller that needs to know who the client is. We achieved this using a HttpServletRequest parameter and then calling getRemoteAddr() on it. The challenge then was how to test this because we need to be able to mock this value.
 The fix The Spring test helpers don&amp;rsquo;t provide a way to set this value with a helper method but they do provide an extension point that we can use to do it ourselves.</description>
     </item>
     
     <item>
       <title>tycho-p2-director-plugin &#34;Error packing product:  isn&#39;t a directory&#34; problem</title>
-      <link>http://blog.techotom.com/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</link>
+      <link>/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</link>
       <pubDate>Mon, 27 Oct 2014 00:00:58 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</guid>
+      <guid>/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</guid>
       <description>The problem You&amp;rsquo;re trying to build an Eclipse update site project, specifically &amp;lt;packaging&amp;gt;eclipse-repository&amp;lt;/packaging&amp;gt;, with maven and you&amp;rsquo;re getting the following error:
 This error message is specific to this environment block that you would have defined in your POM:
 &amp;lt;environment&amp;gt; &amp;lt;os&amp;gt;linux&amp;lt;/os&amp;gt; &amp;lt;ws&amp;gt;gtk&amp;lt;/ws&amp;gt; &amp;lt;arch&amp;gt;x86&amp;lt;/arch&amp;gt; &amp;lt;/environment&amp;gt; For the sake of making this post easier to find for people Googling for error messages, you might get one of the following error messages for other common environments:</description>
@@ -76,30 +76,30 @@ This error message is specific to this environment block that you would have def
     
     <item>
       <title>Fixing &#34;The default package &#39;.&#39; is not permitted by the Import-Package syntax.&#34; with maven-bundle-plugin</title>
-      <link>http://blog.techotom.com/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</link>
+      <link>/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</link>
       <pubDate>Tue, 21 Oct 2014 01:05:03 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</guid>
+      <guid>/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</guid>
       <description>Overview I found this problem when I was trying to bundle a maven project as an OSGi bundle to use with Tycho. The bundle I was trying to make was effectively a shaded/uber JAR that has all the dependencies inlined inside of the final artifact JAR.
 The cause This problem is caused by a Java class file existing in the default/unamed package. It could come from anywhere in the dependency chain, including your own project, but in this case it came from one of my dependencies; JDOM.</description>
     </item>
     
     <item>
       <title>Changing mwe2 src directory for Xtext 2.3.1</title>
-      <link>http://blog.techotom.com/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</link>
+      <link>/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</link>
       <pubDate>Fri, 06 Jun 2014 06:51:54 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</guid>
+      <guid>/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</guid>
       <description>Problem
 The Xtext project I&amp;rsquo;m working with had, what I assume is, the default project structure where all the java source code lives in a src directory and the generated code goes into src-gen. I wanted to change the structure to a more maven-like structure and have the java code living under src/main/java. I wasn&amp;rsquo;t too fussed about the src-gen directory, that can stay where it is. I Googled for a while but I couldn&amp;rsquo;t find anyone asking the same question as me so hopefully this will help any others (and my future self).</description>
     </item>
     
     <item>
       <title>Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code</title>
-      <link>http://blog.techotom.com/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</link>
+      <link>/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</link>
       <pubDate>Tue, 10 Dec 2013 06:32:17 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</guid>
+      <guid>/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</guid>
       <description>Note: I&amp;rsquo;m working in Eclipse with Spring 3 and using jUnit for my tests.
 Background
 I was writing a unit test for a file upload method on a controller that looks like:
@@ -109,10 +109,10 @@ java.lang.AssertionError: Status expected:&amp;lt;200&amp;gt; but was:&amp;lt;40
     
     <item>
       <title>How to time-hack TinyDeathStar without losing a Bitizen to the airlock</title>
-      <link>http://blog.techotom.com/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</link>
+      <link>/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</link>
       <pubDate>Mon, 09 Dec 2013 09:45:31 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</guid>
+      <guid>/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</guid>
       <description>Note: this was done on a rooted Android. It may work on Apple devices but you definitely require root on Android.
 Background
 I&amp;rsquo;ve become a bit addicted to this game and in the course of playing it, I&amp;rsquo;ve had it rip me off a few times. This happened when I&amp;rsquo;d open the game after, it&amp;rsquo;d been sitting for a while, but then it would crash a few seconds after and when I relaunched it, the extra money I&amp;rsquo;d earned wouldn&amp;rsquo;t be there.</description>
@@ -120,10 +120,10 @@ I&amp;rsquo;ve become a bit addicted to this game and in the course of playing i
     
     <item>
       <title>Fixing SEVERE errors with Jersey on WebApp startup</title>
-      <link>http://blog.techotom.com/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</link>
+      <link>/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</link>
       <pubDate>Fri, 19 Apr 2013 08:20:40 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</guid>
+      <guid>/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</guid>
       <description>The problem As some background, I&amp;rsquo;m running the following:
  Jersey 1.15 Apache Tomcat 7  The specific error that we&amp;rsquo;re going to fix is:
 SEVERE: The following errors and warnings have been detected with resource and/or provider classes: SEVERE: Missing dependency for method public au.com.your.package.YourResponse au.com.your.package.YourClass.someMethod(au.com.your.package.YourRequest) at parameter at index 0 SEVERE: Method, public au.com.your.package.YourResponse au.com.your.package.YourClass.someMethod(au.com.your.package.YourRequest), annotated with GET of resource, class au.com.your.package.YourClass, is not recognized as valid resource method.</description>
@@ -131,10 +131,10 @@ SEVERE: The following errors and warnings have been detected with resource and/o
     
     <item>
       <title>Fixing locale issues with postgres</title>
-      <link>http://blog.techotom.com/post/2013-02-15-fixing-locale-issues-with-postgres/</link>
+      <link>/post/2013-02-15-fixing-locale-issues-with-postgres/</link>
       <pubDate>Fri, 15 Feb 2013 02:25:55 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-02-15-fixing-locale-issues-with-postgres/</guid>
+      <guid>/post/2013-02-15-fixing-locale-issues-with-postgres/</guid>
       <description>I came across this problem the other day and thought I&amp;rsquo;d post up the fix because it&amp;rsquo;s simple to fix but a show stopper if you can&amp;rsquo;t.
 I&amp;rsquo;m running Linux Mint 64-bit Cinnamon and Postgres 9.1 as a refenece in case you can&amp;rsquo;t copy-paste my commands.
 Basically, when I copied an already running version of postgres to a new box and it failed to start. When I took a look in the postgres log for when you try to start it, I could see that it was complaining about a missing locale.</description>
@@ -142,19 +142,19 @@ Basically, when I copied an already running version of postgres to a new box and
     
     <item>
       <title>&#34;Could not open a connection to your authentication agent.&#34; when trying to ssh-add</title>
-      <link>http://blog.techotom.com/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</link>
+      <link>/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</link>
       <pubDate>Tue, 22 Jan 2013 12:58:55 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</guid>
+      <guid>/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</guid>
       <description>How to &lt;code&gt;ssh-add&lt;/code&gt; on a remote machine.</description>
     </item>
     
     <item>
       <title>Configuring Eclipse source directories with maven</title>
-      <link>http://blog.techotom.com/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</link>
+      <link>/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</link>
       <pubDate>Sat, 10 Nov 2012 00:19:20 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</guid>
+      <guid>/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</guid>
       <description>When you generate a Java project using maven and then import it into Eclipse, often you want to add extra directories that are treated as source directories. This guide will show you how to do it.
 First lets look at (a snippet of) the Super POM to see what we get by default:
 &amp;lt;build&amp;gt; &amp;lt;sourceDirectory&amp;gt;src/main/java&amp;lt;/sourceDirectory&amp;gt; &amp;lt;scriptSourceDirectory&amp;gt;src/main/scripts&amp;lt;/scriptSourceDirectory&amp;gt; &amp;lt;testSourceDirectory&amp;gt;src/test/java&amp;lt;/testSourceDirectory&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;resource&amp;gt; &amp;lt;directory&amp;gt;src/main/resources&amp;lt;/directory&amp;gt; &amp;lt;/resource&amp;gt; &amp;lt;/resources&amp;gt; &amp;lt;/build&amp;gt; We can override what we get from here which is probably what you&amp;rsquo;ll do most of the time; adding another resource directory.</description>

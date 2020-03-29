@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>virtualbox on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/virtualbox/</link>
+    <link>/tags/virtualbox/</link>
     <description>Recent content in virtualbox on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 10 won&#39;t start as VirtualBox guest</title>
-      <link>http://blog.techotom.com/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</link>
+      <link>/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</link>
       <pubDate>Wed, 05 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</guid>
+      <guid>/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</guid>
       <description>Updating to a newer version of VirtualBox is required to get Windows 10 version 1703 to run as a guest.</description>
     </item>
     
     <item>
       <title>Ejecting an ISO from a VirtualBox VM using VBoxManage</title>
-      <link>http://blog.techotom.com/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</link>
+      <link>/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</link>
       <pubDate>Sat, 22 Sep 2012 01:19:45 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</guid>
+      <guid>/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</guid>
       <description>How to eject an ISO when you only have the command line (no GUI).</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/docker/</link>
+    <link>/tags/docker/</link>
     <description>Recent content in docker on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker &#39;no supported platform found in manifest&#39;</title>
-      <link>http://blog.techotom.com/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</link>
+      <link>/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</link>
       <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</guid>
+      <guid>/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</guid>
       <description>What to do when you&amp;rsquo;re trying to pull an image that DockerHub hasn&amp;rsquo;t built yet.</description>
     </item>
     

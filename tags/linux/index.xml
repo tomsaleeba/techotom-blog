@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/linux/</link>
+    <link>/tags/linux/</link>
     <description>Recent content in linux on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Adelaide University VPN, Openconnect and Duo</title>
-      <link>http://blog.techotom.com/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</link>
+      <link>/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</guid>
+      <guid>/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</guid>
       <description>How to connect to Adelaide University&amp;rsquo;s VPN using openconnect from the command line in *nix based systems now that they&amp;rsquo;re introduced 2FA using Duo.</description>
     </item>
     

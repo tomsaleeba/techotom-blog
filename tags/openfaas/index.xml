@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openfaas on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/openfaas/</link>
+    <link>/tags/openfaas/</link>
     <description>Recent content in openfaas on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/openfaas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/openfaas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>faas-netes getting 502 &#39;Error pulling metrics from provider/backend&#39;</title>
-      <link>http://blog.techotom.com/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</link>
+      <link>/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</link>
       <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</guid>
+      <guid>/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</guid>
       <description>How I caused headaches for myself by deploying faas-netes to a different namespace when it only wants to run in the default one.</description>
     </item>
     

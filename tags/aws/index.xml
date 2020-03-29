@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aws on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/aws/</link>
+    <link>/tags/aws/</link>
     <description>Recent content in aws on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Three level failover with AWS Route53</title>
-      <link>http://blog.techotom.com/post/2017-07-07-three-level-failover-with-aws-route53/</link>
+      <link>/post/2017-07-07-three-level-failover-with-aws-route53/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2017-07-07-three-level-failover-with-aws-route53/</guid>
+      <guid>/post/2017-07-07-three-level-failover-with-aws-route53/</guid>
       <description>How to create a 3 level failover DNS setup from the AWS web console</description>
     </item>
     

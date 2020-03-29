@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IT on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/categories/IT/</link>
+    <link>/categories/IT/</link>
     <description>Recent content in IT on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Oct 2014 00:00:58 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/categories/IT/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/IT/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tycho-p2-director-plugin &#34;Error packing product:  isn&#39;t a directory&#34; problem</title>
-      <link>http://blog.techotom.com/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</link>
+      <link>/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</link>
       <pubDate>Mon, 27 Oct 2014 00:00:58 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</guid>
+      <guid>/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</guid>
       <description>The problem You&amp;rsquo;re trying to build an Eclipse update site project, specifically &amp;lt;packaging&amp;gt;eclipse-repository&amp;lt;/packaging&amp;gt;, with maven and you&amp;rsquo;re getting the following error:
 This error message is specific to this environment block that you would have defined in your POM:
 &amp;lt;environment&amp;gt; &amp;lt;os&amp;gt;linux&amp;lt;/os&amp;gt; &amp;lt;ws&amp;gt;gtk&amp;lt;/ws&amp;gt; &amp;lt;arch&amp;gt;x86&amp;lt;/arch&amp;gt; &amp;lt;/environment&amp;gt; For the sake of making this post easier to find for people Googling for error messages, you might get one of the following error messages for other common environments:</description>
@@ -24,10 +24,10 @@ This error message is specific to this environment block that you would have def
     
     <item>
       <title>Fixing SEVERE errors with Jersey on WebApp startup</title>
-      <link>http://blog.techotom.com/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</link>
+      <link>/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</link>
       <pubDate>Fri, 19 Apr 2013 08:20:40 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</guid>
+      <guid>/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</guid>
       <description>The problem As some background, I&amp;rsquo;m running the following:
  Jersey 1.15 Apache Tomcat 7  The specific error that we&amp;rsquo;re going to fix is:
 SEVERE: The following errors and warnings have been detected with resource and/or provider classes: SEVERE: Missing dependency for method public au.com.your.package.YourResponse au.com.your.package.YourClass.someMethod(au.com.your.package.YourRequest) at parameter at index 0 SEVERE: Method, public au.com.your.package.YourResponse au.com.your.package.YourClass.someMethod(au.com.your.package.YourRequest), annotated with GET of resource, class au.com.your.package.YourClass, is not recognized as valid resource method.</description>
@@ -35,47 +35,47 @@ SEVERE: The following errors and warnings have been detected with resource and/o
     
     <item>
       <title>Fixing linux apt &#34;bzip2: Data integrity error when decompressing.&#34; error</title>
-      <link>http://blog.techotom.com/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</link>
+      <link>/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</link>
       <pubDate>Tue, 26 Feb 2013 01:27:28 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</guid>
+      <guid>/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</guid>
       <description>How to clear the APT cache to fix failing updates.</description>
     </item>
     
     <item>
       <title>Maven deploy to Sonatype Nexus &#34;401 Premission Denied&#34; workaround</title>
-      <link>http://blog.techotom.com/post/2012-12-24-maven-deploy-401-workaround/</link>
+      <link>/post/2012-12-24-maven-deploy-401-workaround/</link>
       <pubDate>Mon, 24 Dec 2012 05:37:53 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-12-24-maven-deploy-401-workaround/</guid>
+      <guid>/post/2012-12-24-maven-deploy-401-workaround/</guid>
       <description>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus&amp;rsquo; RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</description>
     </item>
     
     <item>
       <title>Ejecting an ISO from a VirtualBox VM using VBoxManage</title>
-      <link>http://blog.techotom.com/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</link>
+      <link>/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</link>
       <pubDate>Sat, 22 Sep 2012 01:19:45 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</guid>
+      <guid>/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</guid>
       <description>How to eject an ISO when you only have the command line (no GUI).</description>
     </item>
     
     <item>
       <title>Blacklisting a module on Ubuntu Server 11.10 Oneiric Ocelot</title>
-      <link>http://blog.techotom.com/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</link>
+      <link>/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</link>
       <pubDate>Mon, 21 May 2012 11:48:28 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</guid>
+      <guid>/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</guid>
       <description>This assumes you have vim (the command line text editor) installed. If not, you can use vi or any command line text editor in its place.
  Change to the modprobe directory: cd /etc/modprobe  We need to create a new blacklist file to store our blacklistings in. If there are already other files in this directory, you can reuse one of them but for the sake of separating configuration you&amp;rsquo;ve made from the out-of-the-box setup, we&amp;rsquo;ll create a new file.</description>
     </item>
     
     <item>
       <title>XenServer 5.6.1 FP1: Mounting a guest VM&#39;s hard drive (VDI) on the host</title>
-      <link>http://blog.techotom.com/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</link>
+      <link>/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</link>
       <pubDate>Mon, 21 May 2012 10:58:40 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</guid>
+      <guid>/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</guid>
       <description>Back story This is a problem that I ran up against because I was running the host machine as a bare host and all the functionality that I needed was in the guest machine. The purpose of this was to insulate myself from changes in hardware and to be able to easily backup the entire server (the guest) so it could be restored from image. This meant that occasionally I&amp;rsquo;d need to access files on the guest machine&amp;rsquo;s &amp;ldquo;hard drive&amp;rdquo; but it wasn&amp;rsquo;t running so methods that require networking were out.</description>
     </item>
     

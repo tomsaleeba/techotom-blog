@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/categories/Linux/</link>
+    <link>/categories/Linux/</link>
     <description>Recent content in Linux on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 May 2016 03:00:40 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Can&#39;t rename files in Linux Mint using Nemo</title>
-      <link>http://blog.techotom.com/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</link>
+      <link>/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</link>
       <pubDate>Tue, 31 May 2016 03:00:40 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</guid>
+      <guid>/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</guid>
       <description>TL;DR: I installed Zoom which brought ibus in as a dependency. During a dist-update ibus was set to my main input method and it doesn&amp;rsquo;t work well (for me). Use the Input Method app to set the input method back to XIM and restart the display manager.
 Background: I&amp;rsquo;m running Linux Mint 17.1 and I recently experienced the same issue described in this thread: https://forums.linuxmint.com/viewtopic.php?t=171086. Basically, I could press F2 to rename a file using Nemo, the out-of-the-box file manager but then I typing would have no effect.</description>
     </item>
     
     <item>
       <title>Fixing linux apt &#34;bzip2: Data integrity error when decompressing.&#34; error</title>
-      <link>http://blog.techotom.com/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</link>
+      <link>/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</link>
       <pubDate>Tue, 26 Feb 2013 01:27:28 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</guid>
+      <guid>/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</guid>
       <description>How to clear the APT cache to fix failing updates.</description>
     </item>
     
     <item>
       <title>Fixing locale issues with postgres</title>
-      <link>http://blog.techotom.com/post/2013-02-15-fixing-locale-issues-with-postgres/</link>
+      <link>/post/2013-02-15-fixing-locale-issues-with-postgres/</link>
       <pubDate>Fri, 15 Feb 2013 02:25:55 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2013-02-15-fixing-locale-issues-with-postgres/</guid>
+      <guid>/post/2013-02-15-fixing-locale-issues-with-postgres/</guid>
       <description>I came across this problem the other day and thought I&amp;rsquo;d post up the fix because it&amp;rsquo;s simple to fix but a show stopper if you can&amp;rsquo;t.
 I&amp;rsquo;m running Linux Mint 64-bit Cinnamon and Postgres 9.1 as a refenece in case you can&amp;rsquo;t copy-paste my commands.
 Basically, when I copied an already running version of postgres to a new box and it failed to start. When I took a look in the postgres log for when you try to start it, I could see that it was complaining about a missing locale.</description>
@@ -43,10 +43,10 @@ Basically, when I copied an already running version of postgres to a new box and
     
     <item>
       <title>Removing 10 minute screen timeout for Ubuntu Server</title>
-      <link>http://blog.techotom.com/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</link>
+      <link>/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</link>
       <pubDate>Wed, 15 Aug 2012 01:59:47 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</guid>
+      <guid>/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</guid>
       <description>The problem My situation is that I run an Ubuntu Server for normal server-like tasks; web server, file server, etc. I decided to install XMBC on it so I could make it into a HTPC because after all, it already had all my media stored on it. Installing XMBC meant that I also had to install Xserver and along with that install, I scored some defaults for screen saver timeout and monitor timeout (all set to 10 minutes) and this really sucks when you&amp;rsquo;re watching a movie and even 10 minutes the display would turn off unless you gave some input (keyboard, mouse, remote).</description>
     </item>
     

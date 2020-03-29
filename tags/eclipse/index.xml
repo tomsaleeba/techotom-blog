@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>eclipse on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/eclipse/</link>
+    <link>/tags/eclipse/</link>
     <description>Recent content in eclipse on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Nov 2012 00:19:20 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Configuring Eclipse source directories with maven</title>
-      <link>http://blog.techotom.com/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</link>
+      <link>/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</link>
       <pubDate>Sat, 10 Nov 2012 00:19:20 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</guid>
+      <guid>/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</guid>
       <description>When you generate a Java project using maven and then import it into Eclipse, often you want to add extra directories that are treated as source directories. This guide will show you how to do it.
 First lets look at (a snippet of) the Super POM to see what we get by default:
 &amp;lt;build&amp;gt; &amp;lt;sourceDirectory&amp;gt;src/main/java&amp;lt;/sourceDirectory&amp;gt; &amp;lt;scriptSourceDirectory&amp;gt;src/main/scripts&amp;lt;/scriptSourceDirectory&amp;gt; &amp;lt;testSourceDirectory&amp;gt;src/test/java&amp;lt;/testSourceDirectory&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;resource&amp;gt; &amp;lt;directory&amp;gt;src/main/resources&amp;lt;/directory&amp;gt; &amp;lt;/resource&amp;gt; &amp;lt;/resources&amp;gt; &amp;lt;/build&amp;gt; We can override what we get from here which is probably what you&amp;rsquo;ll do most of the time; adding another resource directory.</description>

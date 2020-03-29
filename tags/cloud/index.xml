@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloud on Tom Saleeba (TechoTom)</title>
-    <link>http://blog.techotom.com/tags/cloud/</link>
+    <link>/tags/cloud/</link>
     <description>Recent content in cloud on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.techotom.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>eRSA Tango Ubuntu VM setup</title>
-      <link>http://blog.techotom.com/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</link>
+      <link>/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</link>
       <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.techotom.com/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</guid>
+      <guid>/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</guid>
       <description>Get that newly provisioned VM running like you want.</description>
     </item>
     
