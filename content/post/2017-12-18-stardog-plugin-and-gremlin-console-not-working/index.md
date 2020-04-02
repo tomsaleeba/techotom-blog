@@ -7,6 +7,8 @@ tags:
 - gremlin
 - tinkerpop
 title: Stardog plugin and Gremlin console not working
+aliases:
+- /2017/12/18/stardog-plugin-and-gremlin-console-not-working.html
 ---
 # TL;DR
 Newer versions of Gremlin console don't seem to work with Stardog 5.1.0. Go back to `3.0.2-incubating` for Gremlin console. This is the version that the Stardog docs link to at the time of writing.

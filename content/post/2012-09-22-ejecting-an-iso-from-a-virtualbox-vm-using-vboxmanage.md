@@ -7,6 +7,8 @@ summary: How to eject an ISO when you only have the command line (no GUI).
 tags:
 - virtualbox
 title: Ejecting an ISO from a VirtualBox VM using VBoxManage
+aliases:
+- /it/virtualisation/2012/09/22/ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage.html
 ---
 # The problem
 

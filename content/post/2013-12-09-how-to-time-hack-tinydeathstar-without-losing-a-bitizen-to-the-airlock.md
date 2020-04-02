@@ -3,6 +3,8 @@ categories:
 - Software Development
 date: "2013-12-09T09:45:31Z"
 title: How to time-hack TinyDeathStar without losing a Bitizen to the airlock
+aliases:
+- /software%20development/2013/12/09/how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock.html
 ---
 Note: this was done on a rooted Android. It may work on Apple devices but you definitely require root on Android.
 

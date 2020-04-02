@@ -7,6 +7,8 @@ tags:
 - faas-netes
 - kubernetes
 title: faas-netes getting 502 'Error pulling metrics from provider/backend'
+aliases:
+- /2017/11/08/faas-netes-getting-502-error-pulling-metrics-from-provider-backend.html
 ---
 # TL;DR
 You can't deploy faas-netes in your own namespace, you need to deploy it in the default namespace. It seems that the [https://github.com/openfaas/faas-netes/blob/32a818328921900f250501f1e117d1aee551b85b/faas.yml#L79](DNS lookup is fully specified) including the `default` namespace. If you want to use other namespaces, it seems that using the [https://github.com/openfaas/faas-netes/blob/master/HELM.md](Helm chart) is your best bet at the time of writing.

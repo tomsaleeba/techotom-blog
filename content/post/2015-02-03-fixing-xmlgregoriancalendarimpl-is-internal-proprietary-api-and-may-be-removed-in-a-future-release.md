@@ -4,6 +4,8 @@ categories:
 date: "2015-02-03T07:43:51Z"
 title: Fixing "XMLGregorianCalendarImpl is internal proprietary API and may be removed
   in a future release"
+aliases:
+- /software%20development/2015/02/03/fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release.html
 ---
 # Background:
 

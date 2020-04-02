@@ -3,6 +3,8 @@ categories:
 - Software Development
 date: "2016-03-22T07:23:14Z"
 title: Xtend 2.8.2, Java 8 and .sort()
+aliases:
+- /software%20development/2016/03/22/xtend-2-8-2-java-8-and-sort.html
 ---
 # Background
 

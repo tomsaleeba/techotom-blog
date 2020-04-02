@@ -4,6 +4,8 @@ summary: Get that newly provisioned VM running like you want.
 tags:
 - cloud
 title: eRSA Tango Ubuntu VM setup
+aliases:
+- /2018/02/21/ersa-tango-ubuntu-vm-setup.html
 ---
 # Some background
 I've just started playing with [eRSA's Tango cloud](https://www.ersa.edu.au/service/cloud/tango-cloud/) and found that a fresh Ubuntu VM isn't the same as what I'm used to when launching something on OpenStack or AWS. I'll run through each issue I found and how I fixed it.

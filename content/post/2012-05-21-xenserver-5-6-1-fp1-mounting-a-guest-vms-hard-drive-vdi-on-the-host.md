@@ -6,6 +6,8 @@ date: "2012-05-21T10:58:40Z"
 tags:
 - XenServer
 title: 'XenServer 5.6.1 FP1: Mounting a guest VM''s hard drive (VDI) on the host'
+aliases:
+- /infrastructure/it/2012/05/21/xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host.html
 ---
 # Back story
 

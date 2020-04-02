@@ -6,6 +6,8 @@ date: "2013-04-19T08:20:40Z"
 tags:
 - jersey
 title: Fixing SEVERE errors with Jersey on WebApp startup
+aliases:
+- /it/software%20development/2013/04/19/fixing-severe-errors-with-jersey-on-webapp-startup.html
 ---
 # The problem
 

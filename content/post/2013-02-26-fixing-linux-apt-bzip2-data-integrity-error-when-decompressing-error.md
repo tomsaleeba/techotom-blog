@@ -5,6 +5,8 @@ categories:
 date: "2013-02-26T01:27:28Z"
 summary: How to clear the APT cache to fix failing updates.
 title: 'Fixing linux apt "bzip2: Data integrity error when decompressing." error'
+aliases:
+- /it/linux/2013/02/26/fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error.html
 ---
 # Background
 

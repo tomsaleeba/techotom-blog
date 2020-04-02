@@ -6,6 +6,8 @@ tags:
 - docker
 - kubernetes
 title: Docker 'no supported platform found in manifest'
+aliases:
+- /2017/11/09/docker-no-supported-platform-found-in-manifest.html
 ---
 
 # TL;DR

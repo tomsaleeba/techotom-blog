@@ -3,6 +3,8 @@ categories:
 - Linux
 date: "2012-08-15T01:59:47Z"
 title: Removing 10 minute screen timeout for Ubuntu Server
+aliases:
+- /linux/2012/08/15/removing-10-minute-screen-timeout-for-ubuntu-server.html
 ---
 # The problem
 

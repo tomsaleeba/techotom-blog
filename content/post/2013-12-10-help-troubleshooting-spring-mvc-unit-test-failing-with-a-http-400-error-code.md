@@ -3,6 +3,8 @@ categories:
 - Software Development
 date: "2013-12-10T06:32:17Z"
 title: Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code
+aliases:
+- /software%20development/2013/12/10/help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code.html
 ---
 Note: I'm working in Eclipse with Spring 3 and using jUnit for my tests.
 

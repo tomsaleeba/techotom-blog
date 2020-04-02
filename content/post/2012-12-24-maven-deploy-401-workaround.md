@@ -4,6 +4,8 @@ categories:
 - IT
 date: "2012-12-24T05:37:53Z"
 title: Maven deploy to Sonatype Nexus "401 Premission Denied" workaround
+aliases:
+- /infrastructure/it/2012/12/24/maven-deploy-401-workaround.html
 ---
 My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the `settings.xml` file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus' RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies. In the future I'll use the [maven-release-plugin](http://maven.apache.org/maven-release/maven-release-plugin/index.html) but for now, this is how I solved this problem.
 

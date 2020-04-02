@@ -5,6 +5,8 @@ tags:
 - mechanical keyboards
 - diy
 title: Ball bearing homing bumps on keycaps
+aliases:
+- /2018/02/03/ball-bearing-homing-bumps-on-keycaps.html
 ---
 # Some background
 I bought an [Ergo Dox Infinity](https://input.club/devices/infinity-ergodox/)

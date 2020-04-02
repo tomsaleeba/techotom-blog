@@ -8,6 +8,8 @@ tags:
 - Ubuntu
 - Ubuntu Server
 title: Blacklisting a module on Ubuntu Server 11.10 Oneiric Ocelot
+aliases:
+- /infrastructure/it/2012/05/21/blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot.html
 ---
 This assumes you have vim (the command line text editor) installed. If not, you can use vi or any command line text editor in its place.
 

@@ -3,6 +3,8 @@ categories:
 - Software Development
 date: "2016-03-17T06:32:56Z"
 title: Loading TDB data into Apache Fuseki
+aliases:
+- /software%20development/2016/03/17/loading-tdb-data-into-apache-fuseki.html
 ---
 # Background
 

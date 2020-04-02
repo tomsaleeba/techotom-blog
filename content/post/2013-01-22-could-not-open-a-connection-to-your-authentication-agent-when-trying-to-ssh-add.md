@@ -5,6 +5,8 @@ date: "2013-01-22T12:58:55Z"
 summary: How to `ssh-add` on a remote machine.
 title: '"Could not open a connection to your authentication agent." when trying to
   ssh-add'
+aliases:
+- /software%20development/2013/01/22/could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add.html
 ---
 This is a reference for myself and hopefully others Googling will find it useful.
 

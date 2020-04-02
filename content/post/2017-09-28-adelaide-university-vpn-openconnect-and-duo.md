@@ -9,6 +9,8 @@ tags:
 - duo
 - 2fa
 title: Adelaide University VPN, Openconnect and Duo
+aliases:
+- /2017/09/28/adelaide-university-vpn-openconnect-and-duo.html
 ---
 
 # The backstory

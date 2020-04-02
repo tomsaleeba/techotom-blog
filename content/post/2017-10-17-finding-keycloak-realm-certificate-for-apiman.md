@@ -6,6 +6,8 @@ tags:
 - apiman
 - keycloak
 title: Finding keycloak realm certificate for apiman
+aliases:
+- /2017/10/17/finding-keycloak-realm-certificate-for-apiman.html
 ---
 
 # TL;DR

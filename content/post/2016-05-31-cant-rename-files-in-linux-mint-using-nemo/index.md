@@ -3,6 +3,8 @@ categories:
 - Linux
 date: "2016-05-31T03:00:40Z"
 title: Can't rename files in Linux Mint using Nemo
+aliases:
+- /linux/2016/05/31/cant-rename-files-in-linux-mint-using-nemo.html
 ---
 # TL;DR:
 

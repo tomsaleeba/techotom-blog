@@ -4,6 +4,8 @@ categories:
 - Software Development
 date: "2014-10-27T00:00:58Z"
 title: 'tycho-p2-director-plugin "Error packing product:  isn''t a directory" problem'
+aliases:
+- /it/software%20development/2014/10/27/tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem.html
 ---
 # The problem
 

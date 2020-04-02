@@ -5,6 +5,8 @@ tags:
 - aws
 - route53
 title: Three level failover with AWS Route53
+aliases:
+- /2017/07/07/three-level-failover-with-aws-route53.html
 ---
 
 # TL;DR
