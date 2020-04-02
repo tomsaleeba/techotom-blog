@@ -5,7 +5,7 @@ categories:
 date: "2013-02-15T02:25:55Z"
 title: Fixing locale issues with postgres
 aliases:
-- /linux/software%20development/2013/02/15/fixing-locale-issues-with-postgres.html
+- /linux/software development/2013/02/15/fixing-locale-issues-with-postgres.html
 ---
 I came across this problem the other day and thought I'd post up the fix because it's simple to fix but a show stopper if you can't.
 

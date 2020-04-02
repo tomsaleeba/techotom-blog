@@ -4,7 +4,7 @@ categories:
 date: "2014-06-06T06:51:54Z"
 title: Changing mwe2 src directory for Xtext 2.3.1
 aliases:
-- /software%20development/2014/06/06/changing-mwe2-src-directory-for-xtext-2-3-1.html
+- /software development/2014/06/06/changing-mwe2-src-directory-for-xtext-2-3-1.html
 ---
 **Problem**
 

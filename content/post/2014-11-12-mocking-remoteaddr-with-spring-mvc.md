@@ -4,7 +4,7 @@ categories:
 date: "2014-11-12T03:00:42Z"
 title: Mocking remoteAddr with Spring-mvc
 aliases:
-- /software%20development/2014/11/12/mocking-remoteaddr-with-spring-mvc.html
+- /software development/2014/11/12/mocking-remoteaddr-with-spring-mvc.html
 ---
 # The problem
 

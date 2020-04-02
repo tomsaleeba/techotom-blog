@@ -5,7 +5,7 @@ date: "2016-12-06T04:21:48Z"
 summary: Learn even faster by watching videos at faster than 2x playback speed.
 title: PluralSight custom playback speeds
 aliases:
-- /software%20development/2016/12/06/pluralsight-custom-playback-speeds.html
+- /software development/2016/12/06/pluralsight-custom-playback-speeds.html
 ---
 **Edit 10 April 2017**: there's now a GitHub repo for this script at https://github.com/tomsaleeba/custom-pluralsight-playback-speed and it contains the fix for the new player released over the past few days. They changed `playbackSpeed` to `playbackRate` and it's no longer multiplied by 10.
 

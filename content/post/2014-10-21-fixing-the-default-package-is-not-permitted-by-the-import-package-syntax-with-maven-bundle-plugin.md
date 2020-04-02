@@ -5,7 +5,7 @@ date: "2014-10-21T01:05:03Z"
 title: Fixing "The default package '.' is not permitted by the Import-Package syntax."
   with maven-bundle-plugin
 aliases:
-- /software%20development/2014/10/21/fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin.html
+- /software development/2014/10/21/fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin.html
 ---
 # Overview
 

@@ -7,7 +7,7 @@ tags:
 - maven
 title: Configuring Eclipse source directories with maven
 aliases:
-- /software%20development/2012/11/10/configuring-eclipse-source-directories-with-maven.html
+- /software development/2012/11/10/configuring-eclipse-source-directories-with-maven.html
 ---
 When you generate a Java project using maven and then import it into Eclipse, often you want to add extra directories that are treated as source directories. This guide will show you how to do it.
 
