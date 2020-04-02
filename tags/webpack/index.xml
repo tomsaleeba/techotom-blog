@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webpack on Tom Saleeba (TechoTom)</title>
+    <link>/tags/webpack/</link>
+    <description>Recent content in webpack on Tom Saleeba (TechoTom)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Apr 2020 16:37:59 +1100</lastBuildDate>
+    
+	<atom:link href="/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Disable individual icons with favicons-webpack-plugin</title>
+      <link>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</link>
+      <pubDate>Thu, 02 Apr 2020 16:37:59 +1100</pubDate>
+      
+      <guid>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</guid>
+      <description>If you only want to disable some icons, like the really big Apple ones, here&amp;rsquo;s how</description>
+    </item>
+    
+  </channel>
+</rss>

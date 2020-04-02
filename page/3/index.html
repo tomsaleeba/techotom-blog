@@ -169,6 +169,26 @@ if (!doNotTrack) {
         
         <article>
             <h2>
+                <a href="/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/">
+                    Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code
+                </a>
+            </h2>
+            <div><p>Note: I&rsquo;m working in Eclipse with Spring 3 and using jUnit for my tests.
+Background
+I was writing a unit test for a file upload method on a controller that looks like:
+mockMvc.perform(fileUpload(&#34;/fileUpload&#34;) .param(&#34;description&#34;, &#34;blah&#34;) ) .andExpect(status().isOk()); The test was failing with the message:
+java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;400&gt; This isn&rsquo;t super helpful because I wasn&rsquo;t sure why I was getting the 400. I tried changing the URL that I was testing and the error code changed to a 404 so I knew the request was trying to get to the right controller method.</p></div>
+            <div class="post-footer">
+            <time>December 10, 2013</time>
+
+            
+            
+            </div> 
+           
+        </article>
+        
+        <article>
+            <h2>
                 <a href="/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/">
                     How to time-hack TinyDeathStar without losing a Bitizen to the airlock
                 </a>
@@ -328,31 +348,6 @@ First lets look at (a snippet of) the Super POM to see what we get by default:
             <time>August 15, 2012</time>
 
             
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/">
-                    Blacklisting a module on Ubuntu Server 11.10 Oneiric Ocelot
-                </a>
-            </h2>
-            <div><p>This assumes you have vim (the command line text editor) installed. If not, you can use vi or any command line text editor in its place.
- Change to the modprobe directory: cd /etc/modprobe  We need to create a new blacklist file to store our blacklistings in. If there are already other files in this directory, you can reuse one of them but for the sake of separating configuration you&rsquo;ve made from the out-of-the-box setup, we&rsquo;ll create a new file.</p></div>
-            <div class="post-footer">
-            <time>May 21, 2012</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/Oneiric-Ocelot">#Oneiric Ocelot</a>
-                
-                    <a class="tag" href="/tags/Ubuntu">#Ubuntu</a>
-                
-                    <a class="tag" href="/tags/Ubuntu-Server">#Ubuntu Server</a>
-                
             
             </div> 
            

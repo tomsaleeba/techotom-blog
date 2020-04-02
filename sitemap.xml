@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</loc>
+    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/js/</loc>
+    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/webpack/</loc>
+    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/cloud/</loc>
     <lastmod>2018-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2018-02-21T00:00:00+00:00</lastmod>
   </url>
   

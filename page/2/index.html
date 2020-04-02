@@ -169,6 +169,22 @@ if (!doNotTrack) {
         
         <article>
             <h2>
+                <a href="/post/2017-03-17-alternative-way-to-fix-the-screen-overlay-detected-error-on-android/">
+                    Alternative way to fix the &#34;Screen Overlay Detected&#34; error on Android
+                </a>
+            </h2>
+            <div><p>Work around this annoying notification by manually enabling the permission from the settings menu.</p></div>
+            <div class="post-footer">
+            <time>March 17, 2017</time>
+
+            
+            
+            </div> 
+           
+        </article>
+        
+        <article>
+            <h2>
                 <a href="/post/2016-12-06-pluralsight-custom-playback-speeds/">
                     PluralSight custom playback speeds
                 </a>
@@ -316,26 +332,6 @@ The cause This problem is caused by a Java class file existing in the default/un
 The Xtext project I&rsquo;m working with had, what I assume is, the default project structure where all the java source code lives in a src directory and the generated code goes into src-gen. I wanted to change the structure to a more maven-like structure and have the java code living under src/main/java. I wasn&rsquo;t too fussed about the src-gen directory, that can stay where it is. I Googled for a while but I couldn&rsquo;t find anyone asking the same question as me so hopefully this will help any others (and my future self).</p></div>
             <div class="post-footer">
             <time>June 6, 2014</time>
-
-            
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/">
-                    Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code
-                </a>
-            </h2>
-            <div><p>Note: I&rsquo;m working in Eclipse with Spring 3 and using jUnit for my tests.
-Background
-I was writing a unit test for a file upload method on a controller that looks like:
-mockMvc.perform(fileUpload(&#34;/fileUpload&#34;) .param(&#34;description&#34;, &#34;blah&#34;) ) .andExpect(status().isOk()); The test was failing with the message:
-java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;400&gt; This isn&rsquo;t super helpful because I wasn&rsquo;t sure why I was getting the 400. I tried changing the URL that I was testing and the error code changed to a 404 so I knew the request was trying to get to the right controller method.</p></div>
-            <div class="post-footer">
-            <time>December 10, 2013</time>
 
             
             

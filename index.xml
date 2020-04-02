@@ -6,10 +6,19 @@
     <description>Recent content on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2020 16:37:59 +1100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disable individual icons with favicons-webpack-plugin</title>
+      <link>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</link>
+      <pubDate>Thu, 02 Apr 2020 16:37:59 +1100</pubDate>
+      
+      <guid>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</guid>
+      <description>If you only want to disable some icons, like the really big Apple ones, here&amp;rsquo;s how</description>
+    </item>
     
     <item>
       <title>eRSA Tango Ubuntu VM setup</title>

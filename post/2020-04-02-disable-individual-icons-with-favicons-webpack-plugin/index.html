@@ -159,329 +159,144 @@ if (!doNotTrack) {
 </nav>
         <div id="content" class="content-container">
         
+<h1 class="post-title">Disable individual icons with favicons-webpack-plugin</h1>
+    
+    <time>April 2, 2020</time>
+    
+    <div>
+        <p>
+        <p>I&rsquo;m using <code>favicons-webpack-plugin</code> as part of my project to generate all the
+favicons I could ever what from a single source image. It works great. Some of
+the icons it generates are quite large though. I mean, they&rsquo;re as big as they
+should be but they&rsquo;re over 1000px in each dimension so they&rsquo;re a few hundred
+kilobytes each.</p>
+<p>I&rsquo;m using workbox to generate a precache manifest for the project and all of
+these icons get included in the manifest, so I&rsquo;m making client download all of
+the icons in all size no matter what platform they on.</p>
+<p>So I had the smart idea to just kill off some of the larger icons. As I write
+this, with the benefit of hindsight, I can say this was the wrong approach. The
+right approach, and the one I ended up taking was to exclude <em>all</em> the icons
+from the precache manifest.</p>
+<p>However, I don&rsquo;t want my work in figuring this out to go completely to waste so
+it&rsquo;s going to live on in this blog post.</p>
+<p>I didn&rsquo;t get a full solution but I did manage to exclude any icons I didn&rsquo;t
+want. I achieved this by importing the <code>favicons</code> module into my script and
+directly modifying the config property on it. It&rsquo;s probably worth noting here
+that <code>favicons-webpack-plugin</code> uses <code>favicons</code> internally and we can do this
+trick because all modules are singletons (I think, or at least they behave like
+it) so modifying it here also takes effect inside the plugin.</p>
+<p>The bit I didn&rsquo;t get working was to also exclude the fragments that will
+injected into the HTML. They live
+<a href="https://github.com/itgalaxy/favicons/blob/9fa4945/src/config/html.js">here</a> and
+you&rsquo;ll see they&rsquo;re all functions so they&rsquo;ll be a bit harder to filter. If I had
+to tackle this, I would:</p>
+<ol>
+<li>iterate over the root object</li>
+<li>reduce each of the child arrays</li>
+<li>inside the reducer, I&rsquo;d call each function and inspect the result for names
+I&rsquo;d already excluded from the <code>icons</code></li>
+<li>assign the result of the reducer to the key in the object</li>
+<li>profit</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">FaviconsWebpackPlugin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;favicons-webpack-plugin&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">favicons</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;favicons&#39;</span>)
 
-  <h1>
-    Archives
-  </h1>
-  <div>
-     
-      
-      
-          <h3>2020</h3> 
+;(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">dontGenerateLargeFavicons</span>() {
+  <span style="color:#75715e">// these icons get precached by our service worker and bloat everything.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// That&#39;s not cool
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleIcon</span>[<span style="color:#e6db74">&#39;apple-touch-icon-1024x1024.png&#39;</span>]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-1536x2008.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-1496x2048.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-1242x2148.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-1182x2208.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-748x1024.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-768x1004.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-750x1294.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-640x1096.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">appleStartup</span>[
+    <span style="color:#e6db74">&#39;apple-touch-startup-image-640x920.png&#39;</span>
+  ]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">firefox</span>[<span style="color:#e6db74">&#39;firefox_app_512x512.png&#39;</span>]
+  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">favicons</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">icons</span>.<span style="color:#a6e22e">android</span>[<span style="color:#e6db74">&#39;android-chrome-512x512.png&#39;</span>]
+})()
 
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Apr 2</span>
-                    <span>
-                      <a href="/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/">Disable individual icons with favicons-webpack-plugin</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-          <h3>2018</h3> 
+<span style="color:#75715e">// FIXME still need to exclude corresponding parts of favicons.config.html
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">configureWebpack</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+      <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FaviconsWebpackPlugin</span>({
+        <span style="color:#a6e22e">logo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/assets/icon-seed-white.png&#39;</span>,
+        <span style="color:#a6e22e">inject</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">devMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;webapp&#39;</span>,
+        <span style="color:#a6e22e">prefix</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;img/icons/&#39;</span>,
+        <span style="color:#a6e22e">favicons</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">theme_color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#5683BA&#39;</span>,
+          <span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#000&#39;</span>, <span style="color:#75715e">// background of flattened icons
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">appName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Uber Awesome App&#39;</span>,
+          <span style="color:#a6e22e">appShortName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;UberAwesomeApp&#39;</span>,
+          <span style="color:#a6e22e">appDescription</span><span style="color:#f92672">:</span>
+            <span style="color:#e6db74">&#39;something, blah blah&#39;</span>,
+          <span style="color:#a6e22e">appleStatusBarStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;default&#39;</span>,
+          <span style="color:#a6e22e">developerName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+          <span style="color:#a6e22e">developerURL</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+          <span style="color:#a6e22e">start_url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/index.html&#39;</span>,
+        },
+      }),
+    ],
+  },
+}
+</code></pre></div>
+        </p>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Feb 21</span>
-                    <span>
-                      <a href="/post/2018-02-21-ersa-tango-ubuntu-vm-setup/">eRSA Tango Ubuntu VM setup</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Feb 3</span>
-                    <span>
-                      <a href="/post/2018-02-03-ball-bearing-homing-bumps-on-keycaps/">Ball bearing homing bumps on keycaps</a>
-                    </span>
-                  </li>
-              
-          </ul>
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/js">#js</a>
+        
+            <a class="tag" href="/tags/webpack">#webpack</a>
+        
       
-          <h3>2017</h3> 
-
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Dec 18</span>
-                    <span>
-                      <a href="/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/">Stardog plugin and Gremlin console not working</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Nov 9</span>
-                    <span>
-                      <a href="/post/2017-11-09-docker-no-supported-platform-found-in-manifest/">Docker &#39;no supported platform found in manifest&#39;</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Nov 8</span>
-                    <span>
-                      <a href="/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/">faas-netes getting 502 &#39;Error pulling metrics from provider/backend&#39;</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Oct 17</span>
-                    <span>
-                      <a href="/post/2017-10-17-finding-keycloak-realm-certificate-for-apiman/">Finding keycloak realm certificate for apiman</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Sep 28</span>
-                    <span>
-                      <a href="/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/">Adelaide University VPN, Openconnect and Duo</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Jul 7</span>
-                    <span>
-                      <a href="/post/2017-07-07-three-level-failover-with-aws-route53/">Three level failover with AWS Route53</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Jul 5</span>
-                    <span>
-                      <a href="/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/">Windows 10 won&#39;t start as VirtualBox guest</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Mar 17</span>
-                    <span>
-                      <a href="/post/2017-03-17-alternative-way-to-fix-the-screen-overlay-detected-error-on-android/">Alternative way to fix the &#34;Screen Overlay Detected&#34; error on Android</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-          <h3>2016</h3> 
-
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Dec 6</span>
-                    <span>
-                      <a href="/post/2016-12-06-pluralsight-custom-playback-speeds/">PluralSight custom playback speeds</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">May 31</span>
-                    <span>
-                      <a href="/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/">Can&#39;t rename files in Linux Mint using Nemo</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Mar 22</span>
-                    <span>
-                      <a href="/post/2016-03-22-xtend-2-8-2-java-8-and-sort/">Xtend 2.8.2, Java 8 and .sort()</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Mar 17</span>
-                    <span>
-                      <a href="/post/2016-03-17-loading-tdb-data-into-apache-fuseki/">Loading TDB data into Apache Fuseki</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-          <h3>2015</h3> 
-
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Feb 3</span>
-                    <span>
-                      <a href="/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/">Fixing &#34;XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release&#34;</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-          <h3>2014</h3> 
-
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Nov 12</span>
-                    <span>
-                      <a href="/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/">Mocking remoteAddr with Spring-mvc</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Oct 27</span>
-                    <span>
-                      <a href="/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/">tycho-p2-director-plugin &#34;Error packing product:  isn&#39;t a directory&#34; problem</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Oct 21</span>
-                    <span>
-                      <a href="/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/">Fixing &#34;The default package &#39;.&#39; is not permitted by the Import-Package syntax.&#34; with maven-bundle-plugin</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Jun 6</span>
-                    <span>
-                      <a href="/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/">Changing mwe2 src directory for Xtext 2.3.1</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-          <h3>2013</h3> 
-
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Dec 10</span>
-                    <span>
-                      <a href="/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/">Help troubleshooting Spring MVC unit test failing with a HTTP 400 error code</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Dec 9</span>
-                    <span>
-                      <a href="/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/">How to time-hack TinyDeathStar without losing a Bitizen to the airlock</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Apr 19</span>
-                    <span>
-                      <a href="/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/">Fixing SEVERE errors with Jersey on WebApp startup</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Feb 26</span>
-                    <span>
-                      <a href="/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/">Fixing linux apt &#34;bzip2: Data integrity error when decompressing.&#34; error</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Feb 15</span>
-                    <span>
-                      <a href="/post/2013-02-15-fixing-locale-issues-with-postgres/">Fixing locale issues with postgres</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Jan 22</span>
-                    <span>
-                      <a href="/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/">&#34;Could not open a connection to your authentication agent.&#34; when trying to ssh-add</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-          <h3>2012</h3> 
-
-          <ul class="archives-list"> 
-            
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Dec 24</span>
-                    <span>
-                      <a href="/post/2012-12-24-maven-deploy-401-workaround/">Maven deploy to Sonatype Nexus &#34;401 Premission Denied&#34; workaround</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Nov 10</span>
-                    <span>
-                      <a href="/post/2012-11-10-configuring-eclipse-source-directories-with-maven/">Configuring Eclipse source directories with maven</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Sep 22</span>
-                    <span>
-                      <a href="/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/">Ejecting an ISO from a VirtualBox VM using VBoxManage</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">Aug 15</span>
-                    <span>
-                      <a href="/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/">Removing 10 minute screen timeout for Ubuntu Server</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">May 21</span>
-                    <span>
-                      <a href="/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/">Blacklisting a module on Ubuntu Server 11.10 Oneiric Ocelot</a>
-                    </span>
-                  </li>
-              
-             
-                  <li class="archives-list-item">
-                    <span class="archives-list-item-date">May 21</span>
-                    <span>
-                      <a href="/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/">XenServer 5.6.1 FP1: Mounting a guest VM&#39;s hard drive (VDI) on the host</a>
-                    </span>
-                  </li>
-              
-          </ul>
-      
-  </div>
-
-  <div class="page-footer"></div>
+    </div>
 
 
         
