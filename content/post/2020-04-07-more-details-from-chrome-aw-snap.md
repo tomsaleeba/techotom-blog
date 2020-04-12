@@ -1,5 +1,5 @@
 ---
-title: "More details from Chrome Aw snap"
+title: "More details from Chrome 'Aw snap'"
 date: 2020-04-07T22:51:59+11:00
 summary: "Trying to get more details about why the page crashes"
 tags:
@@ -27,13 +27,15 @@ So the goal here is to see what it sent in that POST, just to confirm it's what
 I thought, as I can't use devtools to see that. For this we'll use
 [`mitmproxy`](https://mitmproxy.org/) to intercept our network traffic.
 
-1. install `mitmproxy`
-1. run `mitmproxy` listening on port 8081
-mitmproxy \
-  --listen-port 8081 \
-  --listen-host 0.0.0.0 \
-  --ssl-insecure \
-  --set block_global=false
+  1. install `mitmproxy`
+  1. run `mitmproxy` listening on port 8081
+      ```bash
+      mitmproxy \
+        --listen-port 8081 \
+        --listen-host 0.0.0.0 \
+        --ssl-insecure \
+        --set block_global=false
+      ```
 
 Now we can start Chrome so it uses our proxy. I don't want to mess with my main
 profile, plus it's good to verify bugs on a clean profile, so let's start Chrome
