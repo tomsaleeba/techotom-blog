@@ -6,10 +6,19 @@
     <description>Recent content on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2020 16:37:59 +1100</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 22:51:59 +1100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>More details from Chrome Aw snap</title>
+      <link>/post/2020-04-07-more-details-from-chrome-aw-snap/</link>
+      <pubDate>Tue, 07 Apr 2020 22:51:59 +1100</pubDate>
+      
+      <guid>/post/2020-04-07-more-details-from-chrome-aw-snap/</guid>
+      <description>Trying to get more details about why the page crashes</description>
+    </item>
     
     <item>
       <title>Disable individual icons with favicons-webpack-plugin</title>

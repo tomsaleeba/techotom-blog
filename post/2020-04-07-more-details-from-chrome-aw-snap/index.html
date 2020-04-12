@@ -2,13 +2,12 @@
 
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.68.3" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Tom Saleeba (TechoTom)</title>
+    <title>More details from Chrome Aw snap | Tom Saleeba (TechoTom)</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Tom Saleeba (TechoTom)" />
     
     
 <script type="application/javascript">
@@ -166,260 +163,103 @@ if (!doNotTrack) {
 </nav>
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="/post/2020-04-07-more-details-from-chrome-aw-snap/">
-                    More details from Chrome Aw snap
-                </a>
-            </h2>
-            <div><p>Trying to get more details about why the page crashes</p></div>
-            <div class="post-footer">
-            <time>April 7, 2020</time>
+<h1 class="post-title">More details from Chrome Aw snap</h1>
+    
+    <time>April 7, 2020</time>
+    
+    <div>
+        <p>
+        <p>I&rsquo;ve been experiencing <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1042093">this
+bug</a> while using
+Chrome devtools and it&rsquo;s gotten to the point where I wanted to dig deeper to
+find out what is causing it.</p>
+<p>This is not about debugging Chrome itself, I don&rsquo;t have the skills for that, but
+just trying to get some more details to figure out if it&rsquo;s something I&rsquo;ve done
+wrong in my code. Or if not, gather enough detail to report a useful bug.</p>
+<p>The general idea of the bug is:</p>
+<ol>
+<li>launch a webpage with a service worker</li>
+<li>have the service worker trigger a POST</li>
+<li>(try to) inspect the body of the POST in the devtools network tab</li>
+<li>the tab will crash</li>
+</ol>
+<p>It&rsquo;s not all POST requests, I tried to make a minimal reproduction, but there&rsquo;s
+something about the ones I make that causes this.</p>
+<p>So the goal here is to see what it sent in that POST, just to confirm it&rsquo;s what
+I thought, as I can&rsquo;t use devtools to see that. For this we&rsquo;ll use
+<a href="https://mitmproxy.org/"><code>mitmproxy</code></a> to intercept our network traffic.</p>
+<ol>
+<li>install <code>mitmproxy</code></li>
+<li>run <code>mitmproxy</code> listening on port 8081
+mitmproxy<br>
+&ndash;listen-port 8081<br>
+&ndash;listen-host 0.0.0.0<br>
+&ndash;ssl-insecure<br>
+&ndash;set block_global=false</li>
+</ol>
+<p>Now we can start Chrome so it uses our proxy. I don&rsquo;t want to mess with my main
+profile, plus it&rsquo;s good to verify bugs on a clean profile, so let&rsquo;s start Chrome
+with a throw-away profile and ask for extra logging output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">google-chrome-stable <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --proxy-server<span style="color:#f92672">=</span>http://localhost:8081 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --user-data-dir<span style="color:#f92672">=</span>/tmp/chrome1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --enable-logging <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --v<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</code></pre></div><p>Now we need Chrome to trust the HTTPS certificate that <code>mitmproxy</code> presents. We
+do that by:</p>
+<ol>
+<li>opening some HTTPS webpage (not google, that just seems to hang) and confirm
+that it fails with an invalid cert</li>
+<li>now open <a href="mitm.it">mitm.it</a>, the proxy will intercept this and show you a page where you
+can download certs</li>
+<li>download the pem cert (by clicking <em>other</em>)</li>
+<li>open settings, search for &ldquo;cert&rdquo;, open the <em>Manage Certificate</em> item</li>
+<li>go to the <em>Authorities</em> tab</li>
+<li>click the <em>import</em> button</li>
+<li>select the pem cert you downloaded</li>
+<li>check &ldquo;Trust this certificate for identifying websites&rdquo;</li>
+<li>go back and refresh your failed page, it should work now because Chrome trusts the mitmproxy cert</li>
+</ol>
+<p>Now, if you look in the running <code>mitmproxy</code> you will (should) see flows
+appearing as you browse with Chrome.</p>
+<p>You&rsquo;ll also see debug logs spewing from Chrome in your terminal where you launched it.</p>
+<p>We now have everything in place to trigger the bug and then I can check in
+mitmproxy that my app is indeed sending what I expect. It was. It was a pretty
+boring JSON object too. I&rsquo;ve reported the bug and I can&rsquo;t get a minimal
+reproduction to work, so I&rsquo;ll just have to wait and hope for a fix.</p>
 
-            
-            
-                
-                    <a class="tag" href="/tags/chrome">#chrome</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/">
-                    Disable individual icons with favicons-webpack-plugin
-                </a>
-            </h2>
-            <div><p>If you only want to disable some icons, like the really big Apple ones, here&rsquo;s how</p></div>
-            <div class="post-footer">
-            <time>April 2, 2020</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/js">#js</a>
-                
-                    <a class="tag" href="/tags/webpack">#webpack</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2018-02-21-ersa-tango-ubuntu-vm-setup/">
-                    eRSA Tango Ubuntu VM setup
-                </a>
-            </h2>
-            <div><p>Get that newly provisioned VM running like you want.</p></div>
-            <div class="post-footer">
-            <time>February 21, 2018</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/cloud">#cloud</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2018-02-03-ball-bearing-homing-bumps-on-keycaps/">
-                    Ball bearing homing bumps on keycaps
-                </a>
-            </h2>
-            <div><p>How to make your own homing keys with inset ball bearings.</p></div>
-            <div class="post-footer">
-            <time>February 3, 2018</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/mechanical-keyboards">#mechanical keyboards</a>
-                
-                    <a class="tag" href="/tags/diy">#diy</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/">
-                    Stardog plugin and Gremlin console not working
-                </a>
-            </h2>
-            <div><p>You&rsquo;ve followed the instructions to install the plugin and it doesn&rsquo;t load, now what?</p></div>
-            <div class="post-footer">
-            <time>December 18, 2017</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/stardog">#stardog</a>
-                
-                    <a class="tag" href="/tags/gremlin">#gremlin</a>
-                
-                    <a class="tag" href="/tags/tinkerpop">#tinkerpop</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2017-11-09-docker-no-supported-platform-found-in-manifest/">
-                    Docker &#39;no supported platform found in manifest&#39;
-                </a>
-            </h2>
-            <div><p>What to do when you&rsquo;re trying to pull an image that DockerHub hasn&rsquo;t built yet.</p></div>
-            <div class="post-footer">
-            <time>November 9, 2017</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/docker">#docker</a>
-                
-                    <a class="tag" href="/tags/kubernetes">#kubernetes</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/">
-                    faas-netes getting 502 &#39;Error pulling metrics from provider/backend&#39;
-                </a>
-            </h2>
-            <div><p>How I caused headaches for myself by deploying faas-netes to a different namespace when it only wants to run in the default one.</p></div>
-            <div class="post-footer">
-            <time>November 8, 2017</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/openfaas">#openfaas</a>
-                
-                    <a class="tag" href="/tags/faas-netes">#faas-netes</a>
-                
-                    <a class="tag" href="/tags/kubernetes">#kubernetes</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2017-10-17-finding-keycloak-realm-certificate-for-apiman/">
-                    Finding keycloak realm certificate for apiman
-                </a>
-            </h2>
-            <div><p>The blog post on setting up OAuth2 with apiman has some out of date bits when using apiman v1.3.1. I&rsquo;ll show you where to find that realm certificate.</p></div>
-            <div class="post-footer">
-            <time>October 17, 2017</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/apiman">#apiman</a>
-                
-                    <a class="tag" href="/tags/keycloak">#keycloak</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/">
-                    Adelaide University VPN, Openconnect and Duo
-                </a>
-            </h2>
-            <div><p>How to connect to Adelaide University&rsquo;s VPN using openconnect from the command line in *nix based systems now that they&rsquo;re introduced 2FA using Duo.</p></div>
-            <div class="post-footer">
-            <time>September 28, 2017</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/adelaide-university">#adelaide university</a>
-                
-                    <a class="tag" href="/tags/openconnect">#openconnect</a>
-                
-                    <a class="tag" href="/tags/linux">#linux</a>
-                
-                    <a class="tag" href="/tags/duo">#duo</a>
-                
-                    <a class="tag" href="/tags/2fa">#2fa</a>
-                
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2017-07-07-three-level-failover-with-aws-route53/">
-                    Three level failover with AWS Route53
-                </a>
-            </h2>
-            <div><p>How to create a 3 level failover DNS setup from the AWS web console</p></div>
-            <div class="post-footer">
-            <time>July 7, 2017</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/aws">#aws</a>
-                
-                    <a class="tag" href="/tags/route53">#route53</a>
-                
-            
-            </div>
-
-        </article>
-        
+        </p>
     </div>
-        
-        <div class="paginator">
-        
-        
-        <p>Page 1 of 4</p>
-        <div class="paginator-group">
-            
-            
-                <a class="color-link older" href="/page/2/">
-                    Older
-                    <svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                            <g class="color-arrow" fill="#FF7700" fill-rule="nonzero">
-                                <polygon points="7.6707477 1.37628835 8.3292523 0.623711653 12.7592994 4.50000282 8.32918951 8.37629079 7.67069049 7.62370921 11.2407006 4.49999718"></polygon>
-                                <polygon id="Path" points="0 5 0 4 12 4 12 5"></polygon>
-                            </g>
-                    </svg>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "techotom" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-                </a>
-            
-        </div>
+    <div class="page-footer">
         
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/chrome">#chrome</a>
+        
+      
     </div>
+
 
         </div>
         <footer class="footer-mobile">
