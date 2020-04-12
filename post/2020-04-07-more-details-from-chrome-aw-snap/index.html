@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>More details from Chrome Aw snap | Tom Saleeba (TechoTom)</title>
+    <title>More details from Chrome &#39;Aw snap&#39; | Tom Saleeba (TechoTom)</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -163,7 +163,7 @@ if (!doNotTrack) {
 </nav>
         <div id="content" class="content-container">
         
-<h1 class="post-title">More details from Chrome Aw snap</h1>
+<h1 class="post-title">More details from Chrome &#39;Aw snap&#39;</h1>
     
     <time>April 7, 2020</time>
     
@@ -191,11 +191,12 @@ I thought, as I can&rsquo;t use devtools to see that. For this we&rsquo;ll use
 <ol>
 <li>install <code>mitmproxy</code></li>
 <li>run <code>mitmproxy</code> listening on port 8081
-mitmproxy<br>
-&ndash;listen-port 8081<br>
-&ndash;listen-host 0.0.0.0<br>
-&ndash;ssl-insecure<br>
-&ndash;set block_global=false</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mitmproxy <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --listen-port <span style="color:#ae81ff">8081</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --listen-host 0.0.0.0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --ssl-insecure <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --set block_global<span style="color:#f92672">=</span>false
+</code></pre></div></li>
 </ol>
 <p>Now we can start Chrome so it uses our proxy. I don&rsquo;t want to mess with my main
 profile, plus it&rsquo;s good to verify bugs on a clean profile, so let&rsquo;s start Chrome
