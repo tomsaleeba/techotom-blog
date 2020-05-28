@@ -6,10 +6,19 @@
     <description>Recent content on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2020 22:51:59 +1100</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2020 10:54:45 +0930</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comparing Google Cloud Run and Compute Engine Costs</title>
+      <link>/post/comparing-google-cloud-run-and-compute-engine-costs/</link>
+      <pubDate>Thu, 28 May 2020 10:54:45 +0930</pubDate>
+      
+      <guid>/post/comparing-google-cloud-run-and-compute-engine-costs/</guid>
+      <description>How much do you pay for convenience? TL;DR roughly 2.5x as much</description>
+    </item>
     
     <item>
       <title>More details from Chrome &#39;Aw snap&#39;</title>
