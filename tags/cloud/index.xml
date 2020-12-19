@@ -6,11 +6,7 @@
     <description>Recent content in cloud on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Feb 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>eRSA Tango Ubuntu VM setup</title>
       <link>/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in duo on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/duo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/duo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adelaide University VPN, Openconnect and Duo</title>
       <link>/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</link>

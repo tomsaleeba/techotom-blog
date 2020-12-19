@@ -6,11 +6,7 @@
     <description>Recent content in virtualbox on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jul 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 05 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows 10 won&#39;t start as VirtualBox guest</title>
       <link>/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</link>

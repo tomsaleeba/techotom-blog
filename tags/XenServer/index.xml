@@ -6,11 +6,7 @@
     <description>Recent content in XenServer on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 May 2012 10:58:40 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/XenServer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 May 2012 10:58:40 +0000</lastBuildDate><atom:link href="/tags/XenServer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>XenServer 5.6.1 FP1: Mounting a guest VM&#39;s hard drive (VDI) on the host</title>
       <link>/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</link>

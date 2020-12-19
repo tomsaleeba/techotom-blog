@@ -6,18 +6,14 @@
     <description>Recent content in Infrastructure on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Dec 2012 05:37:53 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/Infrastructure/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Dec 2012 05:37:53 +0000</lastBuildDate><atom:link href="/categories/Infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maven deploy to Sonatype Nexus &#34;401 Premission Denied&#34; workaround</title>
       <link>/post/2012-12-24-maven-deploy-401-workaround/</link>
       <pubDate>Mon, 24 Dec 2012 05:37:53 +0000</pubDate>
       
       <guid>/post/2012-12-24-maven-deploy-401-workaround/</guid>
-      <description>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus&amp;rsquo; RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</description>
+      <description>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus&#39; RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</description>
     </item>
     
     <item>

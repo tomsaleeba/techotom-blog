@@ -223,26 +223,26 @@ Events:
 <p>As I was trying to implicitly pull the <code>latest</code> tag (<code>1.4.2</code> at the time of writing), the solution was to go back a version. In my case, that&rsquo;s <code>1.4.1</code>. Alternatively I could&rsquo;ve just waited for the image to be built and then try again but who has time to wait for that!</p>
 <p>To fix this in practice, I just needed to add the <code>:1.4.1</code> label to the image name in my YAML file. You can see the change made near the bottom of this file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># traefik.yml</span>
-<span style="color:#66d9ef">kind</span>: DaemonSet
-<span style="color:#66d9ef">apiVersion</span>: extensions/v1beta1
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: traefik-ingress-controller
-  <span style="color:#66d9ef">namespace</span>: kube-system
-  <span style="color:#66d9ef">labels</span>:
-    <span style="color:#66d9ef">k8s-app</span>: traefik-ingress-lb
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">template</span>:
-    <span style="color:#66d9ef">metadata</span>:
-      <span style="color:#66d9ef">labels</span>:
-        <span style="color:#66d9ef">k8s-app</span>: traefik-ingress-lb
-        <span style="color:#66d9ef">name</span>: traefik-ingress-lb
-    <span style="color:#66d9ef">spec</span>:
-      <span style="color:#66d9ef">serviceAccountName</span>: traefik-ingress-controller
-      <span style="color:#66d9ef">terminationGracePeriodSeconds</span>: <span style="color:#ae81ff">60</span>
-      <span style="color:#66d9ef">hostNetwork</span>: <span style="color:#66d9ef">true</span>
-      <span style="color:#66d9ef">containers</span>:
-      - <span style="color:#66d9ef">image</span>: traefik:<span style="color:#ae81ff">1.4.1</span> <span style="color:#75715e"># added the &#39;:1.4.1&#39; label</span>
-        <span style="color:#66d9ef">name</span>: traefik-ingress-lb
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">DaemonSet</span>
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">traefik-ingress-controller</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">k8s-app</span>: <span style="color:#ae81ff">traefik-ingress-lb</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">k8s-app</span>: <span style="color:#ae81ff">traefik-ingress-lb</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">traefik-ingress-lb</span>
+    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">serviceAccountName</span>: <span style="color:#ae81ff">traefik-ingress-controller</span>
+      <span style="color:#f92672">terminationGracePeriodSeconds</span>: <span style="color:#ae81ff">60</span>
+      <span style="color:#f92672">hostNetwork</span>: <span style="color:#66d9ef">true</span>
+      <span style="color:#f92672">containers</span>:
+      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">traefik:1.4.1</span> <span style="color:#75715e"># added the &#39;:1.4.1&#39; label</span>
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">traefik-ingress-lb</span>
 </code></pre></div><p>&hellip;then I can deploy the updated yaml file to my Kubernetes cluster:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -f traefik.yml
 </code></pre></div><p>After updating, everything goes smoothly. The older image is pulled, the pods are created and everyone is happy.</p>

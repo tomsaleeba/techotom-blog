@@ -6,11 +6,7 @@
     <description>Recent content in webpack on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2020 16:37:59 +1100</lastBuildDate>
-    
-	<atom:link href="/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 02 Apr 2020 16:37:59 +1100</lastBuildDate><atom:link href="/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Disable individual icons with favicons-webpack-plugin</title>
       <link>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</link>

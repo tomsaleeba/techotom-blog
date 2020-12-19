@@ -2,7 +2,7 @@
 
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.70.0" />
+	<meta name="generator" content="Hugo 0.79.0" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -173,6 +173,24 @@ if (!doNotTrack) {
         
         <article>
             <h2>
+                <a href="/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/">
+                    tycho-p2-director-plugin &#34;Error packing product:  isn&#39;t a directory&#34; problem
+                </a>
+            </h2>
+            <div><p>The problem You&rsquo;re trying to build an Eclipse update site project, specifically &lt;packaging&gt;eclipse-repository&lt;/packaging&gt;, with maven and you&rsquo;re getting the following error:
+This error message is specific to this environment block that you would have defined in your POM:
+&lt;environment&gt; &lt;os&gt;linux&lt;/os&gt; &lt;ws&gt;gtk&lt;/ws&gt; &lt;arch&gt;x86&lt;/arch&gt; &lt;/environment&gt; For the sake of making this post easier to find for people Googling for error messages, you might get one of the following error messages for other common environments:</p></div>
+            <div class="post-footer">
+            <time>October 27, 2014</time>
+
+            
+            
+            </div>
+
+        </article>
+        
+        <article>
+            <h2>
                 <a href="/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/">
                     Fixing &#34;The default package &#39;.&#39; is not permitted by the Import-Package syntax.&#34; with maven-bundle-plugin
                 </a>
@@ -321,35 +339,11 @@ Basically, when I copied an already running version of postgres to a new box and
                     Maven deploy to Sonatype Nexus &#34;401 Premission Denied&#34; workaround
                 </a>
             </h2>
-            <div><p>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus&rsquo; RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</p></div>
+            <div><p>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus' RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</p></div>
             <div class="post-footer">
             <time>December 24, 2012</time>
 
             
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2012-11-10-configuring-eclipse-source-directories-with-maven/">
-                    Configuring Eclipse source directories with maven
-                </a>
-            </h2>
-            <div><p>When you generate a Java project using maven and then import it into Eclipse, often you want to add extra directories that are treated as source directories. This guide will show you how to do it.
-First lets look at (a snippet of) the Super POM to see what we get by default:
-&lt;build&gt; &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt; &lt;scriptSourceDirectory&gt;src/main/scripts&lt;/scriptSourceDirectory&gt; &lt;testSourceDirectory&gt;src/test/java&lt;/testSourceDirectory&gt; &lt;resources&gt; &lt;resource&gt; &lt;directory&gt;src/main/resources&lt;/directory&gt; &lt;/resource&gt; &lt;/resources&gt; &lt;/build&gt; We can override what we get from here which is probably what you&rsquo;ll do most of the time; adding another resource directory.</p></div>
-            <div class="post-footer">
-            <time>November 10, 2012</time>
-
-            
-            
-                
-                    <a class="tag" href="/tags/eclipse">#eclipse</a>
-                
-                    <a class="tag" href="/tags/maven">#maven</a>
-                
             
             </div>
 

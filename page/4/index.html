@@ -2,7 +2,7 @@
 
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.70.0" />
+	<meta name="generator" content="Hugo 0.79.0" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -170,6 +170,30 @@ if (!doNotTrack) {
         
         
         
+        
+        <article>
+            <h2>
+                <a href="/post/2012-11-10-configuring-eclipse-source-directories-with-maven/">
+                    Configuring Eclipse source directories with maven
+                </a>
+            </h2>
+            <div><p>When you generate a Java project using maven and then import it into Eclipse, often you want to add extra directories that are treated as source directories. This guide will show you how to do it.
+First lets look at (a snippet of) the Super POM to see what we get by default:
+&lt;build&gt; &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt; &lt;scriptSourceDirectory&gt;src/main/scripts&lt;/scriptSourceDirectory&gt; &lt;testSourceDirectory&gt;src/test/java&lt;/testSourceDirectory&gt; &lt;resources&gt; &lt;resource&gt; &lt;directory&gt;src/main/resources&lt;/directory&gt; &lt;/resource&gt; &lt;/resources&gt; &lt;/build&gt; We can override what we get from here which is probably what you&rsquo;ll do most of the time; adding another resource directory.</p></div>
+            <div class="post-footer">
+            <time>November 10, 2012</time>
+
+            
+            
+                
+                    <a class="tag" href="/tags/eclipse">#eclipse</a>
+                
+                    <a class="tag" href="/tags/maven">#maven</a>
+                
+            
+            </div>
+
+        </article>
         
         <article>
             <h2>
