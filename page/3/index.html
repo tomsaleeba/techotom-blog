@@ -173,6 +173,23 @@ if (!doNotTrack) {
         
         <article>
             <h2>
+                <a href="/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/">
+                    Mocking remoteAddr with Spring-mvc
+                </a>
+            </h2>
+            <div><p>The problem We developed a Spring MVC controller that needs to know who the client is. We achieved this using a HttpServletRequest parameter and then calling getRemoteAddr() on it. The challenge then was how to test this because we need to be able to mock this value.
+The fix The Spring test helpers don&rsquo;t provide a way to set this value with a helper method but they do provide an extension point that we can use to do it ourselves.</p></div>
+            <div class="post-footer">
+            <time>November 12, 2014</time>
+
+            
+            
+            </div>
+
+        </article>
+        
+        <article>
+            <h2>
                 <a href="/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/">
                     tycho-p2-director-plugin &#34;Error packing product:  isn&#39;t a directory&#34; problem
                 </a>
@@ -326,22 +343,6 @@ Basically, when I copied an already running version of postgres to a new box and
             <div><p>How to <code>ssh-add</code> on a remote machine.</p></div>
             <div class="post-footer">
             <time>January 22, 2013</time>
-
-            
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2012-12-24-maven-deploy-401-workaround/">
-                    Maven deploy to Sonatype Nexus &#34;401 Premission Denied&#34; workaround
-                </a>
-            </h2>
-            <div><p>My current infrastructure has an instance of Jenkins as the Continuous Integration server and Sonatype Nexus as the repository manager. The POMs for my project and the settings.xml file for maven are configured so that Jenkins can automatically deploy SNAPSHOTs to the Nexus repository but the problem arose when I had a build that went to production and I needed to deploy that pre-built artifact to Nexus' RELEASE repository. This was easier that going back and checking out the correct versions of the many dependencies.</p></div>
-            <div class="post-footer">
-            <time>December 24, 2012</time>
 
             
             
