@@ -1,6 +1,8 @@
 ---
 title: "TapStrap Key Mappings"
 date: 2020-12-08T17:54:35+10:30
+tags:
+- keyboards
 ---
 
 The [TapStrap](https://www.tapwithus.com/) is an interesting keyboard. It's also
