@@ -8,6 +8,7 @@ author:
 
 disqusShortname: techotom
 googleAnalytics: UA-101335262-2
+enableEmoji: true
 
 params:
   # Main
