@@ -174,52 +174,93 @@ not that cheap so it&rsquo;s understandable if you&rsquo;re apprehensive about b
 <p>I wanted to try the layout without buying the keyboard to see how it works for
 me. The first step is to find out what the layout is and my Google-fu let me
 down because I couldn&rsquo;t find anything written. All the references tell you to
-use the TapGenius app.</p>
-<p>So here I&rsquo;ve transcribed the layout from TapGenius as a reference.</p>
+use the TapGenius app (<em>the app</em> from here on).</p>
+<p>So here I&rsquo;ve transcribed the layout from <em>the app</em> as a reference.</p>
+<p>I&rsquo;m going to set these up as
+<a href="https://docs.qmk.fm/#/feature_combo?id=combos">combos</a> in my QMK powered
+keyboard to try them out.</p>
 <h1 id="how-to-read-this">How to read this</h1>
 <p>All the combinations are assuming you&rsquo;re using your right hand. The <code>*</code> means
 tap that key/finger and <code>_</code> means don&rsquo;t tap.</p>
-<h1 id="aeiou---one-finger">AEIOU - One finger</h1>
+<h1 id="alphas">Alphas</h1>
+<p>First, here&rsquo;s a screenshot from <em>the app</em>.</p>
+<p><img src="alphas.jpg" alt=""></p>
+<p>Here&rsquo;s a textual version that uses the same headings that <em>the app</em> uses when it
+teaches you.</p>
+<h2 id="aeiou---one-finger">AEIOU - One finger</h2>
 <pre><code> A: * _ _ _ _
  E: _ * _ _ _
  I: _ _ * _ _
  O: _ _ _ * _
  U: _ _ _ _ *
-</code></pre><h1 id="ntls---two-fingers-together">NTLS - Two fingers together</h1>
+</code></pre><h2 id="ntls---two-fingers-together">NTLS - Two fingers together</h2>
 <pre><code> N: * * _ _ _
  T: _ * * _ _
  L: _ _ * * _
  S: _ _ _ * *
-</code></pre><h1 id="dmz---two-fingers-skipping-one">DMZ - Two fingers skipping one</h1>
+</code></pre><h2 id="dmz---two-fingers-skipping-one">DMZ - Two fingers skipping one</h2>
 <pre><code> D: * _ * _ _
  M: _ * _ * _
  Z: _ _ * _ *
-</code></pre><p>#KB - Two fingers skipping two</p>
+</code></pre><h2 id="kb---two-fingers-skipping-two">KB - Two fingers skipping two</h2>
 <pre><code> K: * _ _ * _
  B: _ * _ _ *
-</code></pre><h1 id="hcvjr---one-finger-up-four-finger-taps">HCVJR - One finger up (four finger taps)</h1>
+</code></pre><h2 id="hcvjr---one-finger-up-four-finger-taps">HCVJR - One finger up (four finger taps)</h2>
 <pre><code> H: _ * * * *
  C: * _ * * *
  V: * * _ * *
  J: * * * _ *
  R: * * * * _
-</code></pre><h1 id="yw---looks-like-they-letters">YW - Looks like they letters</h1>
+</code></pre><h2 id="yw---looks-like-they-letters">YW - Looks like they letters</h2>
 <pre><code> Y: * _ _ _ *
  W: * _ * _ *
-</code></pre><h1 id="gx---one-finger-chasing-two">GX - One finger chasing two</h1>
+</code></pre><h2 id="gx---one-finger-chasing-two">GX - One finger chasing two</h2>
 <pre><code> G: * _ * * _
  W: _ * _ * *
-</code></pre><h1 id="fq---two-fingers-chasing-one">FQ - Two fingers chasing one</h1>
+</code></pre><h2 id="fq---two-fingers-chasing-one">FQ - Two fingers chasing one</h2>
 <pre><code> F: * * _ * _
  Q: _ * * _ *
-</code></pre><h1 id="p-return---three-fingers-skipping-two">P Return - Three fingers skipping two</h1>
+</code></pre><h2 id="p-return---three-fingers-skipping-two">P Return - Three fingers skipping two</h2>
 <pre><code>   P: * * _ _ *
  Ret: * _ _ * *
-</code></pre><h1 id="shift-del-switch---three-fingers-together">Shift Del Switch - Three fingers together</h1>
+</code></pre><h1 id="shortcuts">Shortcuts</h1>
+<p>Then there are some double tap shortcuts for some of the keys.</p>
+<p><img src="shortcuts.jpg" alt=""></p>
+<pre><code> J: _ _ * _ _ x2
+ Q: _ _ * _ _ x2
+ V: * _ _ _ _ x2
+ W: _ _ _ _ * x2
+ Z: * _ _ _ * x2
+</code></pre><h1 id="essentials">Essentials</h1>
+<p>Here are those other keys you need to actually type useful things.</p>
+<p><img src="other.jpg" alt=""></p>
+<h2 id="shift-del-switch---three-fingers-together">Shift Del Switch - Three fingers together</h2>
 <pre><code> Shift: * * * _ _
   Bksp: _ * * * _
- Swtch: _ _ * * *
-</code></pre>
+Switch: _ _ * * *
+</code></pre><h2 id="return---three-fingers-skipping-two">Return - Three fingers skipping two</h2>
+<p>Yeah, repeated from above as return belongs in this category.</p>
+<pre><code> Return: * _ _ * *
+</code></pre><h2 id="space---everything">Space - everything!</h2>
+<pre><code> Space: * * * * *
+</code></pre><h1 id="numbers">Numbers</h1>
+<p><img src="numbers.jpg" alt=""></p>
+<p>As a refresher, here&rsquo;s the switch combo:</p>
+<pre><code>Switch: _ _ * * *
+</code></pre><p>Now, the numbers:</p>
+<pre><code> 0: _ * * * *
+ 1: * _ _ _ _
+ 2: _ * _ _ _
+ 3: _ _ * _ _
+ 4: _ _ _ * _
+ 5: _ _ _ _ *
+ 6: * _ _ _ *
+ 7: _ * _ _ *
+ 8: _ _ * _ *
+ 9: _ _ _ * *
+</code></pre><h1 id="symbols">Symbols</h1>
+<p><img src="symbols.jpg" alt=""></p>
+
         </p>
     </div>
     <div id="disqus_thread"></div>
