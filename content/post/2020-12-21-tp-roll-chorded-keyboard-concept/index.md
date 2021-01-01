@@ -15,9 +15,8 @@ understatement, it's more like consumed. I tried a
 my expectations. The main problem was the thing everyone fears about this
 product, the accuracy of recognising the taps.  This led me to look at other
 options that use physical keys like the [BAT
-Keyboard](https://www.infogrip.com/bat-keyboard.htmlhttps://www.infogrip.com/bat-keyboard.html)
-or the wonderful things the [maker community comes up
-with](https://hackaday.com/tag/chorded-keyboard/).
+Keyboard](https://www.infogrip.com/bat-keyboard.html) or the wonderful things
+the [maker community comes up with](https://hackaday.com/tag/chorded-keyboard/).
 
 I like the feature of the TapStrap where you don't need a table to use it.
 Any surface should be suitable. In my experience, that's not how it works in
@@ -60,12 +59,20 @@ confident I can make it work, but it'll need testing to confirm.
 
 ![](front-hand.jpg)
 
-I've gone with a slight columnar stagger for the finger keys. I'm a believer on
-that front, fingers are different lengths after all. Ignore the letters on the
-keys, they're just what I had lying around. I think I'll try to stand on the
-shoulders of giants and try out the mapping that the BAT keyboard uses:
+I've gone with a slight columnar stagger for the finger keys. I'm a believer
+that fingers of different lengths are happy with staggered keys. Ignore the
+letters on the keys, they're just what I had lying around. I think I'll try to
+stand on the shoulders of giants and try out the mapping that the [BAT
+Keyboard](https://www.infogrip.com/bat-keyboard.html) uses:
 
 ![](batalphart.jpg)
+
+...or, as [/u/qpockets pointed
+out](https://www.reddit.com/r/MechanicalKeyboards/comments/khgurd/prototyping_a_key_layout_for_a_handheld_chorded/ghb5nde?utm_source=share&utm_medium=web2x&context=3)
+the [artsey.io layout](https://www.artsey.io/_FILES/ARTSEY.jpg) is gaining
+momentum. I'm keen to try the artsey layout but at this point I feel like having
+a strap to hold the 'board to your hand so you can use the thumb for a few extra
+keys will be a winning strategy.
 
 I'm right handed so I've been making it to suit, but I've found that if you turn
 it upside down, it will fit the left hand because the stagger of the finger keys
