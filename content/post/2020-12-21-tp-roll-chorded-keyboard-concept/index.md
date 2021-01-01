@@ -29,13 +29,14 @@ a macropad. Why order it you ask? N+1 keyboards is why :grin:. Being Bluetooth
 gives me hope it'll make a good base for a wireless chorded keyboard, just like
 what we're talking about here.
 
-There are the requirements I have for a chorded keyboard:
+These are the requirements I have for a chorded keyboard:
 
 - uses mechanical keyboard switches
 - handheld, or at least usable on more surfaces than just a regular desk
 - enough keys to be able to achieve the alphabet, numbers, some symbols and the
     other essentials like space, enter, arrows, backspace, etc.
 - ideally cordless
+- hackable and open source
 
 You've already seen it at the top of this post because everybody knows if you
 don't start a blog post with an image, even an unrelated one, then nobody will
