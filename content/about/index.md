@@ -14,7 +14,7 @@ Early on I did a lot of Java webapps. These days I'm doing Vue.js based apps
 that connect to whatever server we're using for the job.
 
 I guess the best classification for me is "web developer" but when working in
-small teams you never have one role. I the person who gets whatever needs doing
+small teams you never have one role. I'm the person who gets whatever needs doing
 done. I don't know how long the term will survive for but let's just say DevOps.
 
 I really enjoy mentoring and teaching so this blog is a way for me to share the
