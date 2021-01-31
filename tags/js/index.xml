@@ -6,7 +6,16 @@
     <description>Recent content in js on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2020 16:37:59 +1100</lastBuildDate><atom:link href="/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 11:55:45 +1030</lastBuildDate><atom:link href="/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce Yarn 2 Verbosity</title>
+      <link>/post/2021-01-31-reduce-yarn2-verbosity/</link>
+      <pubDate>Sun, 31 Jan 2021 11:55:45 +1030</pubDate>
+      
+      <guid>/post/2021-01-31-reduce-yarn2-verbosity/</guid>
+      <description>I think the default log output of yarn v2 is too verbose, so I show how to tame it.</description>
+    </item>
+    
     <item>
       <title>Disable individual icons with favicons-webpack-plugin</title>
       <link>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</link>

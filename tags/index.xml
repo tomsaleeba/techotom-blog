@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Dec 2020 18:23:18 +1030</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 11:55:45 +1030</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js</title>
+      <link>/tags/js/</link>
+      <pubDate>Sun, 31 Jan 2021 11:55:45 +1030</pubDate>
+      
+      <guid>/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yarn</title>
+      <link>/tags/yarn/</link>
+      <pubDate>Sun, 31 Jan 2021 11:55:45 +1030</pubDate>
+      
+      <guid>/tags/yarn/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>keyboards</title>
       <link>/tags/keyboards/</link>
@@ -31,15 +49,6 @@
       <pubDate>Tue, 07 Apr 2020 22:51:59 +1100</pubDate>
       
       <guid>/tags/chrome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>js</title>
-      <link>/tags/js/</link>
-      <pubDate>Thu, 02 Apr 2020 16:37:59 +1100</pubDate>
-      
-      <guid>/tags/js/</guid>
       <description></description>
     </item>
     

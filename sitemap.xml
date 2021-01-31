@@ -3,17 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tags/keyboards/</loc>
-    <lastmod>2020-12-21T18:23:18+10:30</lastmod>
+    <loc>/tags/js/</loc>
+    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-12-21T18:23:18+10:30</lastmod>
+    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2021-01-31-reduce-yarn2-verbosity/</loc>
+    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/yarn/</loc>
+    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/keyboards/</loc>
     <lastmod>2020-12-21T18:23:18+10:30</lastmod>
   </url>
   
@@ -23,17 +43,12 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-12-21T18:23:18+10:30</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/tapstrap-key-mappings/</loc>
     <lastmod>2020-12-08T17:54:35+10:30</lastmod>
   </url>
   
   <url>
-    <loc>/post/comparing-google-cloud-run-and-compute-engine-costs/</loc>
+    <loc>/post/2020-05-28-comparing-google-cloud-run-and-compute-engine-costs/</loc>
     <lastmod>2020-05-28T10:54:45+09:30</lastmod>
   </url>
   
@@ -54,11 +69,6 @@
   
   <url>
     <loc>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</loc>
-    <lastmod>2020-04-02T16:37:59+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/js/</loc>
     <lastmod>2020-04-02T16:37:59+11:00</lastmod>
   </url>
   

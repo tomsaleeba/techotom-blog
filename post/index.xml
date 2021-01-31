@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Tom Saleeba (TechoTom)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Dec 2020 18:23:18 +1030</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 11:55:45 +1030</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce Yarn 2 Verbosity</title>
+      <link>/post/2021-01-31-reduce-yarn2-verbosity/</link>
+      <pubDate>Sun, 31 Jan 2021 11:55:45 +1030</pubDate>
+      
+      <guid>/post/2021-01-31-reduce-yarn2-verbosity/</guid>
+      <description>I think the default log output of yarn v2 is too verbose, so I show how to tame it.</description>
+    </item>
+    
     <item>
       <title>Toilet paper roll chorded keyboard concept</title>
       <link>/post/2020-12-21-tp-roll-chorded-keyboard-concept/</link>
@@ -29,10 +38,10 @@ I wanted to try the layout without buying the keyboard to see how it works for m
     
     <item>
       <title>Comparing Google Cloud Run and Compute Engine Costs</title>
-      <link>/post/comparing-google-cloud-run-and-compute-engine-costs/</link>
+      <link>/post/2020-05-28-comparing-google-cloud-run-and-compute-engine-costs/</link>
       <pubDate>Thu, 28 May 2020 10:54:45 +0930</pubDate>
       
-      <guid>/post/comparing-google-cloud-run-and-compute-engine-costs/</guid>
+      <guid>/post/2020-05-28-comparing-google-cloud-run-and-compute-engine-costs/</guid>
       <description>How much do you pay for convenience? TL;DR roughly 2.5x as much</description>
     </item>
     

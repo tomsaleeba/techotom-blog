@@ -2,7 +2,7 @@
 
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.79.0" />
+	<meta name="generator" content="Hugo 0.80.0" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -173,6 +173,24 @@ if (!doNotTrack) {
         
         <article>
             <h2>
+                <a href="/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/">
+                    Fixing &#34;XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release&#34;
+                </a>
+            </h2>
+            <div><p>Background: I wrote some code that required an XMLGregorianCalendar so when I poked around with code completion, the first thing I found was a constructor on com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl. This got my code working but when you build with Maven, you get given a warning (and rightly so):
+ XMLGregorianCalendarImpl is internal proprietary API and may be removed in a future release
+ The fix: The correct way to get something that conforms to the XMLGregorianCalendar interface is to call this factory:</p></div>
+            <div class="post-footer">
+            <time>February 3, 2015</time>
+
+            
+            
+            </div>
+
+        </article>
+        
+        <article>
+            <h2>
                 <a href="/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/">
                     Mocking remoteAddr with Spring-mvc
                 </a>
@@ -327,22 +345,6 @@ I&rsquo;m running Linux Mint 64-bit Cinnamon and Postgres 9.1 as a refenece in c
 Basically, when I copied an already running version of postgres to a new box and it failed to start. When I took a look in the postgres log for when you try to start it, I could see that it was complaining about a missing locale.</p></div>
             <div class="post-footer">
             <time>February 15, 2013</time>
-
-            
-            
-            </div>
-
-        </article>
-        
-        <article>
-            <h2>
-                <a href="/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/">
-                    &#34;Could not open a connection to your authentication agent.&#34; when trying to ssh-add
-                </a>
-            </h2>
-            <div><p>How to <code>ssh-add</code> on a remote machine.</p></div>
-            <div class="post-footer">
-            <time>January 22, 2013</time>
 
             
             
