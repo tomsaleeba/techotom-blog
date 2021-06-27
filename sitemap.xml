@@ -1,418 +1,261 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/tags/js/</loc>
-    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
-  </url>
-  
-  <url>
+    <loc>/post/2021-06-26-elecom-deft-pro-bearing-swap/</loc>
+    <lastmod>2021-06-26T15:07:50-06:00</lastmod>
+  </url><url>
     <loc>/post/</loc>
-    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-06-26T15:07:50-06:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2021-06-26T15:07:50-06:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-06-26T15:07:50-06:00</lastmod>
+  </url><url>
+    <loc>/tags/trackball/</loc>
+    <lastmod>2021-06-26T15:07:50-06:00</lastmod>
+  </url><url>
+    <loc>/tags/js/</loc>
+    <lastmod>2021-02-02T16:24:45+10:30</lastmod>
+  </url><url>
+    <loc>/tags/yarn/</loc>
+    <lastmod>2021-02-02T16:24:45+10:30</lastmod>
+  </url><url>
+    <loc>/post/2021-02-02-yarn2-add-from-gitlab/</loc>
+    <lastmod>2021-02-02T16:24:45+10:30</lastmod>
+  </url><url>
     <loc>/post/2021-01-31-reduce-yarn2-verbosity/</loc>
     <lastmod>2021-01-31T11:55:45+10:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/yarn/</loc>
-    <lastmod>2021-01-31T11:55:45+10:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/keyboards/</loc>
     <lastmod>2020-12-21T18:23:18+10:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2020-12-21-tp-roll-chorded-keyboard-concept/</loc>
     <lastmod>2020-12-21T18:23:18+10:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/tapstrap-key-mappings/</loc>
     <lastmod>2020-12-08T17:54:35+10:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2020-05-28-comparing-google-cloud-run-and-compute-engine-costs/</loc>
     <lastmod>2020-05-28T10:54:45+09:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/Google-Cloud/</loc>
     <lastmod>2020-05-28T10:54:45+09:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/chrome/</loc>
     <lastmod>2020-04-07T22:51:59+11:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2020-04-07-more-details-from-chrome-aw-snap/</loc>
     <lastmod>2020-04-07T22:51:59+11:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2020-04-02-disable-individual-icons-with-favicons-webpack-plugin/</loc>
     <lastmod>2020-04-02T16:37:59+11:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/webpack/</loc>
     <lastmod>2020-04-02T16:37:59+11:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/cloud/</loc>
     <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2018-02-21-ersa-tango-ubuntu-vm-setup/</loc>
     <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2018-02-03-ball-bearing-homing-bumps-on-keycaps/</loc>
     <lastmod>2018-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/diy/</loc>
     <lastmod>2018-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/mechanical-keyboards/</loc>
     <lastmod>2018-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/gremlin/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/stardog/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-12-18-stardog-plugin-and-gremlin-console-not-working/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/tinkerpop/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/docker/</loc>
     <lastmod>2017-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-11-09-docker-no-supported-platform-found-in-manifest/</loc>
     <lastmod>2017-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/kubernetes/</loc>
     <lastmod>2017-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/faas-netes/</loc>
     <lastmod>2017-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-11-08-faas-netes-getting-502-error-pulling-metrics-from-provider-backend/</loc>
     <lastmod>2017-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/openfaas/</loc>
     <lastmod>2017-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/apiman/</loc>
     <lastmod>2017-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-10-17-finding-keycloak-realm-certificate-for-apiman/</loc>
     <lastmod>2017-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/keycloak/</loc>
     <lastmod>2017-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/2fa/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/adelaide-university/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-09-28-adelaide-university-vpn-openconnect-and-duo/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/duo/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/linux/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/openconnect/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/aws/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/route53/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-07-07-three-level-failover-with-aws-route53/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/virtualbox/</loc>
     <lastmod>2017-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/windows/</loc>
     <lastmod>2017-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-07-05-windows-10-won-t-start-as-virtualbox-guest/</loc>
     <lastmod>2017-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2017-03-17-alternative-way-to-fix-the-screen-overlay-detected-error-on-android/</loc>
     <lastmod>2017-03-17T11:55:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/android/</loc>
     <lastmod>2017-03-17T11:55:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
     <lastmod>2017-03-17T11:55:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2016-12-06-pluralsight-custom-playback-speeds/</loc>
     <lastmod>2016-12-06T04:21:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/Software-Development/</loc>
     <lastmod>2016-12-06T04:21:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2016-05-31-cant-rename-files-in-linux-mint-using-nemo/</loc>
     <lastmod>2016-05-31T03:00:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/Linux/</loc>
     <lastmod>2016-05-31T03:00:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2016-03-22-xtend-2-8-2-java-8-and-sort/</loc>
     <lastmod>2016-03-22T07:23:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2016-03-17-loading-tdb-data-into-apache-fuseki/</loc>
     <lastmod>2016-03-17T06:32:56+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2015-02-03-fixing-xmlgregoriancalendarimpl-is-internal-proprietary-api-and-may-be-removed-in-a-future-release/</loc>
     <lastmod>2015-02-03T07:43:51+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2014-11-12-mocking-remoteaddr-with-spring-mvc/</loc>
     <lastmod>2014-11-12T03:00:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/IT/</loc>
     <lastmod>2014-10-27T00:00:58+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2014-10-27-tycho-p2-director-plugin-error-packing-product-isnt-a-directory-problem/</loc>
     <lastmod>2014-10-27T00:00:58+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2014-10-21-fixing-the-default-package-is-not-permitted-by-the-import-package-syntax-with-maven-bundle-plugin/</loc>
     <lastmod>2014-10-21T01:05:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2014-06-06-changing-mwe2-src-directory-for-xtext-2-3-1/</loc>
     <lastmod>2014-06-06T06:51:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2013-12-10-help-troubleshooting-spring-mvc-unit-test-failing-with-a-http-400-error-code/</loc>
     <lastmod>2013-12-10T06:32:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2013-12-09-how-to-time-hack-tinydeathstar-without-losing-a-bitizen-to-the-airlock/</loc>
     <lastmod>2013-12-09T09:45:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2013-04-19-fixing-severe-errors-with-jersey-on-webapp-startup/</loc>
     <lastmod>2013-04-19T08:20:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/jersey/</loc>
     <lastmod>2013-04-19T08:20:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2013-02-26-fixing-linux-apt-bzip2-data-integrity-error-when-decompressing-error/</loc>
     <lastmod>2013-02-26T01:27:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2013-02-15-fixing-locale-issues-with-postgres/</loc>
     <lastmod>2013-02-15T02:25:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2013-01-22-could-not-open-a-connection-to-your-authentication-agent-when-trying-to-ssh-add/</loc>
     <lastmod>2013-01-22T12:58:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/Infrastructure/</loc>
     <lastmod>2012-12-24T05:37:53+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2012-12-24-maven-deploy-401-workaround/</loc>
     <lastmod>2012-12-24T05:37:53+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2012-11-10-configuring-eclipse-source-directories-with-maven/</loc>
     <lastmod>2012-11-10T00:19:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/eclipse/</loc>
     <lastmod>2012-11-10T00:19:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/maven/</loc>
     <lastmod>2012-11-10T00:19:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2012-09-22-ejecting-an-iso-from-a-virtualbox-vm-using-vboxmanage/</loc>
     <lastmod>2012-09-22T01:19:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/Virtualisation/</loc>
     <lastmod>2012-09-22T01:19:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2012-08-15-removing-10-minute-screen-timeout-for-ubuntu-server/</loc>
     <lastmod>2012-08-15T01:59:47+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2012-05-21-blacklisting-a-module-on-ubuntu-server-11-10-oneiric-ocelot/</loc>
     <lastmod>2012-05-21T11:48:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/Oneiric-Ocelot/</loc>
     <lastmod>2012-05-21T11:48:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/Ubuntu/</loc>
     <lastmod>2012-05-21T11:48:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/Ubuntu-Server/</loc>
     <lastmod>2012-05-21T11:48:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/XenServer/</loc>
     <lastmod>2012-05-21T10:58:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2012-05-21-xenserver-5-6-1-fp1-mounting-a-guest-vms-hard-drive-vdi-on-the-host/</loc>
     <lastmod>2012-05-21T10:58:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/archives/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/about/</loc>
   </url>
-  
 </urlset>
