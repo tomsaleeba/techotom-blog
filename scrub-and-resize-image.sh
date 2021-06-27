@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-maxLongSide=${MAX_LONG:-800}
+maxLongSide=${2:-800}
 
 image=${1:?first param must be path to image}
 outFile=$(mktemp)
